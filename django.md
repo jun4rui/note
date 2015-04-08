@@ -1,5 +1,5 @@
 # Django学习笔记
-
+![Django首页截图](images/django.jpg)
 ## 1. 安装
 * 目前支持从2.5（貌似）到最新的3.4的所有版本Python，所以建议走最高版本就好了，貌似最新版Python还自带了pip（一个python包管理工具，很好用，必备）。
 * 安装在pip下超级简单，就是`pip install django==1.7.5`，1.7.5是当前最新版本
