@@ -13,5 +13,5 @@
 
 ## 简易目录
 
-- [Django学习笔记](django.me)
-- [Laravel学习笔记](Laravel.md) 
+- [Django学习笔记](https://github.com/jun4rui/note/blob/master/django.md)
+- [Laravel学习笔记](https://github.com/jun4rui/note/blob/master/Laravel.md) 
