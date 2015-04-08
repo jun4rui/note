@@ -58,6 +58,7 @@
 * 如果新闻的 model 包含了 新闻分类 还有新闻内容 新闻内容 里头设置好了 外键 那么 admin 里头 list_display 可以直接指定新闻分类的哇 然后后台的界面中下拉菜单啥的直接帮你生成好了 ~~
 
 ## 5. 当前项目采用的环境
+* Python 2.7.x（pyodbc对python版本有要求）
 * Django 1.7.6
 * virtualenv（虚拟开发环境）
 * pyodbc（通过odbc调用sqlserver）
