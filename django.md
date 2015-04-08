@@ -20,7 +20,7 @@
  * 一个视图功能必须返回一个HttpResponse
 * 参数在urls中的写法: `url(r'^hello/(\w+)/$',hello)`,用括号+正则的写法
 * 在处理的views里面，添加offset参数,例如：`Def hello(request,offset):`，其实offset可以随便变成别的变量名。如果有多个参数，你就继续加就好了，变量名自己定就行
-* ***PS：参数始终是String型，就算是纯数字也是String型***
+* **PS：参数始终是String型，就算是纯数字也是String型**
 
 ## 3. 有用的组件
 * 目前主流的RESTFul框架：<http://www.django-rest-framework.org/>
