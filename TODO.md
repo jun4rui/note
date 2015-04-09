@@ -1,6 +1,6 @@
 1. Redis数据库
 2. mangoDB数据库
-3. 服务器主动推送技术
+3. 服务器主动推送技术(socket.io这种)
 4. 在Django中集成可视化编辑器
 5. 在Django中修改后台管理Admin端口样式
 6. 在Django后台整合管理中整合多张表的关联
