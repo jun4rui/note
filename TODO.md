@@ -7,3 +7,6 @@
 7. 了解Django的一些常用插件
 8. 学会用git
 9. 关注一下用javascript写程序生成原生代码的NativeScript技术
+10. Vgrant，一个类似Docker但是又不同的环境
+11. Docker也要了解
+
