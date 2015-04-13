@@ -3,6 +3,7 @@
 <head lang="en">
 	<meta charset="UTF-8">
 	<title></title>
+	<script src="http://www.htyou.com/common/jquery-1.11.0.min.js"></script>
 </head>
 <body>
 <style>
@@ -23,8 +24,51 @@
 	}
 </style>
 
-<div id="demo">
+<!--<div id="demo">
 	
+</div>-->
+
+<style>
+	@-webkit-keyframes animate1 {
+		from    {background:red;}
+		to      {background:yellow;}
+	}
+	@-webkit-keyframes animate2 {
+		from        {
+			margin-left:-400px;
+			opacity: 0.0;
+		}
+		to          {
+			margin-left:0;
+			opacity: 1.0;
+		}
+	 }
+	#demo1, .tt1 {
+		width:300px;
+		background-color:yellow;
+		color:#F00;
+		border:1px solid aquamarine;
+		/*-webkit-animation: animate1 5s;*/
+		-webkit-animation: animate2 1s;
+		margin-bottom: .5em;
+		-webkit-border-radius:5px;
+	}
+</style>
+<div id="demo1">
+	123
 </div>
+
+<script>
+	var intval  = setInterval(function(){
+		var i = $('.tt1').length;
+		if (i<100){
+			$('body').append('<div class="tt1">'+i+'</div>').delay(1000);
+		}else{
+			clearInterval(intval);
+		}
+	},50);
+
+
+</script>
 </body>
 </html>
