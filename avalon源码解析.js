@@ -1,10 +1,10 @@
 /* jun4rui
-ÒòÎª×Ô¼ºÌ«´À£¬ËùÒÔ¼±ÇĞµÄĞèÒª×Ô¼ºµÄ¼¼ÄÜË®Æ½£¬ËùÒÔÑ¡ÔñÁË½âÎöAvalonµÄÔ´´úÂë 20150428
+å› ä¸ºè‡ªå·±å¤ªè ¢ï¼Œæ‰€ä»¥æ€¥åˆ‡çš„éœ€è¦è‡ªå·±çš„æŠ€èƒ½æ°´å¹³ï¼Œæ‰€ä»¥é€‰æ‹©äº†è§£æAvalonçš„æºä»£ç  20150428
  */
 
 
 /*==================================================
- Copyright (c) 2013-2015 Ë¾Í½ÕıÃÀ and other contributors
+ Copyright (c) 2013-2015 å¸å¾’æ­£ç¾ and other contributors
  http://www.cnblogs.com/rubylouvre/
  https://github.com/RubyLouvre
  http://weibo.com/jslouvre/
@@ -18,11 +18,11 @@
 	... some code ...
 })();
 
- ×ÔÖ´ĞĞÄäÃûº¯Êı£º
+ è‡ªæ‰§è¡ŒåŒ¿åå‡½æ•°ï¼š
 
-³£¼û¸ñÊ½£º(function() { ... code ... })();
-½âÊÍ£º°üÎ§º¯Êı£¨function(){})µÄµÚÒ»¶ÔÀ¨ºÅÏò½Å±¾·µ»ØÎ´ÃüÃûµÄº¯Êı£¬ËæºóÒ»¶Ô¿ÕÀ¨ºÅÁ¢¼´Ö´ĞĞ·µ»ØµÄÎ´ÃüÃûº¯Êı£¬À¨ºÅÄÚÎªÄäÃûº¯ÊıµÄ²ÎÊı¡£
-×÷ÓÃ£º¿ÉÒÔÓÃËü´´½¨ÃüÃû¿Õ¼ä£¬Ö»Òª°Ñ×Ô¼ºËùÓĞµÄ´úÂë¶¼Ğ´ÔÚÕâ¸öÌØÊâµÄº¯Êı°ü×°ÄÚ£¬ÄÇÃ´Íâ²¿¾Í²»ÄÜ·ÃÎÊ£¬³ı·ÇÄãÔÊĞí(±äÁ¿Ç°¼ÓÉÏwindow£¬ÕâÑù¸Ãº¯Êı»ò±äÁ¿¾Í³ÉÎªÈ«¾Ö)¡£¸÷JavaScript¿âµÄ´úÂëÒ²»ù±¾ÊÇÕâÖÖ×éÖ¯ĞÎÊ½¡£
+å¸¸è§æ ¼å¼ï¼š(function() { ... code ... })();
+è§£é‡Šï¼šåŒ…å›´å‡½æ•°ï¼ˆfunction(){})çš„ç¬¬ä¸€å¯¹æ‹¬å·å‘è„šæœ¬è¿”å›æœªå‘½åçš„å‡½æ•°ï¼Œéšåä¸€å¯¹ç©ºæ‹¬å·ç«‹å³æ‰§è¡Œè¿”å›çš„æœªå‘½åå‡½æ•°ï¼Œæ‹¬å·å†…ä¸ºåŒ¿åå‡½æ•°çš„å‚æ•°ã€‚
+ä½œç”¨ï¼šå¯ä»¥ç”¨å®ƒåˆ›å»ºå‘½åç©ºé—´ï¼Œåªè¦æŠŠè‡ªå·±æ‰€æœ‰çš„ä»£ç éƒ½å†™åœ¨è¿™ä¸ªç‰¹æ®Šçš„å‡½æ•°åŒ…è£…å†…ï¼Œé‚£ä¹ˆå¤–éƒ¨å°±ä¸èƒ½è®¿é—®ï¼Œé™¤éä½ å…è®¸(å˜é‡å‰åŠ ä¸Šwindowï¼Œè¿™æ ·è¯¥å‡½æ•°æˆ–å˜é‡å°±æˆä¸ºå…¨å±€)ã€‚å„JavaScriptåº“çš„ä»£ç ä¹ŸåŸºæœ¬æ˜¯è¿™ç§ç»„ç»‡å½¢å¼ã€‚
 
  */
 
@@ -49,17 +49,17 @@
 }(typeof window !== "undefined" ? window : this, function(window, noGlobal){
 
 	/*********************************************************************
-	 *                    È«¾Ö±äÁ¿¼°·½·¨                                  *
+	 *                    å…¨å±€å˜é‡åŠæ–¹æ³•                                  *
 	 **********************************************************************/
 	var expose = new Date() - 0
 //http://stackoverflow.com/questions/7290086/javascript-use-strict-and-nicks-find-global-function
 	var DOC = window.document
-	var head = DOC.getElementsByTagName("head")[0] //HEADÔªËØ
-	var ifGroup = head.insertBefore(document.createElement("avalon"), head.firstChild) //±ÜÃâIE6 base±êÇ©BUG
+	var head = DOC.getElementsByTagName("head")[0] //HEADå…ƒç´ 
+	var ifGroup = head.insertBefore(document.createElement("avalon"), head.firstChild) //é¿å…IE6 baseæ ‡ç­¾BUG
 	ifGroup.innerHTML = "X<style id='avalonStyle'>.avalonHide{ display: none!important }</style>"
 	ifGroup.setAttribute("ms-skip", "1")
 	ifGroup.className = "avalonHide"
-	var rnative = /\[native code\]/ //ÅĞ¶¨ÊÇ·ñÔ­Éúº¯Êı
+	var rnative = /\[native code\]/ //åˆ¤å®šæ˜¯å¦åŸç”Ÿå‡½æ•°
 	function log() {
 		if (window.console && avalon.config.debug) {
 			// http://stackoverflow.com/questions/8785624/how-to-safely-wrap-console-log
@@ -73,7 +73,7 @@
 	var otherDefine = window.define
 	var innerRequire
 	var stopRepeatAssign = false
-	var rword = /[^, ]+/g //ÇĞ¸î×Ö·û´®ÎªÒ»¸ö¸öĞ¡¿é£¬ÒÔ¿Õ¸ñ»ò¶¹ºÅ·Ö¿ªËüÃÇ£¬½áºÏreplaceÊµÏÖ×Ö·û´®µÄforEach
+	var rword = /[^, ]+/g //åˆ‡å‰²å­—ç¬¦ä¸²ä¸ºä¸€ä¸ªä¸ªå°å—ï¼Œä»¥ç©ºæ ¼æˆ–è±†å·åˆ†å¼€å®ƒä»¬ï¼Œç»“åˆreplaceå®ç°å­—ç¬¦ä¸²çš„forEach
 	var rcomplexType = /^(?:object|array)$/
 	var rsvg = /^\[object SVG\w*Element\]$/
 	var rwindow = /^\[object (?:Window|DOMWindow|global)\]$/
@@ -82,7 +82,7 @@
 	var serialize = oproto.toString
 	var ap = Array.prototype
 	var aslice = ap.slice
-	var Registry = {} //½«º¯ÊıÆØ¹âµ½´Ë¶ÔÏóÉÏ£¬·½±ã·ÃÎÊÆ÷ÊÕ¼¯ÒÀÀµ
+	var Registry = {} //å°†å‡½æ•°æ›å…‰åˆ°æ­¤å¯¹è±¡ä¸Šï¼Œæ–¹ä¾¿è®¿é—®å™¨æ”¶é›†ä¾èµ–
 	var W3C = window.dispatchEvent
 	var root = DOC.documentElement
 	var hyperspace = DOC.createDocumentFragment()
@@ -109,7 +109,7 @@
 		return result
 	}
 
-//Éú³ÉUUID http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
+//ç”ŸæˆUUID http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
 	var generateID = function(prefix) {
 		prefix = prefix || "avalon"
 		return (prefix + Math.random() + Math.random()).replace(/0\./g, "")
@@ -124,11 +124,11 @@
 	}
 	var IEVersion = IE()
 
-	avalon = function(el) { //´´½¨jQueryÊ½µÄÎŞnew ÊµÀı»¯½á¹¹
+	avalon = function(el) { //åˆ›å»ºjQueryå¼çš„æ— new å®ä¾‹åŒ–ç»“æ„
 		return new avalon.init(el)
 	}
 
-	/*ÊÓä¯ÀÀÆ÷Çé¿ö²ÉÓÃ×î¿ìµÄÒì²½»Øµ÷*/
+	/*è§†æµè§ˆå™¨æƒ…å†µé‡‡ç”¨æœ€å¿«çš„å¼‚æ­¥å›è°ƒ*/
 	avalon.nextTick = new function() {// jshint ignore:line
 		var tickImmediate = window.setImmediate
 		var tickObserver = window.MutationObserver
@@ -175,18 +175,18 @@
 		}
 	}// jshint ignore:line
 	/*********************************************************************
-	 *                 avalonµÄ¾²Ì¬·½·¨¶¨ÒåÇø                              *
+	 *                 avalonçš„é™æ€æ–¹æ³•å®šä¹‰åŒº                              *
 	 **********************************************************************/
 	avalon.init = function(el) {
 		this[0] = this.element = el
 	}
 	avalon.fn = avalon.prototype = avalon.init.prototype
 
-	avalon.type = function(obj) { //È¡µÃÄ¿±êµÄÀàĞÍ
+	avalon.type = function(obj) { //å–å¾—ç›®æ ‡çš„ç±»å‹
 		if (obj == null) {
 			return String(obj)
 		}
-		// ÔçÆÚµÄwebkitÄÚºËä¯ÀÀÆ÷ÊµÏÖÁËÒÑ·ÏÆúµÄecma262v4±ê×¼£¬¿ÉÒÔ½«ÕıÔò×ÖÃæÁ¿µ±×÷º¯ÊıÊ¹ÓÃ£¬Òò´ËtypeofÔÚÅĞ¶¨ÕıÔòÊ±»á·µ»Øfunction
+		// æ—©æœŸçš„webkitå†…æ ¸æµè§ˆå™¨å®ç°äº†å·²åºŸå¼ƒçš„ecma262v4æ ‡å‡†ï¼Œå¯ä»¥å°†æ­£åˆ™å­—é¢é‡å½“ä½œå‡½æ•°ä½¿ç”¨ï¼Œå› æ­¤typeofåœ¨åˆ¤å®šæ­£åˆ™æ—¶ä¼šè¿”å›function
 		return typeof obj === "object" || typeof obj === "function" ?
 		class2type[serialize.call(obj)] || "object" :
 			typeof obj
@@ -206,8 +206,8 @@
 	avalon.isWindow = function(obj) {
 		if (!obj)
 			return false
-		// ÀûÓÃIE678 window == documentÎªtrue,document == window¾¹È»ÎªfalseµÄÉñÆæÌØĞÔ
-		// ±ê×¼ä¯ÀÀÆ÷¼°IE9£¬IE10µÈÊ¹ÓÃ ÕıÔò¼ì²â
+		// åˆ©ç”¨IE678 window == documentä¸ºtrue,document == windowç«Ÿç„¶ä¸ºfalseçš„ç¥å¥‡ç‰¹æ€§
+		// æ ‡å‡†æµè§ˆå™¨åŠIE9ï¼ŒIE10ç­‰ä½¿ç”¨ æ­£åˆ™æ£€æµ‹
 		return obj == obj.document && obj.document != obj //jshint ignore:line
 	}
 
@@ -221,17 +221,17 @@
 	for (enu in avalon({})) {
 		break
 	}
-	var enumerateBUG = enu !== "0" //IE6ÏÂÎªtrue, ÆäËûÎªfalse
-	/*ÅĞ¶¨ÊÇ·ñÊÇÒ»¸öÆÓËØµÄjavascript¶ÔÏó£¨Object£©£¬²»ÊÇDOM¶ÔÏó£¬²»ÊÇBOM¶ÔÏó£¬²»ÊÇ×Ô¶¨ÒåÀàµÄÊµÀı*/
+	var enumerateBUG = enu !== "0" //IE6ä¸‹ä¸ºtrue, å…¶ä»–ä¸ºfalse
+	/*åˆ¤å®šæ˜¯å¦æ˜¯ä¸€ä¸ªæœ´ç´ çš„javascriptå¯¹è±¡ï¼ˆObjectï¼‰ï¼Œä¸æ˜¯DOMå¯¹è±¡ï¼Œä¸æ˜¯BOMå¯¹è±¡ï¼Œä¸æ˜¯è‡ªå®šä¹‰ç±»çš„å®ä¾‹*/
 	avalon.isPlainObject = function(obj, key) {
 		if (!obj || avalon.type(obj) !== "object" || obj.nodeType || avalon.isWindow(obj)) {
 			return false;
 		}
-		try { //IEÄÚÖÃ¶ÔÏóÃ»ÓĞconstructor
+		try { //IEå†…ç½®å¯¹è±¡æ²¡æœ‰constructor
 			if (obj.constructor && !ohasOwn.call(obj, "constructor") && !ohasOwn.call(obj.constructor.prototype, "isPrototypeOf")) {
 				return false;
 			}
-		} catch (e) { //IE8 9»áÔÚÕâÀïÅ×´í
+		} catch (e) { //IE8 9ä¼šåœ¨è¿™é‡ŒæŠ›é”™
 			return false;
 		}
 		if (enumerateBUG) {
@@ -245,11 +245,11 @@
 	}
 	if (rnative.test(Object.getPrototypeOf)) {
 		avalon.isPlainObject = function(obj) {
-			// ¼òµ¥µÄ typeof obj === "object"¼ì²â£¬»áÖÂÊ¹ÓÃisPlainObject(window)ÔÚoperaÏÂÍ¨²»¹ı
+			// ç®€å•çš„ typeof obj === "object"æ£€æµ‹ï¼Œä¼šè‡´ä½¿ç”¨isPlainObject(window)åœ¨operaä¸‹é€šä¸è¿‡
 			return serialize.call(obj) === "[object Object]" && Object.getPrototypeOf(obj) === oproto
 		}
 	}
-//ÓëjQuery.extend·½·¨£¬¿ÉÓÃÓÚÇ³¿½±´£¬Éî¿½±´
+//ä¸jQuery.extendæ–¹æ³•ï¼Œå¯ç”¨äºæµ…æ‹·è´ï¼Œæ·±æ‹·è´
 	avalon.mix = avalon.fn.mix = function() {
 		var options, name, src, copy, copyIsArray, clone,
 			target = arguments[0] || {},
@@ -257,36 +257,36 @@
 			length = arguments.length,
 			deep = false
 
-		// Èç¹ûµÚÒ»¸ö²ÎÊıÎª²¼¶û,ÅĞ¶¨ÊÇ·ñÉî¿½±´
+		// å¦‚æœç¬¬ä¸€ä¸ªå‚æ•°ä¸ºå¸ƒå°”,åˆ¤å®šæ˜¯å¦æ·±æ‹·è´
 		if (typeof target === "boolean") {
 			deep = target
 			target = arguments[1] || {}
 			i++
 		}
 
-		//È·±£½ÓÊÜ·½ÎªÒ»¸ö¸´ÔÓµÄÊı¾İÀàĞÍ
+		//ç¡®ä¿æ¥å—æ–¹ä¸ºä¸€ä¸ªå¤æ‚çš„æ•°æ®ç±»å‹
 		if (typeof target !== "object" && !isFunction(target)) {
 			target = {}
 		}
 
-		//Èç¹ûÖ»ÓĞÒ»¸ö²ÎÊı£¬ÄÇÃ´ĞÂ³ÉÔ±Ìí¼ÓÓÚmixËùÔÚµÄ¶ÔÏóÉÏ
+		//å¦‚æœåªæœ‰ä¸€ä¸ªå‚æ•°ï¼Œé‚£ä¹ˆæ–°æˆå‘˜æ·»åŠ äºmixæ‰€åœ¨çš„å¯¹è±¡ä¸Š
 		if (i === length) {
 			target = this
 			i--
 		}
 
 		for (; i < length; i++) {
-			//Ö»´¦Àí·Ç¿Õ²ÎÊı
+			//åªå¤„ç†éç©ºå‚æ•°
 			if ((options = arguments[i]) != null) {
 				for (name in options) {
 					src = target[name]
 					try {
-						copy = options[name] //µ±optionsÎªVBS¶ÔÏóÊ±±¨´í
+						copy = options[name] //å½“optionsä¸ºVBSå¯¹è±¡æ—¶æŠ¥é”™
 					} catch (e) {
 						continue
 					}
 
-					// ·ÀÖ¹»·ÒıÓÃ
+					// é˜²æ­¢ç¯å¼•ç”¨
 					if (target === copy) {
 						continue
 					}
@@ -310,7 +310,7 @@
 		return target
 	}
 
-	function _number(a, len) { //ÓÃÓÚÄ£Äâslice, spliceµÄĞ§¹û
+	function _number(a, len) { //ç”¨äºæ¨¡æ‹Ÿslice, spliceçš„æ•ˆæœ
 		a = Math.floor(a) || 0
 		return a < 0 ? Math.max(len + a, 0) : Math.min(a, len);
 	}
@@ -337,11 +337,11 @@
 			return ret
 		},
 		noop: noop,
-		/*Èç¹û²»ÓÃError¶ÔÏó·â×°Ò»ÏÂ£¬strÔÚ¿ØÖÆÌ¨ÏÂ¿ÉÄÜ»áÂÒÂë*/
+		/*å¦‚æœä¸ç”¨Errorå¯¹è±¡å°è£…ä¸€ä¸‹ï¼Œstråœ¨æ§åˆ¶å°ä¸‹å¯èƒ½ä¼šä¹±ç */
 		error: function(str, e) {
 			throw  (e || Error)(str)
 		},
-		/*½«Ò»¸öÒÔ¿Õ¸ñ»ò¶ººÅ¸ô¿ªµÄ×Ö·û´®»òÊı×é,×ª»»³ÉÒ»¸ö¼üÖµ¶¼Îª1µÄ¶ÔÏó*/
+		/*å°†ä¸€ä¸ªä»¥ç©ºæ ¼æˆ–é€—å·éš”å¼€çš„å­—ç¬¦ä¸²æˆ–æ•°ç»„,è½¬æ¢æˆä¸€ä¸ªé”®å€¼éƒ½ä¸º1çš„å¯¹è±¡*/
 		oneObject: oneObject,
 		/* avalon.range(10)
 		 => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -353,7 +353,7 @@
 		 => [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 		 avalon.range(0)
 		 => []*/
-		range: function(start, end, step) { // ÓÃÓÚÉú³ÉÕûÊıÊı×é
+		range: function(start, end, step) { // ç”¨äºç”Ÿæˆæ•´æ•°æ•°ç»„
 			step || (step = 1)
 			if (end == null) {
 				end = start || 0
@@ -369,7 +369,7 @@
 			return result
 		},
 		eventHooks: {},
-		/*°ó¶¨ÊÂ¼ş*/
+		/*ç»‘å®šäº‹ä»¶*/
 		bind: function(el, type, fn, phase) {
 			var hooks = avalon.eventHooks
 			var hook = hooks[type]
@@ -389,7 +389,7 @@
 			}
 			return callback
 		},
-		/*Ğ¶ÔØÊÂ¼ş*/
+		/*å¸è½½äº‹ä»¶*/
 		unbind: function(el, type, fn, phase) {
 			var hooks = avalon.eventHooks
 			var hook = hooks[type]
@@ -406,23 +406,23 @@
 				el.detachEvent("on" + type, callback)
 			}
 		},
-		/*¶ÁĞ´É¾³ıÔªËØ½ÚµãµÄÑùÊ½*/
+		/*è¯»å†™åˆ é™¤å…ƒç´ èŠ‚ç‚¹çš„æ ·å¼*/
 		css: function(node, name, value) {
 			if (node instanceof avalon) {
 				node = node[0]
 			}
 			var prop = /[_-]/.test(name) ? camelize(name) : name, fn
 			name = avalon.cssName(prop) || prop
-			if (value === void 0 || typeof value === "boolean") { //»ñÈ¡ÑùÊ½
+			if (value === void 0 || typeof value === "boolean") { //è·å–æ ·å¼
 				fn = cssHooks[prop + ":get"] || cssHooks["@:get"]
 				if (name === "background") {
 					name = "backgroundColor"
 				}
 				var val = fn(node, name)
 				return value === true ? parseFloat(val) || 0 : val
-			} else if (value === "") { //Çë³ıÑùÊ½
+			} else if (value === "") { //è¯·é™¤æ ·å¼
 				node.style[name] = ""
-			} else { //ÉèÖÃÑùÊ½
+			} else { //è®¾ç½®æ ·å¼
 				if (value == null || value !== value) {
 					return
 				}
@@ -433,9 +433,9 @@
 				fn(node, name, value)
 			}
 		},
-		/*±éÀúÊı×éÓë¶ÔÏó,»Øµ÷µÄµÚÒ»¸ö²ÎÊıÎªË÷Òı»ò¼üÃû,µÚ¶ş¸ö»òÔªËØ»ò¼üÖµ*/
+		/*éå†æ•°ç»„ä¸å¯¹è±¡,å›è°ƒçš„ç¬¬ä¸€ä¸ªå‚æ•°ä¸ºç´¢å¼•æˆ–é”®å,ç¬¬äºŒä¸ªæˆ–å…ƒç´ æˆ–é”®å€¼*/
 		each: function(obj, fn) {
-			if (obj) { //ÅÅ³ınull, undefined
+			if (obj) { //æ’é™¤null, undefined
 				var i = 0
 				if (isArrayLike(obj)) {
 					for (var n = obj.length; i < n; i++) {
@@ -451,7 +451,7 @@
 				}
 			}
 		},
-		//ÊÕ¼¯ÔªËØµÄdata-{{prefix}}-*ÊôĞÔ£¬²¢×ª»»Îª¶ÔÏó
+		//æ”¶é›†å…ƒç´ çš„data-{{prefix}}-*å±æ€§ï¼Œå¹¶è½¬æ¢ä¸ºå¯¹è±¡
 		getWidgetData: function(elem, prefix) {
 			var raw = avalon(elem).data()
 			var result = {}
@@ -465,17 +465,17 @@
 			return result
 		},
 		Array: {
-			/*Ö»ÓĞµ±Ç°Êı×é²»´æÔÚ´ËÔªËØÊ±Ö»Ìí¼ÓËü*/
+			/*åªæœ‰å½“å‰æ•°ç»„ä¸å­˜åœ¨æ­¤å…ƒç´ æ—¶åªæ·»åŠ å®ƒ*/
 			ensure: function(target, item) {
 				if (target.indexOf(item) === -1) {
 					return target.push(item)
 				}
 			},
-			/*ÒÆ³ıÊı×éÖĞÖ¸¶¨Î»ÖÃµÄÔªËØ£¬·µ»Ø²¼¶û±íÊ¾³É¹¦Óë·ñ*/
+			/*ç§»é™¤æ•°ç»„ä¸­æŒ‡å®šä½ç½®çš„å…ƒç´ ï¼Œè¿”å›å¸ƒå°”è¡¨ç¤ºæˆåŠŸä¸å¦*/
 			removeAt: function(target, index) {
 				return !!target.splice(index, 1).length
 			},
-			/*ÒÆ³ıÊı×éÖĞµÚÒ»¸öÆ¥Åä´«²ÎµÄÄÇ¸öÔªËØ£¬·µ»Ø²¼¶û±íÊ¾³É¹¦Óë·ñ*/
+			/*ç§»é™¤æ•°ç»„ä¸­ç¬¬ä¸€ä¸ªåŒ¹é…ä¼ å‚çš„é‚£ä¸ªå…ƒç´ ï¼Œè¿”å›å¸ƒå°”è¡¨ç¤ºæˆåŠŸä¸å¦*/
 			remove: function(target, item) {
 				var index = target.indexOf(item)
 				if (~index)
@@ -488,23 +488,23 @@
 	var bindingHandlers = avalon.bindingHandlers = {}
 	var bindingExecutors = avalon.bindingExecutors = {}
 
-	/*ÅĞ¶¨ÊÇ·ñÀàÊı×é£¬Èç½Úµã¼¯ºÏ£¬´¿Êı×é£¬argumentsÓëÓµÓĞ·Ç¸ºÕûÊıµÄlengthÊôĞÔµÄ´¿JS¶ÔÏó*/
+	/*åˆ¤å®šæ˜¯å¦ç±»æ•°ç»„ï¼Œå¦‚èŠ‚ç‚¹é›†åˆï¼Œçº¯æ•°ç»„ï¼Œargumentsä¸æ‹¥æœ‰éè´Ÿæ•´æ•°çš„lengthå±æ€§çš„çº¯JSå¯¹è±¡*/
 	function isArrayLike(obj) {
 		if (!obj)
 			return false
 		var n = obj.length
-		if (n === (n >>> 0)) { //¼ì²âlengthÊôĞÔÊÇ·ñÎª·Ç¸ºÕûÊı
+		if (n === (n >>> 0)) { //æ£€æµ‹lengthå±æ€§æ˜¯å¦ä¸ºéè´Ÿæ•´æ•°
 			var type = serialize.call(obj).slice(8, -1)
 			if (/(?:regexp|string|function|window|global)$/i.test(type))
 				return false
 			if (type === "Array")
 				return true
 			try {
-				if ({}.propertyIsEnumerable.call(obj, "length") === false) { //Èç¹ûÊÇÔ­Éú¶ÔÏó
+				if ({}.propertyIsEnumerable.call(obj, "length") === false) { //å¦‚æœæ˜¯åŸç”Ÿå¯¹è±¡
 					return  /^\s?function/.test(obj.item || obj.callee)
 				}
 				return true
-			} catch (e) { //IEµÄNodeListÖ±½ÓÅ×´í
+			} catch (e) { //IEçš„NodeListç›´æ¥æŠ›é”™
 				return !obj.window //IE6-8 window
 			}
 		}
@@ -586,9 +586,9 @@
 	}// jshint ignore:line
 
 	/*********************************************************************
-	 *                         javascript µ×²ã²¹¶¡                       *
+	 *                         javascript åº•å±‚è¡¥ä¸                       *
 	 **********************************************************************/
-	if (!"Ë¾Í½ÕıÃÀ".trim) {
+	if (!"å¸å¾’æ­£ç¾".trim) {
 		var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g
 		String.prototype.trim = function () {
 			return this.replace(rtrim, "")
@@ -670,7 +670,7 @@
 	}
 	if (!rnative.test([].map)) {
 		avalon.mix(ap, {
-			//¶¨Î»²Ù×÷£¬·µ»ØÊı×éÖĞµÚÒ»¸öµÈÓÚ¸ø¶¨²ÎÊıµÄÔªËØµÄË÷ÒıÖµ¡£
+			//å®šä½æ“ä½œï¼Œè¿”å›æ•°ç»„ä¸­ç¬¬ä¸€ä¸ªç­‰äºç»™å®šå‚æ•°çš„å…ƒç´ çš„ç´¢å¼•å€¼ã€‚
 			indexOf: function (item, index) {
 				var n = this.length,
 					i = ~~index
@@ -681,7 +681,7 @@
 						return i
 				return -1
 			},
-			//¶¨Î»²Ù×÷£¬Í¬ÉÏ£¬²»¹ıÊÇ´Óºó±éÀú¡£
+			//å®šä½æ“ä½œï¼ŒåŒä¸Šï¼Œä¸è¿‡æ˜¯ä»åéå†ã€‚
 			lastIndexOf: function (item, index) {
 				var n = this.length,
 					i = index == null ? n - 1 : index
@@ -692,24 +692,24 @@
 						return i
 				return -1
 			},
-			//µü´ú²Ù×÷£¬½«Êı×éµÄÔªËØ°¤¸ö¶ù´«ÈëÒ»¸öº¯ÊıÖĞÖ´ĞĞ¡£Prototype.jsµÄ¶ÔÓ¦Ãû×ÖÎªeach¡£
+			//è¿­ä»£æ“ä½œï¼Œå°†æ•°ç»„çš„å…ƒç´ æŒ¨ä¸ªå„¿ä¼ å…¥ä¸€ä¸ªå‡½æ•°ä¸­æ‰§è¡Œã€‚Prototype.jsçš„å¯¹åº”åå­—ä¸ºeachã€‚
 			forEach: iterator("", '_', ""),
-			//µü´úÀà ÔÚÊı×éÖĞµÄÃ¿¸öÏîÉÏÔËĞĞÒ»¸öº¯Êı£¬Èç¹û´Ëº¯ÊıµÄÖµÎªÕæ£¬Ôò´ËÔªËØ×÷ÎªĞÂÊı×éµÄÔªËØÊÕ¼¯ÆğÀ´£¬²¢·µ»ØĞÂÊı×é
+			//è¿­ä»£ç±» åœ¨æ•°ç»„ä¸­çš„æ¯ä¸ªé¡¹ä¸Šè¿è¡Œä¸€ä¸ªå‡½æ•°ï¼Œå¦‚æœæ­¤å‡½æ•°çš„å€¼ä¸ºçœŸï¼Œåˆ™æ­¤å…ƒç´ ä½œä¸ºæ–°æ•°ç»„çš„å…ƒç´ æ”¶é›†èµ·æ¥ï¼Œå¹¶è¿”å›æ–°æ•°ç»„
 			filter: iterator('r=[],j=0,', 'if(_)r[j++]=this[i]', 'return r'),
-			//ÊÕ¼¯²Ù×÷£¬½«Êı×éµÄÔªËØ°¤¸ö¶ù´«ÈëÒ»¸öº¯ÊıÖĞÖ´ĞĞ£¬È»ºó°ÑËüÃÇµÄ·µ»ØÖµ×é³ÉÒ»¸öĞÂÊı×é·µ»Ø¡£Prototype.jsµÄ¶ÔÓ¦Ãû×ÖÎªcollect¡£
+			//æ”¶é›†æ“ä½œï¼Œå°†æ•°ç»„çš„å…ƒç´ æŒ¨ä¸ªå„¿ä¼ å…¥ä¸€ä¸ªå‡½æ•°ä¸­æ‰§è¡Œï¼Œç„¶åæŠŠå®ƒä»¬çš„è¿”å›å€¼ç»„æˆä¸€ä¸ªæ–°æ•°ç»„è¿”å›ã€‚Prototype.jsçš„å¯¹åº”åå­—ä¸ºcollectã€‚
 			map: iterator('r=[],', 'r[i]=_', 'return r'),
-			//Ö»ÒªÊı×éÖĞÓĞÒ»¸öÔªËØÂú×ãÌõ¼ş£¨·Å½ø¸ø¶¨º¯Êı·µ»Øtrue£©£¬ÄÇÃ´Ëü¾Í·µ»Øtrue¡£Prototype.jsµÄ¶ÔÓ¦Ãû×ÖÎªany¡£
+			//åªè¦æ•°ç»„ä¸­æœ‰ä¸€ä¸ªå…ƒç´ æ»¡è¶³æ¡ä»¶ï¼ˆæ”¾è¿›ç»™å®šå‡½æ•°è¿”å›trueï¼‰ï¼Œé‚£ä¹ˆå®ƒå°±è¿”å›trueã€‚Prototype.jsçš„å¯¹åº”åå­—ä¸ºanyã€‚
 			some: iterator("", 'if(_)return true', 'return false'),
-			//Ö»ÓĞÊı×éÖĞµÄÔªËØ¶¼Âú×ãÌõ¼ş£¨·Å½ø¸ø¶¨º¯Êı·µ»Øtrue£©£¬Ëü²Å·µ»Øtrue¡£Prototype.jsµÄ¶ÔÓ¦Ãû×ÖÎªall¡£
+			//åªæœ‰æ•°ç»„ä¸­çš„å…ƒç´ éƒ½æ»¡è¶³æ¡ä»¶ï¼ˆæ”¾è¿›ç»™å®šå‡½æ•°è¿”å›trueï¼‰ï¼Œå®ƒæ‰è¿”å›trueã€‚Prototype.jsçš„å¯¹åº”åå­—ä¸ºallã€‚
 			every: iterator("", 'if(!_)return false', 'return true')
 		})
 	}
 	/*********************************************************************
-	 *                           DOM µ×²ã²¹¶¡                             *
+	 *                           DOM åº•å±‚è¡¥ä¸                             *
 	 **********************************************************************/
 
 	function fixContains(root, el) {
-		try { //IE6-8,ÓÎÀëÓÚDOMÊ÷ÍâµÄÎÄ±¾½Úµã£¬·ÃÎÊparentNodeÓĞÊ±»áÅ×´í
+		try { //IE6-8,æ¸¸ç¦»äºDOMæ ‘å¤–çš„æ–‡æœ¬èŠ‚ç‚¹ï¼Œè®¿é—®parentNodeæœ‰æ—¶ä¼šæŠ›é”™
 			while ((el = el.parentNode))
 				if (el === root)
 					return true
@@ -719,7 +719,7 @@
 		}
 	}
 	avalon.contains = fixContains
-//IE6-11µÄÎÄµµ¶ÔÏóÃ»ÓĞcontains
+//IE6-11çš„æ–‡æ¡£å¯¹è±¡æ²¡æœ‰contains
 	if (!DOC.contains) {
 		DOC.contains = function (b) {
 			return fixContains(DOC, b)
@@ -731,9 +731,9 @@
 	}
 
 	if (window.SVGElement) {
-		//safari5+ÊÇ°Ñcontains·½·¨·ÅÔÚElement.prototypeÉÏ¶ø²»ÊÇNode.prototype
+		//safari5+æ˜¯æŠŠcontainsæ–¹æ³•æ”¾åœ¨Element.prototypeä¸Šè€Œä¸æ˜¯Node.prototype
 		if (!DOC.createTextNode("x").contains) {
-			Node.prototype.contains = function (arg) {//IE6-8Ã»ÓĞNode¶ÔÏó
+			Node.prototype.contains = function (arg) {//IE6-8æ²¡æœ‰Nodeå¯¹è±¡
 				return !!(this.compareDocumentPosition(arg) & 16)
 			}
 		}
@@ -749,9 +749,9 @@
 							var svg = DOC.createElementNS(svgns,
 								el.tagName.toLowerCase())
 							ap.forEach.call(el.attributes, function (attr) {
-								svg.setAttribute(attr.name, attr.value) //¸´ÖÆÊôĞÔ
+								svg.setAttribute(attr.name, attr.value) //å¤åˆ¶å±æ€§
 							})// jshint ignore:line
-							// µİ¹é´¦Àí×Ó½Úµã
+							// é€’å½’å¤„ç†å­èŠ‚ç‚¹
 							enumerateNode(el, svg)
 							targetNode.appendChild(svg)
 						}
@@ -759,7 +759,7 @@
 				}
 			}
 			Object.defineProperties(SVGElement.prototype, {
-				"outerHTML": {//IE9-11,firefox²»Ö§³ÖSVGÔªËØµÄinnerHTML,outerHTMLÊôĞÔ
+				"outerHTML": {//IE9-11,firefoxä¸æ”¯æŒSVGå…ƒç´ çš„innerHTML,outerHTMLå±æ€§
 					enumerable: true,
 					configurable: true,
 					get: outerHTML,
@@ -767,10 +767,10 @@
 						var tagName = this.tagName.toLowerCase(),
 							par = this.parentNode,
 							frag = avalon.parseHTML(html)
-						// ²Ù×÷µÄsvg£¬Ö±½Ó²åÈë
+						// æ“ä½œçš„svgï¼Œç›´æ¥æ’å…¥
 						if (tagName === "svg") {
 							par.insertBefore(frag, this)
-							// svg½ÚµãµÄ×Ó½ÚµãÀàËÆ
+							// svgèŠ‚ç‚¹çš„å­èŠ‚ç‚¹ç±»ä¼¼
 						} else {
 							var newFrag = DOC.createDocumentFragment()
 							enumerateNode(frag, newFrag)
@@ -799,7 +799,7 @@
 			})
 		}
 	}
-	if (!root.outerHTML && window.HTMLElement) { //firefox µ½11Ê±²ÅÓĞouterHTML
+	if (!root.outerHTML && window.HTMLElement) { //firefox åˆ°11æ—¶æ‰æœ‰outerHTML
 		HTMLElement.prototype.__defineGetter__("outerHTML", outerHTML);
 	}
 
@@ -823,17 +823,17 @@
 		}
 		ret.timeStamp = new Date() - 0
 		ret.originalEvent = event
-		ret.preventDefault = function () { //×èÖ¹Ä¬ÈÏĞĞÎª
+		ret.preventDefault = function () { //é˜»æ­¢é»˜è®¤è¡Œä¸º
 			event.returnValue = false
 		}
-		ret.stopPropagation = function () { //×èÖ¹ÊÂ¼şÔÚDOMÊ÷ÖĞµÄ´«²¥
+		ret.stopPropagation = function () { //é˜»æ­¢äº‹ä»¶åœ¨DOMæ ‘ä¸­çš„ä¼ æ’­
 			event.cancelBubble = true
 		}
 		return ret
 	}
 
 	var eventHooks = avalon.eventHooks
-//Õë¶Ôfirefox, chromeĞŞÕımouseenter, mouseleave
+//é’ˆå¯¹firefox, chromeä¿®æ­£mouseenter, mouseleave
 	if (!("onmouseenter" in root)) {
 		avalon.each({
 			mouseenter: "mouseover",
@@ -854,7 +854,7 @@
 			}
 		})
 	}
-//Õë¶ÔIE9+, w3cĞŞÕıanimationend
+//é’ˆå¯¹IE9+, w3cä¿®æ­£animationend
 	avalon.each({
 		AnimationEvent: "animationend",
 		WebKitAnimationEvent: "webkitAnimationEnd"
@@ -865,7 +865,7 @@
 			}
 		}
 	})
-//Õë¶ÔIE6-8ĞŞÕıinput
+//é’ˆå¯¹IE6-8ä¿®æ­£input
 	if (!("oninput" in DOC.createElement("input"))) {
 		eventHooks.input = {
 			type: "propertychange",
@@ -880,11 +880,11 @@
 		}
 	}
 	if (DOC.onmousewheel === void 0) {
-		/* IE6-11 chrome mousewheel wheelDetla ÏÂ -120 ÉÏ 120
-		 firefox DOMMouseScroll detail ÏÂ3 ÉÏ-3
-		 firefox wheel detlaY ÏÂ3 ÉÏ-3
-		 IE9-11 wheel deltaY ÏÂ40 ÉÏ-40
-		 chrome wheel deltaY ÏÂ100 ÉÏ-100 */
+		/* IE6-11 chrome mousewheel wheelDetla ä¸‹ -120 ä¸Š 120
+		 firefox DOMMouseScroll detail ä¸‹3 ä¸Š-3
+		 firefox wheel detlaY ä¸‹3 ä¸Š-3
+		 IE9-11 wheel deltaY ä¸‹40 ä¸Š-40
+		 chrome wheel deltaY ä¸‹100 ä¸Š-100 */
 		var fixWheelType = DOC.onwheel !== void 0 ? "wheel" : "DOMMouseScroll"
 		var fixWheelDelta = fixWheelType === "wheel" ? "deltaY" : "detail"
 		eventHooks.mousewheel = {
@@ -906,7 +906,7 @@
 
 
 	/*********************************************************************
-	 *                           ÅäÖÃÏµÍ³                                 *
+	 *                           é…ç½®ç³»ç»Ÿ                                 *
 	 **********************************************************************/
 
 	function kernel(settings) {
@@ -928,7 +928,7 @@
 
 	function escapeRegExp(target) {
 		//http://stevenlevithan.com/regex/xregexp/
-		//½«×Ö·û´®°²È«¸ñÊ½»¯ÎªÕıÔò±í´ïÊ½µÄÔ´Âë
+		//å°†å­—ç¬¦ä¸²å®‰å…¨æ ¼å¼åŒ–ä¸ºæ­£åˆ™è¡¨è¾¾å¼çš„æºç 
 		return (target + "").replace(rregexp, "\\$&")
 	}
 
@@ -949,7 +949,7 @@
 				var test = openTag + "test" + closeTag
 				cinerator.innerHTML = test
 				if (cinerator.innerHTML !== test && cinerator.innerHTML.indexOf("&lt;") > -1) {
-					throw new SyntaxError("´Ë¶¨½ç·û²»ºÏ·¨")
+					throw new SyntaxError("æ­¤å®šç•Œç¬¦ä¸åˆæ³•")
 				}
 				cinerator.innerHTML = ""
 			}
@@ -983,7 +983,7 @@
 		return nodes
 	}
 	/*********************************************************************
-	 *                            ÊÂ¼ş×ÜÏß                               *
+	 *                            äº‹ä»¶æ€»çº¿                               *
 	 **********************************************************************/
 	var EventBus = {
 		$watch: function (type, callback) {
@@ -994,14 +994,14 @@
 				} else {
 					this.$events[type] = [callback]
 				}
-			} else { //ÖØĞÂ¿ªÊ¼¼àÌı´ËVMµÄµÚÒ»ÖØ¼òµ¥ÊôĞÔµÄ±ä¶¯
+			} else { //é‡æ–°å¼€å§‹ç›‘å¬æ­¤VMçš„ç¬¬ä¸€é‡ç®€å•å±æ€§çš„å˜åŠ¨
 				this.$events = this.$watch.backup
 			}
 			return this
 		},
 		$unwatch: function (type, callback) {
 			var n = arguments.length
-			if (n === 0) { //ÈÃ´ËVMµÄËùÓĞ$watch»Øµ÷ÎŞĞ§»¯
+			if (n === 0) { //è®©æ­¤VMçš„æ‰€æœ‰$watchå›è°ƒæ— æ•ˆåŒ–
 				this.$watch.backup = this.$events
 				this.$events = {}
 			} else if (n === 1) {
@@ -1047,14 +1047,14 @@
 							if (eventNodes.length === 0) {
 								continue
 							}
-							//Ñ­»·Á½¸övmodelÖĞµÄ½Úµã£¬²éÕÒÆ¥Åä£¨ÏòÉÏÆ¥Åä»òÕßÏòÏÂÆ¥Åä£©µÄ½Úµã²¢ÉèÖÃ±êÊ¶
+							//å¾ªç¯ä¸¤ä¸ªvmodelä¸­çš„èŠ‚ç‚¹ï¼ŒæŸ¥æ‰¾åŒ¹é…ï¼ˆå‘ä¸ŠåŒ¹é…æˆ–è€…å‘ä¸‹åŒ¹é…ï¼‰çš„èŠ‚ç‚¹å¹¶è®¾ç½®æ ‡è¯†
 							/* jshint ignore:start */
 							Array.prototype.forEach.call(eventNodes, function (node) {
 								Array.prototype.forEach.call(elements, function (element) {
-									var ok = special === "down" ? element.contains(node) : //ÏòÏÂ²¶»ñ
-										node.contains(element) //ÏòÉÏÃ°Åİ
+									var ok = special === "down" ? element.contains(node) : //å‘ä¸‹æ•è·
+										node.contains(element) //å‘ä¸Šå†’æ³¡
 									if (ok) {
-										node._avalon = v //·ûºÏÌõ¼şµÄ¼ÓÒ»¸ö±êÊ¶
+										node._avalon = v //ç¬¦åˆæ¡ä»¶çš„åŠ ä¸€ä¸ªæ ‡è¯†
 									}
 								});
 							})
@@ -1062,7 +1062,7 @@
 						}
 					}
 				}
-				var nodes = DOC.getElementsByTagName("*") //ÊµÏÖ½ÚµãÅÅĞò
+				var nodes = DOC.getElementsByTagName("*") //å®ç°èŠ‚ç‚¹æ’åº
 				var alls = []
 				Array.prototype.forEach.call(nodes, function (el) {
 					if (el._avalon) {
@@ -1097,15 +1097,15 @@
 	/*********************************************************************
 	 *                           modelFactory                             *
 	 **********************************************************************/
-//avalon×îºËĞÄµÄ·½·¨µÄÁ½¸ö·½·¨Ö®Ò»£¨ÁíÒ»¸öÊÇavalon.scan£©£¬·µ»ØÒ»¸öViewModel(VM)
-	var VMODELS = avalon.vmodels = {} //ËùÓĞvmodel¶¼´¢´æÔÚÕâÀï
+//avalonæœ€æ ¸å¿ƒçš„æ–¹æ³•çš„ä¸¤ä¸ªæ–¹æ³•ä¹‹ä¸€ï¼ˆå¦ä¸€ä¸ªæ˜¯avalon.scanï¼‰ï¼Œè¿”å›ä¸€ä¸ªViewModel(VM)
+	var VMODELS = avalon.vmodels = {} //æ‰€æœ‰vmodeléƒ½å‚¨å­˜åœ¨è¿™é‡Œ
 	avalon.define = function (id, factory) {
 		var $id = id.$id || id
 		if (!$id) {
-			log("warning: vm±ØĞëÖ¸¶¨$id")
+			log("warning: vmå¿…é¡»æŒ‡å®š$id")
 		}
 		if (VMODELS[$id]) {
-			log("warning: " + $id + " ÒÑ¾­´æÔÚÓÚavalon.vmodelsÖĞ")
+			log("warning: " + $id + " å·²ç»å­˜åœ¨äºavalon.vmodelsä¸­")
 		}
 		if (typeof id === "object") {
 			var model = modelFactory(id)
@@ -1113,8 +1113,8 @@
 			var scope = {
 				$watch: noop
 			}
-			factory(scope) //µÃµ½ËùÓĞ¶¨Òå
-			model = modelFactory(scope) //ÍµÌì»»ÈÕ£¬½«scope»»Îªmodel
+			factory(scope) //å¾—åˆ°æ‰€æœ‰å®šä¹‰
+			model = modelFactory(scope) //å·å¤©æ¢æ—¥ï¼Œå°†scopeæ¢ä¸ºmodel
 			stopRepeatAssign = true
 			factory(model)
 			stopRepeatAssign = false
@@ -1123,7 +1123,7 @@
 		return VMODELS[$id] = model
 	}
 
-//Ò»Ğ©²»ĞèÒª±»¼àÌıµÄÊôĞÔ
+//ä¸€äº›ä¸éœ€è¦è¢«ç›‘å¬çš„å±æ€§
 	var $$skipArray = String("$id,$watch,$unwatch,$fire,$events,$model,$skipArray").match(rword)
 
 	function isObservable(name, value, $skipArray) {
@@ -1142,29 +1142,29 @@
 		}
 		return true
 	}
-//ms-with,ms-each, ms-repeat°ó¶¨Éú³ÉµÄ´úÀí¶ÔÏó´¢´æ³Ø
+//ms-with,ms-each, ms-repeatç»‘å®šç”Ÿæˆçš„ä»£ç†å¯¹è±¡å‚¨å­˜æ± 
 	var midway = {}
 	function getNewValue(accessor, name, value, $vmodel) {
 		switch (accessor.type) {
-			case 0://¼ÆËãÊôĞÔ
+			case 0://è®¡ç®—å±æ€§
 				var getter = accessor.get
 				var setter = accessor.set
 				if (isFunction(setter)) {
 					var $events = $vmodel.$events
 					var lock = $events[name]
-					$events[name] = [] //Çå¿Õ»Øµ÷£¬·ÀÖ¹ÄÚ²¿Ã°Åİ¶ø´¥·¢¶à´Î$fire
+					$events[name] = [] //æ¸…ç©ºå›è°ƒï¼Œé˜²æ­¢å†…éƒ¨å†’æ³¡è€Œè§¦å‘å¤šæ¬¡$fire
 					setter.call($vmodel, value)
 					$events[name] = lock
 				}
-				return  getter.call($vmodel) //Í¬²½$model
-			case 1://¼à¿ØÊôĞÔ
+				return  getter.call($vmodel) //åŒæ­¥$model
+			case 1://ç›‘æ§å±æ€§
 				return value
-			case 2://¶ÔÏóÊôĞÔ£¨°üÀ¨Êı×éÓë¹şÏ££©
+			case 2://å¯¹è±¡å±æ€§ï¼ˆåŒ…æ‹¬æ•°ç»„ä¸å“ˆå¸Œï¼‰
 				if (value !== $vmodel.$model[name]) {
 					var svmodel = accessor.svmodel = objectFactory($vmodel, name, value, accessor.valueType)
-					value = svmodel.$model //Í¬²½$model
+					value = svmodel.$model //åŒæ­¥$model
 					var fn = midway[svmodel.$id]
-					fn && fn() //Í¬²½ÊÓÍ¼
+					fn && fn() //åŒæ­¥è§†å›¾
 				}
 				return value
 		}
@@ -1172,8 +1172,8 @@
 
 	var defineProperty = Object.defineProperty
 	var canHideOwn = true
-//Èç¹ûä¯ÀÀÆ÷²»Ö§³Öecma262v5µÄObject.defineProperties»òÕß´æÔÚBUG£¬±ÈÈçIE8
-//±ê×¼ä¯ÀÀÆ÷Ê¹ÓÃ__defineGetter__, __defineSetter__ÊµÏÖ
+//å¦‚æœæµè§ˆå™¨ä¸æ”¯æŒecma262v5çš„Object.definePropertiesæˆ–è€…å­˜åœ¨BUGï¼Œæ¯”å¦‚IE8
+//æ ‡å‡†æµè§ˆå™¨ä½¿ç”¨__defineGetter__, __defineSetter__å®ç°
 	try {
 		defineProperty({}, "_", {
 			value: "x"
@@ -1190,26 +1190,26 @@
 			collection.pushArray(arr)
 			return collection
 		}
-		//0 null undefined || Node || VModel(fix IE6-8 createWithProxy $val: valÒı·¢µÄBUG)
+		//0 null undefined || Node || VModel(fix IE6-8 createWithProxy $val: valå¼•å‘çš„BUG)
 		if (!source || source.nodeType > 0 || (source.$id && source.$events)) {
 			return source
 		}
 		if (!Array.isArray(source.$skipArray)) {
 			source.$skipArray = []
 		}
-		source.$skipArray.$special = $special || {} //Ç¿ÖÆÒª¼àÌıµÄÊôĞÔ
-		var $vmodel = {} //Òª·µ»ØµÄ¶ÔÏó, ËüÔÚIE6-8ÏÂ¿ÉÄÜ±»ÍµÁú×ª·ï
-		$model = $model || {} //vmodels.$modelÊôĞÔ
-		var $events = {} //vmodel.$eventsÊôĞÔ
-		var watchedProperties = {} //¼à¿ØÊôĞÔ
-		var initCallbacks = [] //³õÊ¼»¯²ÅÖ´ĞĞµÄº¯Êı
+		source.$skipArray.$special = $special || {} //å¼ºåˆ¶è¦ç›‘å¬çš„å±æ€§
+		var $vmodel = {} //è¦è¿”å›çš„å¯¹è±¡, å®ƒåœ¨IE6-8ä¸‹å¯èƒ½è¢«å·é¾™è½¬å‡¤
+		$model = $model || {} //vmodels.$modelå±æ€§
+		var $events = {} //vmodel.$eventså±æ€§
+		var watchedProperties = {} //ç›‘æ§å±æ€§
+		var initCallbacks = [] //åˆå§‹åŒ–æ‰æ‰§è¡Œçš„å‡½æ•°
 		for (var i in source) {
 			(function (name, val) {
 				$model[name] = val
 				if (!isObservable(name, val, source.$skipArray)) {
-					return //¹ıÂËËùÓĞ·Ç¼à¿ØÊôĞÔ
+					return //è¿‡æ»¤æ‰€æœ‰éç›‘æ§å±æ€§
 				}
-				//×Ü¹²²úÉúÈıÖÖaccessor
+				//æ€»å…±äº§ç”Ÿä¸‰ç§accessor
 				$events[name] = []
 				var valueType = avalon.type(val)
 				var accessor = function (newValue) {
@@ -1223,7 +1223,7 @@
 						if (stopRepeatAssign) {
 							return
 						}
-						//¼ÆËãÊôĞÔÓë¶ÔÏóÊôĞÔĞèÒªÖØĞÂ¼ÆËãnewValue
+						//è®¡ç®—å±æ€§ä¸å¯¹è±¡å±æ€§éœ€è¦é‡æ–°è®¡ç®—newValue
 						if (accessor.type !== 1) {
 							newValue = getNewValue(accessor, name, newValue, $vmodel)
 							if (!accessor.type)
@@ -1231,28 +1231,28 @@
 						}
 						if (!isEqual(oldValue, newValue)) {
 							$model[name] = newValue
-							notifySubscribers($events[name]) //Í¬²½ÊÓÍ¼
-							safeFire($vmodel, name, newValue, oldValue) //´¥·¢$watch»Øµ÷
+							notifySubscribers($events[name]) //åŒæ­¥è§†å›¾
+							safeFire($vmodel, name, newValue, oldValue) //è§¦å‘$watchå›è°ƒ
 						}
 					} else {
-						if (accessor.type === 0) { //type 0 ¼ÆËãÊôĞÔ 1 ¼à¿ØÊôĞÔ 2 ¶ÔÏóÊôĞÔ
-							//¼ÆËãÊôĞÔ²»ĞèÒªÊÕ¼¯ÊÓÍ¼Ë¢ĞÂº¯Êı,¶¼ÊÇÓÉÆäËû¼à¿ØÊôĞÔ´úÀÍ
+						if (accessor.type === 0) { //type 0 è®¡ç®—å±æ€§ 1 ç›‘æ§å±æ€§ 2 å¯¹è±¡å±æ€§
+							//è®¡ç®—å±æ€§ä¸éœ€è¦æ”¶é›†è§†å›¾åˆ·æ–°å‡½æ•°,éƒ½æ˜¯ç”±å…¶ä»–ç›‘æ§å±æ€§ä»£åŠ³
 							newValue = accessor.get.call($vmodel)
 							if (oldValue !== newValue) {
 								$model[name] = newValue
-								//ÕâÀï²»ÓÃÍ¬²½ÊÓÍ¼
-								safeFire($vmodel, name, newValue, oldValue) //´¥·¢$watch»Øµ÷
+								//è¿™é‡Œä¸ç”¨åŒæ­¥è§†å›¾
+								safeFire($vmodel, name, newValue, oldValue) //è§¦å‘$watchå›è°ƒ
 							}
 							return newValue
 						} else {
-							collectSubscribers($events[name]) //ÊÕ¼¯ÊÓÍ¼º¯Êı
+							collectSubscribers($events[name]) //æ”¶é›†è§†å›¾å‡½æ•°
 							return accessor.svmodel || oldValue
 						}
 					}
 				}
-				//×Ü¹²²úÉúÈıÖÖaccessor
+				//æ€»å…±äº§ç”Ÿä¸‰ç§accessor
 				if (valueType === "object" && isFunction(val.get) && Object.keys(val).length <= 2) {
-					//µÚ1ÖÖÎª¼ÆËãÊôĞÔ£¬ Òò±äÁ¿£¬Í¨¹ıÆäËû¼à¿ØÊôĞÔ´¥·¢Æä¸Ä±ä
+					//ç¬¬1ç§ä¸ºè®¡ç®—å±æ€§ï¼Œ å› å˜é‡ï¼Œé€šè¿‡å…¶ä»–ç›‘æ§å±æ€§è§¦å‘å…¶æ”¹å˜
 					accessor.set = val.set
 					accessor.get = val.get
 					accessor.type = 0
@@ -1273,7 +1273,7 @@
 						delete Registry[expose]
 					})
 				} else if (rcomplexType.test(valueType)) {
-					//µÚ2ÖÖÎª¶ÔÏóÊôĞÔ£¬²úÉú×ÓVMÓë¼à¿ØÊı×é
+					//ç¬¬2ç§ä¸ºå¯¹è±¡å±æ€§ï¼Œäº§ç”Ÿå­VMä¸ç›‘æ§æ•°ç»„
 					accessor.type = 2
 					accessor.valueType = valueType
 					initCallbacks.push(function () {
@@ -1283,7 +1283,7 @@
 					})
 				} else {
 					accessor.type = 1
-					//µÚ3ÖÖÎª¼à¿ØÊôĞÔ£¬¶ÔÓ¦¼òµ¥µÄÊı¾İÀàĞÍ£¬×Ô±äÁ¿
+					//ç¬¬3ç§ä¸ºç›‘æ§å±æ€§ï¼Œå¯¹åº”ç®€å•çš„æ•°æ®ç±»å‹ï¼Œè‡ªå˜é‡
 				}
 				accessor._name = name
 				watchedProperties[name] = accessor
@@ -1292,22 +1292,22 @@
 
 		$$skipArray.forEach(function (name) {
 			delete source[name]
-			delete $model[name] //ÕâĞ©ÌØÊâÊôĞÔ²»Ó¦¸ÃÔÚ$modelÖĞ³öÏÖ
+			delete $model[name] //è¿™äº›ç‰¹æ®Šå±æ€§ä¸åº”è¯¥åœ¨$modelä¸­å‡ºç°
 		})
 
-		$vmodel = defineProperties($vmodel, descriptorFactory(watchedProperties), source) //Éú³ÉÒ»¸ö¿ÕµÄViewModel
+		$vmodel = defineProperties($vmodel, descriptorFactory(watchedProperties), source) //ç”Ÿæˆä¸€ä¸ªç©ºçš„ViewModel
 		for (var name in source) {
 			if (!watchedProperties[name]) {
 				$vmodel[name] = source[name]
 			}
 		}
-		//Ìí¼Ó$id, $model, $events, $watch, $unwatch, $fire
+		//æ·»åŠ $id, $model, $events, $watch, $unwatch, $fire
 		$vmodel.$id = generateID()
 		$vmodel.$model = $model
 		$vmodel.$events = $events
 		for (i in EventBus) {
 			var fn = EventBus[i]
-			if (!W3C) { //ÔÚIE6-8ÏÂ£¬VB¶ÔÏóµÄ·½·¨ÀïµÄthis²¢²»Ö¸Ïò×ÔÉí£¬ĞèÒªÓÃbind´¦ÀíÒ»ÏÂ
+			if (!W3C) { //åœ¨IE6-8ä¸‹ï¼ŒVBå¯¹è±¡çš„æ–¹æ³•é‡Œçš„thiså¹¶ä¸æŒ‡å‘è‡ªèº«ï¼Œéœ€è¦ç”¨bindå¤„ç†ä¸€ä¸‹
 				fn = fn.bind($vmodel)
 			}
 			$vmodel[i] = fn
@@ -1330,13 +1330,13 @@
 			}
 			/* jshint ignore:end */
 		}
-		initCallbacks.forEach(function (cb) { //ÊÕ¼¯ÒÀÀµ
+		initCallbacks.forEach(function (cb) { //æ”¶é›†ä¾èµ–
 			cb()
 		})
 		return $vmodel
 	}
 
-//±È½ÏÁ½¸öÖµÊÇ·ñÏàµÈ
+//æ¯”è¾ƒä¸¤ä¸ªå€¼æ˜¯å¦ç›¸ç­‰
 	var isEqual = Object.is || function (v1, v2) {
 			if (v1 === 0 && v2 === 0) {
 				return 1 / v1 === 1 / v2
@@ -1370,9 +1370,9 @@
 
 
 
-//Ó¦ÓÃÓÚµÚ2ÖÖaccessor
+//åº”ç”¨äºç¬¬2ç§accessor
 	function objectFactory(parent, name, value, valueType) {
-		//aÎªÔ­À´µÄVM£¬ bÎªĞÂÊı×é»òĞÂ¶ÔÏó
+		//aä¸ºåŸæ¥çš„VMï¼Œ bä¸ºæ–°æ•°ç»„æˆ–æ–°å¯¹è±¡
 		var son = parent[name]
 		if (valueType === "array") {
 			if (!Array.isArray(value) || son === value) {
@@ -1398,7 +1398,7 @@
 						avalon.nextTick(function () {
 							var type = el.type
 							if (type && bindingHandlers[type]) { //#753
-								el.rollback && el.rollback() //»¹Ô­ ms-with ms-on
+								el.rollback && el.rollback() //è¿˜åŸ ms-with ms-on
 								bindingHandlers[type](el, el.vmodels)
 							}
 						})
@@ -1409,7 +1409,7 @@
 			return ret
 		}
 	}
-//===================ĞŞ¸´ä¯ÀÀÆ÷¶ÔObject.definePropertiesµÄÖ§³Ö=================
+//===================ä¿®å¤æµè§ˆå™¨å¯¹Object.definePropertiesçš„æ”¯æŒ=================
 	if (!canHideOwn) {
 		if ("__defineGetter__" in avalon) {
 			defineProperty = function (obj, prop, desc) {
@@ -1472,9 +1472,9 @@
 					"\r\n\tPrivate [__data__], [__proxy__]",
 					"\tPublic Default Function [__const__](d, p)",
 					"\t\tSet [__data__] = d: set [__proxy__] = p",
-					"\t\tSet [__const__] = Me", //Á´Ê½µ÷ÓÃ
+					"\t\tSet [__const__] = Me", //é“¾å¼è°ƒç”¨
 					"\tEnd Function")
-				//Ìí¼ÓÆÕÍ¨ÊôĞÔ,ÒòÎªVBScript¶ÔÏó²»ÄÜÏñJSÄÇÑùËæÒâÔöÉ¾ÊôĞÔ£¬±ØĞëÔÚÕâÀïÔ¤ÏÈ¶¨ÒåºÃ
+				//æ·»åŠ æ™®é€šå±æ€§,å› ä¸ºVBScriptå¯¹è±¡ä¸èƒ½åƒJSé‚£æ ·éšæ„å¢åˆ å±æ€§ï¼Œå¿…é¡»åœ¨è¿™é‡Œé¢„å…ˆå®šä¹‰å¥½
 				for (name in properties) {
 					if (!accessors.hasOwnProperty(name)) {
 						buffer.push("\tPublic [" + name + "]")
@@ -1486,10 +1486,10 @@
 					}
 				})
 				buffer.push("\tPublic [" + 'hasOwnProperty' + "]")
-				//Ìí¼Ó·ÃÎÊÆ÷ÊôĞÔ 
+				//æ·»åŠ è®¿é—®å™¨å±æ€§ 
 				for (name in accessors) {
 					buffer.push(
-						//ÓÉÓÚ²»Öª¶Ô·½»á´«ÈëÊ²Ã´,Òò´Ëset, let¶¼ÓÃÉÏ
+						//ç”±äºä¸çŸ¥å¯¹æ–¹ä¼šä¼ å…¥ä»€ä¹ˆ,å› æ­¤set, letéƒ½ç”¨ä¸Š
 						"\tPublic Property Let [" + name + "](val" + expose + ")", //setter
 						"\t\tCall [__proxy__](Me,[__data__], \"" + name + "\", val" + expose + ")",
 						"\tEnd Property",
@@ -1497,7 +1497,7 @@
 						"\t\tCall [__proxy__](Me,[__data__], \"" + name + "\", val" + expose + ")",
 						"\tEnd Property",
 						"\tPublic Property Get [" + name + "]", //getter
-						"\tOn Error Resume Next", //±ØĞëÓÅÏÈÊ¹ÓÃsetÓï¾ä,·ñÔòËü»áÎó½«Êı×éµ±×Ö·û´®·µ»Ø
+						"\tOn Error Resume Next", //å¿…é¡»ä¼˜å…ˆä½¿ç”¨setè¯­å¥,å¦åˆ™å®ƒä¼šè¯¯å°†æ•°ç»„å½“å­—ç¬¦ä¸²è¿”å›
 						"\t\tSet[" + name + "] = [__proxy__](Me,[__data__],\"" + name + "\")",
 						"\tIf Err.Number <> 0 Then",
 						"\t\t[" + name + "] = [__proxy__](Me,[__data__],\"" + name + "\")",
@@ -1509,30 +1509,30 @@
 
 				buffer.push("End Class")
 				var code = buffer.join("\r\n"),
-					realClassName = window['findOrDefineVBClass'](className, code) //Èç¹û¸ÃVBÀàÒÑ¶¨Òå£¬·µ»ØÀàÃû¡£·ñÔòÓÃclassName´´½¨Ò»¸öĞÂÀà¡£
+					realClassName = window['findOrDefineVBClass'](className, code) //å¦‚æœè¯¥VBç±»å·²å®šä¹‰ï¼Œè¿”å›ç±»åã€‚å¦åˆ™ç”¨classNameåˆ›å»ºä¸€ä¸ªæ–°ç±»ã€‚
 				if (realClassName === className) {
 					window.parseVB([
-						"Function " + className + "Factory(a, b)", //´´½¨ÊµÀı²¢´«ÈëÁ½¸ö¹Ø¼üµÄ²ÎÊı
+						"Function " + className + "Factory(a, b)", //åˆ›å»ºå®ä¾‹å¹¶ä¼ å…¥ä¸¤ä¸ªå…³é”®çš„å‚æ•°
 						"\tDim o",
 						"\tSet o = (New " + className + ")(a, b)",
 						"\tSet " + className + "Factory = o",
 						"End Function"
 					].join("\r\n"))
 				}
-				var ret = window[realClassName + "Factory"](accessors, VBMediator) //µÃµ½Æä²úÆ·
-				return ret //µÃµ½Æä²úÆ·
+				var ret = window[realClassName + "Factory"](accessors, VBMediator) //å¾—åˆ°å…¶äº§å“
+				return ret //å¾—åˆ°å…¶äº§å“
 			}
 		}
 	}
 
 	/*********************************************************************
-	 *          ¼à¿ØÊı×é£¨Óëms-each, ms-repeatÅäºÏÊ¹ÓÃ£©                     *
+	 *          ç›‘æ§æ•°ç»„ï¼ˆä¸ms-each, ms-repeaté…åˆä½¿ç”¨ï¼‰                     *
 	 **********************************************************************/
 
 	function Collection(model) {
 		var array = []
 		array.$id = generateID()
-		array.$model = model //Êı¾İÄ£ĞÍ
+		array.$model = model //æ•°æ®æ¨¡å‹
 		array.$events = {}
 		array.$events[subscribers] = []
 		array._ = modelFactory({
@@ -1591,7 +1591,7 @@
 		_fire: function (method, a, b) {
 			notifySubscribers(this.$events[subscribers], method, a, b)
 		},
-		size: function () { //È¡µÃÊı×é³¤¶È£¬Õâ¸öº¯Êı¿ÉÒÔÍ¬²½ÊÓÍ¼£¬length²»ÄÜ
+		size: function () { //å–å¾—æ•°ç»„é•¿åº¦ï¼Œè¿™ä¸ªå‡½æ•°å¯ä»¥åŒæ­¥è§†å›¾ï¼Œlengthä¸èƒ½
 			return this._.length
 		},
 		pushArray: function (array) {
@@ -1617,13 +1617,13 @@
 				ap.unshift.apply(this.$model, arguments)
 				mutateArray.call(this, "add", 0, m, 0)
 			}
-			return  m + n //IE67µÄunshift²»»á·µ»Ø³¤¶È
+			return  m + n //IE67çš„unshiftä¸ä¼šè¿”å›é•¿åº¦
 		},
 		shift: function () {
 			if (this.length) {
 				var el = this.$model.shift()
 				mutateArray.call(this, "del", 0, 1, 0)
-				return el //·µ»Ø±»ÒÆ³ıµÄÔªËØ
+				return el //è¿”å›è¢«ç§»é™¤çš„å…ƒç´ 
 			}
 		},
 		pop: function () {
@@ -1631,17 +1631,17 @@
 			if (n) {
 				var el = this.$model.pop()
 				mutateArray.call(this, "del", n - 1, 1, Math.max(0, n - 2))
-				return el //·µ»Ø±»ÒÆ³ıµÄÔªËØ
+				return el //è¿”å›è¢«ç§»é™¤çš„å…ƒç´ 
 			}
 		},
 		splice: function (start) {
 			var m = arguments.length, args = [], change
 			var removed = _splice.apply(this.$model, arguments)
-			if (removed.length) { //Èç¹ûÓÃ»§É¾µôÁËÔªËØ
+			if (removed.length) { //å¦‚æœç”¨æˆ·åˆ æ‰äº†å…ƒç´ 
 				args.push("del", start, removed.length, 0)
 				change = true
 			}
-			if (m > 2) {  //Èç¹ûÓÃ»§Ìí¼ÓÁËÔªËØ
+			if (m > 2) {  //å¦‚æœç”¨æˆ·æ·»åŠ äº†å…ƒç´ 
 				if (change) {
 					args.splice(3, 1, 0, "add", start, m - 2)
 				} else {
@@ -1649,19 +1649,19 @@
 				}
 				change = true
 			}
-			if (change) { //·µ»Ø±»ÒÆ³ıµÄÔªËØ
+			if (change) { //è¿”å›è¢«ç§»é™¤çš„å…ƒç´ 
 				return mutateArray.apply(this, args)
 			} else {
 				return []
 			}
 		},
-		contains: function (el) { //ÅĞ¶¨ÊÇ·ñ°üº¬
+		contains: function (el) { //åˆ¤å®šæ˜¯å¦åŒ…å«
 			return this.indexOf(el) !== -1
 		},
-		remove: function (el) { //ÒÆ³ıµÚÒ»¸öµÈÓÚ¸ø¶¨ÖµµÄÔªËØ
+		remove: function (el) { //ç§»é™¤ç¬¬ä¸€ä¸ªç­‰äºç»™å®šå€¼çš„å…ƒç´ 
 			return this.removeAt(this.indexOf(el))
 		},
-		removeAt: function (index) { //ÒÆ³ıÖ¸¶¨Ë÷ÒıÉÏµÄÔªËØ
+		removeAt: function (index) { //ç§»é™¤æŒ‡å®šç´¢å¼•ä¸Šçš„å…ƒç´ 
 			if (index >= 0) {
 				this.$model.splice(index, 1)
 				return mutateArray.call(this, "del", index, 1, 0)
@@ -1669,11 +1669,11 @@
 			return  []
 		},
 		clear: function () {
-			this.$model.length = this.length = this._.length = 0 //Çå¿ÕÊı×é
+			this.$model.length = this.length = this._.length = 0 //æ¸…ç©ºæ•°ç»„
 			this._fire("clear", 0)
 			return this
 		},
-		removeAll: function (all) { //ÒÆ³ıN¸öÔªËØ
+		removeAll: function (all) { //ç§»é™¤Nä¸ªå…ƒç´ 
 			if (Array.isArray(all)) {
 				all.forEach(function (el) {
 					this.remove(el)
@@ -1690,7 +1690,7 @@
 			}
 		},
 		ensure: function (el) {
-			if (!this.contains(el)) { //Ö»ÓĞ²»´æÔÚ²Åpush
+			if (!this.contains(el)) { //åªæœ‰ä¸å­˜åœ¨æ‰push
 				this.push(el)
 			}
 			return this
@@ -1736,12 +1736,12 @@
 
 	"sort,reverse".replace(rword, function (method) {
 		CollectionPrototype[method] = function () {
-			var newArray = this.$model//ÕâÊÇÒªÅÅĞòµÄĞÂÊı×é
-			var oldArray = newArray.concat() //±£³ÖÔ­À´×´Ì¬µÄ¾ÉÊı×é
+			var newArray = this.$model//è¿™æ˜¯è¦æ’åºçš„æ–°æ•°ç»„
+			var oldArray = newArray.concat() //ä¿æŒåŸæ¥çŠ¶æ€çš„æ—§æ•°ç»„
 			var mask = Math.random()
 			var indexes = []
 			var hasSort
-			ap[method].apply(newArray, arguments) //ÅÅĞò
+			ap[method].apply(newArray, arguments) //æ’åº
 			for (var i = 0, n = oldArray.length; i < n; i++) {
 				var neo = newArray[i]
 				var old = oldArray[i]
@@ -1749,8 +1749,8 @@
 					indexes.push(i)
 				} else {
 					var index = oldArray.indexOf(neo)
-					indexes.push(index)//µÃµ½ĞÂÊı×éµÄÃ¿¸öÔªËØÔÚ¾ÉÊı×é¶ÔÓ¦µÄÎ»ÖÃ
-					oldArray[index] = mask    //ÆÁ±ÎÒÑ¾­ÕÒ¹ıµÄÔªËØ
+					indexes.push(index)//å¾—åˆ°æ–°æ•°ç»„çš„æ¯ä¸ªå…ƒç´ åœ¨æ—§æ•°ç»„å¯¹åº”çš„ä½ç½®
+					oldArray[index] = mask    //å±è”½å·²ç»æ‰¾è¿‡çš„å…ƒç´ 
 					hasSort = true
 				}
 			}
@@ -1764,15 +1764,15 @@
 	})
 
 	/*********************************************************************
-	 *                           ÒÀÀµµ÷¶ÈÏµÍ³                             *
+	 *                           ä¾èµ–è°ƒåº¦ç³»ç»Ÿ                             *
 	 **********************************************************************/
 	var ronduplex = /^(duplex|on)$/
 
 	function registerSubscriber(data) {
-		Registry[expose] = data //±©¹â´Ëº¯Êı,·½±ãcollectSubscribersÊÕ¼¯
+		Registry[expose] = data //æš´å…‰æ­¤å‡½æ•°,æ–¹ä¾¿collectSubscribersæ”¶é›†
 		avalon.openComputedCollect = true
 		var fn = data.evaluator
-		if (fn) { //Èç¹ûÊÇÇóÖµº¯Êı
+		if (fn) { //å¦‚æœæ˜¯æ±‚å€¼å‡½æ•°
 			try {
 				var c = ronduplex.test(data.type) ? data : fn.apply(0, data.args)
 				data.handler(c, data.element, data)
@@ -1794,9 +1794,9 @@
 		delete Registry[expose]
 	}
 
-	function collectSubscribers(list) { //ÊÕ¼¯ÒÀÀµÓÚÕâ¸ö·ÃÎÊÆ÷µÄ¶©ÔÄÕß
+	function collectSubscribers(list) { //æ”¶é›†ä¾èµ–äºè¿™ä¸ªè®¿é—®å™¨çš„è®¢é˜…è€…
 		var data = Registry[expose]
-		if (list && data && avalon.Array.ensure(list, data) && data.element) { //Ö»ÓĞÊı×é²»´æÔÚ´ËÔªËØ²Åpush½øÈ¥
+		if (list && data && avalon.Array.ensure(list, data) && data.element) { //åªæœ‰æ•°ç»„ä¸å­˜åœ¨æ­¤å…ƒç´ æ‰pushè¿›å»
 			addSubscribers(data, list)
 		}
 	}
@@ -1825,7 +1825,7 @@
 	}
 
 	function isRemove(el) {
-		try {//IEÏÂ£¬Èç¹ûÎÄ±¾½ÚµãÍÑÀëDOMÊ÷£¬·ÃÎÊparentNode»á±¨´í
+		try {//IEä¸‹ï¼Œå¦‚æœæ–‡æœ¬èŠ‚ç‚¹è„±ç¦»DOMæ ‘ï¼Œè®¿é—®parentNodeä¼šæŠ¥é”™
 			if (!el.parentNode) {
 				return true
 			}
@@ -1864,14 +1864,14 @@
 			}
 		})
 		i = n
-		//avalon.log("ĞèÒª¼ì²âµÄ¸öÊı " + i)
+		//avalon.log("éœ€è¦æ£€æµ‹çš„ä¸ªæ•° " + i)
 		if (diff) {
-			//avalon.log("ÓĞĞèÒªÒÆ³ıµÄÔªËØ")
+			//avalon.log("æœ‰éœ€è¦ç§»é™¤çš„å…ƒç´ ")
 			while (obj = $$subscribers[--i]) {
 				data = obj.data
 				if (data.element === void 0)
 					continue
-				if (needTest[data.type] && isRemove(data.element)) { //Èç¹ûËüÃ»ÓĞÔÚDOMÊ÷
+				if (needTest[data.type] && isRemove(data.element)) { //å¦‚æœå®ƒæ²¡æœ‰åœ¨DOMæ ‘
 					k++
 					$$subscribers.splice(i, 1)
 					delete $$subscribers[obj.$$uuid]
@@ -1883,11 +1883,11 @@
 			}
 		}
 		oldInfo = newInfo
-		// avalon.log("ÒÑ¾­ÒÆ³ıµÄ¸öÊı " + k)
+		// avalon.log("å·²ç»ç§»é™¤çš„ä¸ªæ•° " + k)
 		beginTime = new Date()
 	}
 
-	function notifySubscribers(list) { //Í¨ÖªÒÀÀµÓÚÕâ¸ö·ÃÎÊÆ÷µÄ¶©ÔÄÕß¸üĞÂ×ÔÉí
+	function notifySubscribers(list) { //é€šçŸ¥ä¾èµ–äºè¿™ä¸ªè®¿é—®å™¨çš„è®¢é˜…è€…æ›´æ–°è‡ªèº«
 		if (list && list.length) {
 			if (new Date() - beginTime > 444 && typeof list[0] === "object") {
 				removeSubscribers()
@@ -1897,8 +1897,8 @@
 				var el = fn.element
 				if (el && el.parentNode) {
 					if (fn.$repeat) {
-						fn.handler.apply(fn, args) //´¦Àí¼à¿ØÊı×éµÄ·½·¨
-					} else if (fn.type !== "on") { //ÊÂ¼ş°ó¶¨Ö»ÄÜÓÉÓÃ»§´¥·¢,²»ÄÜÓÉ³ÌĞò´¥·¢
+						fn.handler.apply(fn, args) //å¤„ç†ç›‘æ§æ•°ç»„çš„æ–¹æ³•
+					} else if (fn.type !== "on") { //äº‹ä»¶ç»‘å®šåªèƒ½ç”±ç”¨æˆ·è§¦å‘,ä¸èƒ½ç”±ç¨‹åºè§¦å‘
 						var fun = fn.evaluator || noop
 						fn.handler(fun.apply(0, fn.args || []), el, fn)
 					}
@@ -1908,7 +1908,7 @@
 	}
 
 	/************************************************************************
-	 *            HTML´¦Àí(parseHTML, innerHTML, clearHTML)                  *
+	 *            HTMLå¤„ç†(parseHTML, innerHTML, clearHTML)                  *
 	 ************************************************************************/
 // We have to close these tags to support XHTML 
 	var tagHooks = {
@@ -1921,20 +1921,20 @@
 		tr: [2, "<table>", "</table>"],
 		td: [3, "<table><tr>", "</tr></table>"],
 		g: [1, '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">', '</svg>'],
-		//IE6-8ÔÚÓÃinnerHTMLÉú³É½ÚµãÊ±£¬²»ÄÜÖ±½Ó´´½¨no-scopeÔªËØÓëHTML5µÄĞÂ±êÇ©
-		_default: W3C ? [0, "", ""] : [1, "X<div>", "</div>"] //div¿ÉÒÔ²»ÓÃ±ÕºÏ
+		//IE6-8åœ¨ç”¨innerHTMLç”ŸæˆèŠ‚ç‚¹æ—¶ï¼Œä¸èƒ½ç›´æ¥åˆ›å»ºno-scopeå…ƒç´ ä¸HTML5çš„æ–°æ ‡ç­¾
+		_default: W3C ? [0, "", ""] : [1, "X<div>", "</div>"] //divå¯ä»¥ä¸ç”¨é—­åˆ
 	}
 	tagHooks.th = tagHooks.td
 	tagHooks.optgroup = tagHooks.option
 	tagHooks.tbody = tagHooks.tfoot = tagHooks.colgroup = tagHooks.caption = tagHooks.thead
 	String("circle,defs,ellipse,image,line,path,polygon,polyline,rect,symbol,text,use").replace(rword, function (tag) {
-		tagHooks[tag] = tagHooks.g //´¦ÀíSVG
+		tagHooks[tag] = tagHooks.g //å¤„ç†SVG
 	})
-	var rtagName = /<([\w:]+)/  //È¡µÃÆätagName
+	var rtagName = /<([\w:]+)/  //å–å¾—å…¶tagName
 	var rxhtml = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/ig
 	var rcreate = W3C ? /[^\d\D]/ : /(<(?:script|link|style|meta|noscript))/ig
 	var scriptTypes = oneObject(["", "text/javascript", "text/ecmascript", "application/ecmascript", "application/javascript"])
-	var rnest = /<(?:tb|td|tf|th|tr|col|opt|leg|cap|area)/ //ĞèÒª´¦ÀíÌ×Ç¶¹ØÏµµÄ±êÇ©
+	var rnest = /<(?:tb|td|tf|th|tr|col|opt|leg|cap|area)/ //éœ€è¦å¤„ç†å¥—åµŒå…³ç³»çš„æ ‡ç­¾
 	var script = DOC.createElement("script")
 	var rhtml = /<|&#?\w+;/
 	avalon.parseHTML = function (html) {
@@ -1948,35 +1948,35 @@
 		}
 		html = html.replace(rxhtml, "<$1></$2>").trim()
 		var tag = (rtagName.exec(html) || ["", ""])[1].toLowerCase(),
-		//È¡µÃÆä±êÇ©Ãû
+		//å–å¾—å…¶æ ‡ç­¾å
 			wrap = tagHooks[tag] || tagHooks._default,
 			wrapper = cinerator,
 			firstChild, neo
 		if (!W3C) { //fix IE
-			html = html.replace(rcreate, "<br class=msNoScope>$1") //ÔÚlink style scriptµÈ±êÇ©Ö®Ç°Ìí¼ÓÒ»¸ö²¹¶¡
+			html = html.replace(rcreate, "<br class=msNoScope>$1") //åœ¨link style scriptç­‰æ ‡ç­¾ä¹‹å‰æ·»åŠ ä¸€ä¸ªè¡¥ä¸
 		}
 		wrapper.innerHTML = wrap[1] + html + wrap[2]
 		var els = wrapper.getElementsByTagName("script")
-		if (els.length) { //Ê¹ÓÃinnerHTMLÉú³ÉµÄscript½Úµã²»»á·¢³öÇëÇóÓëÖ´ĞĞtextÊôĞÔ
+		if (els.length) { //ä½¿ç”¨innerHTMLç”Ÿæˆçš„scriptèŠ‚ç‚¹ä¸ä¼šå‘å‡ºè¯·æ±‚ä¸æ‰§è¡Œtextå±æ€§
 			for (var i = 0, el; el = els[i++]; ) {
 				if (scriptTypes[el.type]) {
-					//ÒÔÍµÁú×ª·ï·½Ê½»Ö¸´Ö´ĞĞ½Å±¾¹¦ÄÜ
-					neo = script.cloneNode(false) //FF²»ÄÜÊ¡ÂÔ²ÎÊı
+					//ä»¥å·é¾™è½¬å‡¤æ–¹å¼æ¢å¤æ‰§è¡Œè„šæœ¬åŠŸèƒ½
+					neo = script.cloneNode(false) //FFä¸èƒ½çœç•¥å‚æ•°
 					ap.forEach.call(el.attributes, function (attr) {
 						if (attr && attr.specified) {
-							neo[attr.name] = attr.value //¸´ÖÆÆäÊôĞÔ
+							neo[attr.name] = attr.value //å¤åˆ¶å…¶å±æ€§
 							neo.setAttribute(attr.name, attr.value)
 						}
 					})  // jshint ignore:line
 					neo.text = el.text
-					el.parentNode.replaceChild(neo, el) //Ìæ»»½Úµã
+					el.parentNode.replaceChild(neo, el) //æ›¿æ¢èŠ‚ç‚¹
 				}
 			}
 		}
 		if (!W3C) { //fix IE
 			var target = wrap[1] === "X<div>" ? wrapper.lastChild.firstChild : wrapper.lastChild
 			if (target && target.tagName === "TABLE" && tag !== "tbody") {
-				//IE6-7´¦Àí <thead> --> <thead>,<tbody>
+				//IE6-7å¤„ç† <thead> --> <thead>,<tbody>
 				//<tfoot> --> <tfoot>,<tbody>
 				//<table> --> <table><tbody></table>
 				for (els = target.childNodes, i = 0; el = els[i++]; ) {
@@ -1999,10 +1999,10 @@
 				}
 			}
 		}
-		//ÒÆ³ıÎÒÃÇÎªÁË·ûºÏÌ×Ç¶¹ØÏµ¶øÌí¼ÓµÄ±êÇ©
+		//ç§»é™¤æˆ‘ä»¬ä¸ºäº†ç¬¦åˆå¥—åµŒå…³ç³»è€Œæ·»åŠ çš„æ ‡ç­¾
 		for (i = wrap[0]; i--; wrapper = wrapper.lastChild) {
 		}
-		while (firstChild = wrapper.firstChild) { // ½«wrapperÉÏµÄ½Úµã×ªÒÆµ½ÎÄµµËéÆ¬ÉÏ£¡
+		while (firstChild = wrapper.firstChild) { // å°†wrapperä¸Šçš„èŠ‚ç‚¹è½¬ç§»åˆ°æ–‡æ¡£ç¢ç‰‡ä¸Šï¼
 			fragment.appendChild(firstChild)
 		}
 		return fragment
@@ -2040,7 +2040,7 @@
 	}
 
 	/*********************************************************************
-	 *                           É¨ÃèÏµÍ³                                 *
+	 *                           æ‰«æç³»ç»Ÿ                                 *
 	 **********************************************************************/
 
 	avalon.scan = function(elem, vmodel, group) {
@@ -2086,8 +2086,8 @@
 		for (var i = 0, data; data = bindings[i++]; ) {
 			data.vmodels = vmodels
 			bindingHandlers[data.type](data, vmodels)
-			if (data.evaluator && data.element && data.element.nodeType === 1) { //ÒÆ³ıÊı¾İ°ó¶¨£¬·ÀÖ¹±»¶ş´Î½âÎö
-				//chromeÊ¹ÓÃremoveAttributeNodeÒÆ³ı²»´æÔÚµÄÌØĞÔ½ÚµãÊ±»á±¨´í https://github.com/RubyLouvre/avalon/issues/99
+			if (data.evaluator && data.element && data.element.nodeType === 1) { //ç§»é™¤æ•°æ®ç»‘å®šï¼Œé˜²æ­¢è¢«äºŒæ¬¡è§£æ
+				//chromeä½¿ç”¨removeAttributeNodeç§»é™¤ä¸å­˜åœ¨çš„ç‰¹æ€§èŠ‚ç‚¹æ—¶ä¼šæŠ¥é”™ https://github.com/RubyLouvre/avalon/issues/99
 				data.element.removeAttribute(data.name)
 			}
 		}
@@ -2132,7 +2132,7 @@
 	}
 
 	function scanAttr(elem, vmodels) {
-		//·ÀÖ¹setAttribute, removeAttributeÊ± attributes×Ô¶¯±»Í¬²½,µ¼ÖÂforÑ­»·³ö´í
+		//é˜²æ­¢setAttribute, removeAttributeæ—¶ attributesè‡ªåŠ¨è¢«åŒæ­¥,å¯¼è‡´forå¾ªç¯å‡ºé”™
 		var attributes = getAttributes ? getAttributes(elem) : avalon.slice(elem.attributes)
 		var bindings = [],
 			msData = {},
@@ -2140,7 +2140,7 @@
 		for (var i = 0, attr; attr = attributes[i++]; ) {
 			if (attr.specified) {
 				if (match = attr.name.match(rmsAttr)) {
-					//Èç¹ûÊÇÒÔÖ¸¶¨Ç°×ºÃüÃûµÄ
+					//å¦‚æœæ˜¯ä»¥æŒ‡å®šå‰ç¼€å‘½åçš„
 					var type = match[1]
 					var param = match[2] || ""
 					var value = attr.value
@@ -2150,9 +2150,9 @@
 						param = type
 						type = "on"
 					} else if (obsoleteAttrs[type]) {
-						log("warning!Çë¸ÄÓÃms-attr-" + type + "´úÌæms-" + type + "£¡")
-						if (type === "enabled") {//³Ôµôms-enabled°ó¶¨,ÓÃms-disabled´úÌæ
-							log("warning!ms-enabled»òms-attr-enabledÒÑ¾­±»·ÏÆú")
+						log("warning!è¯·æ”¹ç”¨ms-attr-" + type + "ä»£æ›¿ms-" + type + "ï¼")
+						if (type === "enabled") {//åƒæ‰ms-enabledç»‘å®š,ç”¨ms-disabledä»£æ›¿
+							log("warning!ms-enabledæˆ–ms-attr-enabledå·²ç»è¢«åºŸå¼ƒ")
 							type = "disabled"
 							value = "!(" + value + ")"
 						}
@@ -2199,10 +2199,10 @@
 		var control = elem.type
 		if (control && msData["ms-duplex"]) {
 			if (msData["ms-attr-checked"] && /radio|checkbox/.test(control)) {
-				log("warning!" + control + "¿Ø¼ş²»ÄÜÍ¬Ê±¶¨Òåms-attr-checkedÓëms-duplex")
+				log("warning!" + control + "æ§ä»¶ä¸èƒ½åŒæ—¶å®šä¹‰ms-attr-checkedä¸ms-duplex")
 			}
 			if (msData["ms-attr-value"] && /text|password/.test(control)) {
-				log("warning!" + control + "¿Ø¼ş²»ÄÜÍ¬Ê±¶¨Òåms-attr-valueÓëms-duplex")
+				log("warning!" + control + "æ§ä»¶ä¸èƒ½åŒæ—¶å®šä¹‰ms-attr-valueä¸ms-duplex")
 			}
 		}
 		var scanNode = true
@@ -2217,21 +2217,21 @@
 		executeBindings(bindings, vmodels)
 		if (scanNode && !stopScan[elem.tagName] && rbind.test(elem.innerHTML.replace(rlt, "<").replace(rgt, ">"))) {
 			mergeTextNodes && mergeTextNodes(elem)
-			scanNodeList(elem, vmodels) //É¨Ãè×ÓËïÔªËØ
+			scanNodeList(elem, vmodels) //æ‰«æå­å­™å…ƒç´ 
 		}
 	}
 
 	var rnoscanAttrBinding = /^if|widget|repeat$/
 	var rnoscanNodeBinding = /^each|with|html|include$/
-//IE67ÏÂ£¬ÔÚÑ­»·°ó¶¨ÖĞ£¬Ò»¸ö½ÚµãÈç¹ûÊÇÍ¨¹ıcloneNodeµÃµ½£¬×Ô¶¨ÒåÊôĞÔµÄspecifiedÎªfalse£¬ÎŞ·¨½øÈëÀïÃæµÄ·ÖÖ§£¬
-//µ«Èç¹ûÎÒÃÇÈ¥µôscanAttrÖĞµÄattr.specified¼ì²â£¬Ò»¸öÔªËØ»áÓĞ80+¸öÌØĞÔ½Úµã£¨ÒòÎªËü²»Çø·Ö¹ÌÓĞÊôĞÔÓë×Ô¶¨ÒåÊôĞÔ£©£¬ºÜÈİÒ×¿¨ËÀÒ³Ãæ
+//IE67ä¸‹ï¼Œåœ¨å¾ªç¯ç»‘å®šä¸­ï¼Œä¸€ä¸ªèŠ‚ç‚¹å¦‚æœæ˜¯é€šè¿‡cloneNodeå¾—åˆ°ï¼Œè‡ªå®šä¹‰å±æ€§çš„specifiedä¸ºfalseï¼Œæ— æ³•è¿›å…¥é‡Œé¢çš„åˆ†æ”¯ï¼Œ
+//ä½†å¦‚æœæˆ‘ä»¬å»æ‰scanAtträ¸­çš„attr.specifiedæ£€æµ‹ï¼Œä¸€ä¸ªå…ƒç´ ä¼šæœ‰80+ä¸ªç‰¹æ€§èŠ‚ç‚¹ï¼ˆå› ä¸ºå®ƒä¸åŒºåˆ†å›ºæœ‰å±æ€§ä¸è‡ªå®šä¹‰å±æ€§ï¼‰ï¼Œå¾ˆå®¹æ˜“å¡æ­»é¡µé¢
 	if (!"1" [0]) {
 		var cacheAttrs = new Cache(512)
 		var rattrs = /\s+(ms-[^=\s]+)(?:=("[^"]*"|'[^']*'|[^\s>]+))?/g,
 			rquote = /^['"]/,
 			rtag = /<\w+\b(?:(["'])[^"]*?(\1)|[^>])*>/i,
 			ramp = /&amp;/g
-		//IE6-8½âÎöHTML5ĞÂ±êÇ©£¬»á½«Ëü·Ö½âÁ½¸öÔªËØ½ÚµãÓëÒ»¸öÎÄ±¾½Úµã
+		//IE6-8è§£æHTML5æ–°æ ‡ç­¾ï¼Œä¼šå°†å®ƒåˆ†è§£ä¸¤ä¸ªå…ƒç´ èŠ‚ç‚¹ä¸ä¸€ä¸ªæ–‡æœ¬èŠ‚ç‚¹
 		//<body><section>ddd</section></body>
 		//        window.onload = function() {
 		//            var body = document.body
@@ -2239,10 +2239,10 @@
 		//                avalon.log(el.outerHTML)
 		//            }
 		//        }
-		//ÒÀ´ÎÊä³ö<SECTION>, </SECTION>
+		//ä¾æ¬¡è¾“å‡º<SECTION>, </SECTION>
 		var getAttributes = function (elem) {
 			var html = elem.outerHTML
-			//´¦ÀíIE6-8½âÎöHTML5ĞÂ±êÇ©µÄÇé¿ö£¬¼°<br>µÈ°ë±ÕºÏ±êÇ©outerHTMLÎª¿ÕµÄÇé¿ö
+			//å¤„ç†IE6-8è§£æHTML5æ–°æ ‡ç­¾çš„æƒ…å†µï¼ŒåŠ<br>ç­‰åŠé—­åˆæ ‡ç­¾outerHTMLä¸ºç©ºçš„æƒ…å†µ
 			if (html.slice(0, 2) === "</" || !html.trim()) {
 				return []
 			}
@@ -2288,18 +2288,18 @@
 	}
 	function scanNode(node, nodeType, vmodels) {
 		if (nodeType === 1) {
-			scanTag(node, vmodels) //É¨ÃèÔªËØ½Úµã
+			scanTag(node, vmodels) //æ‰«æå…ƒç´ èŠ‚ç‚¹
 		} else if (nodeType === 3 && rexpr.test(node.data)){
-			scanText(node, vmodels) //É¨ÃèÎÄ±¾½Úµã
+			scanText(node, vmodels) //æ‰«ææ–‡æœ¬èŠ‚ç‚¹
 		} else if (kernel.commentInterpolate && nodeType === 8 && !rexpr.test(node.nodeValue)) {
-			scanText(node, vmodels) //É¨Ãè×¢ÊÍ½Úµã
+			scanText(node, vmodels) //æ‰«ææ³¨é‡ŠèŠ‚ç‚¹
 		}
 	}
 	function scanTag(elem, vmodels, node) {
-		//É¨ÃèË³Ğò  ms-skip(0) --> ms-important(1) --> ms-controller(2) --> ms-if(10) --> ms-repeat(100) 
-		//--> ms-if-loop(110) --> ms-attr(970) ...--> ms-each(1400)-->ms-with(1500)--¡µms-duplex(2000)µæºó
+		//æ‰«æé¡ºåº  ms-skip(0) --> ms-important(1) --> ms-controller(2) --> ms-if(10) --> ms-repeat(100) 
+		//--> ms-if-loop(110) --> ms-attr(970) ...--> ms-each(1400)-->ms-with(1500)--ã€‰ms-duplex(2000)å«å
 		var a = elem.getAttribute("ms-skip")
-		//#360 ÔÚ¾ÉÊ½IEÖĞ Object±êÇ©ÔÚÒıÈëFlashµÈ×ÊÔ´Ê±,¿ÉÄÜ³öÏÖÃ»ÓĞgetAttributeNode,innerHTMLµÄÇéĞÎ
+		//#360 åœ¨æ—§å¼IEä¸­ Objectæ ‡ç­¾åœ¨å¼•å…¥Flashç­‰èµ„æºæ—¶,å¯èƒ½å‡ºç°æ²¡æœ‰getAttributeNode,innerHTMLçš„æƒ…å½¢
 		if (!elem.getAttributeNode) {
 			return log("warning " + elem.tagName + " no getAttributeNode method")
 		}
@@ -2312,14 +2312,14 @@
 			if (!newVmodel) {
 				return
 			}
-			//ms-important²»°üº¬¸¸VM£¬ms-controllerÏà·´
+			//ms-importantä¸åŒ…å«çˆ¶VMï¼Œms-controllerç›¸å
 			vmodels = node === b ? [newVmodel] : [newVmodel].concat(vmodels)
 			var name = node.name
-			elem.removeAttribute(name) //removeAttributeNode²»»áË¢ĞÂ[ms-controller]ÑùÊ½¹æÔò
+			elem.removeAttribute(name) //removeAttributeNodeä¸ä¼šåˆ·æ–°[ms-controller]æ ·å¼è§„åˆ™
 			avalon(elem).removeClass(name)
 			createSignalTower(elem, newVmodel)
 		}
-		scanAttr(elem, vmodels) //É¨ÃèÌØĞÔ½Úµã
+		scanAttr(elem, vmodels) //æ‰«æç‰¹æ€§èŠ‚ç‚¹
 	}
 	var rhasHtml = /\|\s*html\s*/,
 		r11a = /\|\|/g,
@@ -2331,7 +2331,7 @@
 			var scapegoat = value.replace( rstringLiteral, function(_){
 				return Array(_.length+1).join("1")// jshint ignore:line
 			})
-			var index = scapegoat.replace(r11a, "\u1122\u3344").indexOf("|") //¸ÉµôËùÓĞ¶ÌÂ·»ò
+			var index = scapegoat.replace(r11a, "\u1122\u3344").indexOf("|") //å¹²æ‰æ‰€æœ‰çŸ­è·¯æˆ–
 			if (index > -1) {
 				return {
 					filters: value.slice(index),
@@ -2357,7 +2357,7 @@
 				break
 			}
 			value = str.slice(start, stop)
-			if (value) { // {{ ×ó±ßµÄÎÄ±¾
+			if (value) { // {{ å·¦è¾¹çš„æ–‡æœ¬
 				tokens.push({
 					value: value,
 					filters: "",
@@ -2370,13 +2370,13 @@
 				break
 			}
 			value = str.slice(start, stop)
-			if (value) { //´¦Àí{{ }}²åÖµ±í´ïÊ½
+			if (value) { //å¤„ç†{{ }}æ’å€¼è¡¨è¾¾å¼
 				tokens.push(getToken(value))
 			}
 			start = stop + closeTag.length
 		} while (1)
 		value = str.slice(start)
-		if (value) { //}} ÓÒ±ßµÄÎÄ±¾
+		if (value) { //}} å³è¾¹çš„æ–‡æœ¬
 			tokens.push({
 				value: value,
 				expr: false,
@@ -2396,7 +2396,7 @@
 		}
 		if (tokens.length) {
 			for (var i = 0; token = tokens[i++]; ) {
-				var node = DOC.createTextNode(token.value) //½«ÎÄ±¾×ª»»ÎªÎÄ±¾½Úµã£¬²¢Ìæ»»Ô­À´µÄÎÄ±¾½Úµã
+				var node = DOC.createTextNode(token.value) //å°†æ–‡æœ¬è½¬æ¢ä¸ºæ–‡æœ¬èŠ‚ç‚¹ï¼Œå¹¶æ›¿æ¢åŸæ¥çš„æ–‡æœ¬èŠ‚ç‚¹
 				if (token.expr) {
 					token.type = "text"
 					token.element = node
@@ -2405,7 +2405,7 @@
 						token.group = 1
 						return ""
 					})// jshint ignore:line
-					bindings.push(token) //ÊÕ¼¯´øÓĞ²åÖµ±í´ïÊ½µÄÎÄ±¾
+					bindings.push(token) //æ”¶é›†å¸¦æœ‰æ’å€¼è¡¨è¾¾å¼çš„æ–‡æœ¬
 				}
 				hyperspace.appendChild(node)
 			}
@@ -2416,20 +2416,20 @@
 	}
 
 	/*********************************************************************
-	 *                  avalonµÄÔ­ĞÍ·½·¨¶¨ÒåÇø                            *
+	 *                  avalonçš„åŸå‹æ–¹æ³•å®šä¹‰åŒº                            *
 	 **********************************************************************/
 
 	function hyphen(target) {
-		//×ª»»ÎªÁ¬×Ö·ûÏß·ç¸ñ
+		//è½¬æ¢ä¸ºè¿å­—ç¬¦çº¿é£æ ¼
 		return target.replace(/([a-z\d])([A-Z]+)/g, "$1-$2").toLowerCase()
 	}
 
 	function camelize(target) {
-		//ÌáÇ°ÅĞ¶Ï£¬Ìá¸ßgetStyleµÈµÄĞ§ÂÊ
+		//æå‰åˆ¤æ–­ï¼Œæé«˜getStyleç­‰çš„æ•ˆç‡
 		if (!target || target.indexOf("-") < 0 && target.indexOf("_") < 0) {
 			return target
 		}
-		//×ª»»ÎªÍÕ·å·ç¸ñ
+		//è½¬æ¢ä¸ºé©¼å³°é£æ ¼
 		return target.replace(/[-_][^-_]/g, function(match) {
 			return match.charAt(1).toUpperCase()
 		})
@@ -2457,12 +2457,12 @@
 			cls = cls.trim()
 			var node = this.node
 			if (rsvg.test(node)) {
-				//SVGÔªËØµÄclassNameÊÇÒ»¸ö¶ÔÏó SVGAnimatedString { baseVal="", animVal=""}£¬Ö»ÄÜÍ¨¹ıset/getAttribute²Ù×÷
+				//SVGå…ƒç´ çš„classNameæ˜¯ä¸€ä¸ªå¯¹è±¡ SVGAnimatedString { baseVal="", animVal=""}ï¼Œåªèƒ½é€šè¿‡set/getAttributeæ“ä½œ
 				node.setAttribute("class", cls)
 			} else {
 				node.className = cls
 			}
-		} //toggle´æÔÚ°æ±¾²îÒì£¬Òò´Ë²»Ê¹ÓÃËü
+		} //toggleå­˜åœ¨ç‰ˆæœ¬å·®å¼‚ï¼Œå› æ­¤ä¸ä½¿ç”¨å®ƒ
 	}
 
 	function fakeClassList(node) {
@@ -2564,8 +2564,8 @@
 			if (this.css("position") === "fixed") {
 				offset = elem.getBoundingClientRect()
 			} else {
-				offsetParent = this.offsetParent() //µÃµ½ÕæÕıµÄoffsetParent
-				offset = this.offset() // µÃµ½ÕıÈ·µÄoffsetParent
+				offsetParent = this.offsetParent() //å¾—åˆ°çœŸæ­£çš„offsetParent
+				offset = this.offset() // å¾—åˆ°æ­£ç¡®çš„offsetParent
 				if (offsetParent[0].tagName !== "HTML") {
 					parentOffset = offsetParent.offset()
 				}
@@ -2589,7 +2589,7 @@
 			return avalon(offsetParent || root)
 		},
 		bind: function(type, fn, phase) {
-			if (this[0]) { //´Ë·½·¨²»»áÁ´
+			if (this[0]) { //æ­¤æ–¹æ³•ä¸ä¼šé“¾
 				return avalon.bind(this[0], type, fn, phase)
 			}
 		},
@@ -2647,7 +2647,7 @@
 		return data
 	}
 
-//Éú³Éavalon.fn.scrollLeft, avalon.fn.scrollTop·½·¨
+//ç”Ÿæˆavalon.fn.scrollLeft, avalon.fn.scrollTopæ–¹æ³•
 	avalon.each({
 		scrollLeft: "pageXOffset",
 		scrollTop: "pageYOffset"
@@ -2670,7 +2670,7 @@
 	function getWindow(node) {
 		return node.window && node.document ? node : node.nodeType === 9 ? node.defaultView || node.parentWindow : false;
 	}
-//=============================cssÏà¹Ø=======================
+//=============================cssç›¸å…³=======================
 	var cssHooks = avalon.cssHooks = {}
 	var prefixes = ["", "-webkit-", "-o-", "-moz-", "-ms-"]
 	var cssMap = {
@@ -2692,20 +2692,20 @@
 		return null
 	}
 	cssHooks["@:set"] = function(node, name, value) {
-		try { //node.style.width = NaN;node.style.width = "xxxxxxx";node.style.width = undefine ÔÚ¾ÉÊ½IEÏÂ»áÅ×Òì³£
+		try { //node.style.width = NaN;node.style.width = "xxxxxxx";node.style.width = undefine åœ¨æ—§å¼IEä¸‹ä¼šæŠ›å¼‚å¸¸
 			node.style[name] = value
 		} catch (e) {}
 	}
 	if (window.getComputedStyle) {
 		cssHooks["@:get"] = function(node, name) {
 			if (!node || !node.style) {
-				throw new Error("getComputedStyleÒªÇó´«ÈëÒ»¸ö½Úµã " + node)
+				throw new Error("getComputedStyleè¦æ±‚ä¼ å…¥ä¸€ä¸ªèŠ‚ç‚¹ " + node)
 			}
 			var ret, styles = getComputedStyle(node, null)
 			if (styles) {
 				ret = name === "filter" ? styles.getPropertyValue(name) : styles[name]
 				if (ret === "") {
-					ret = node.style[name] //ÆäËûä¯ÀÀÆ÷ĞèÒªÎÒÃÇÊÖ¶¯È¡ÄÚÁªÑùÊ½
+					ret = node.style[name] //å…¶ä»–æµè§ˆå™¨éœ€è¦æˆ‘ä»¬æ‰‹åŠ¨å–å†…è”æ ·å¼
 				}
 			}
 			return ret
@@ -2726,29 +2726,29 @@
 			thick: ie8 ? '5px' : '6px'
 		}
 		cssHooks["@:get"] = function(node, name) {
-			//È¡µÃ¾«È·Öµ£¬²»¹ıËüÓĞ¿ÉÄÜÊÇ´øem,pc,mm,pt,%µÈµ¥Î»
+			//å–å¾—ç²¾ç¡®å€¼ï¼Œä¸è¿‡å®ƒæœ‰å¯èƒ½æ˜¯å¸¦em,pc,mm,pt,%ç­‰å•ä½
 			var currentStyle = node.currentStyle
 			var ret = currentStyle[name]
 			if ((rnumnonpx.test(ret) && !rposition.test(ret))) {
-				//¢Ù£¬±£´æÔ­ÓĞµÄstyle.left, runtimeStyle.left,
+				//â‘ ï¼Œä¿å­˜åŸæœ‰çš„style.left, runtimeStyle.left,
 				var style = node.style,
 					left = style.left,
 					rsLeft = node.runtimeStyle.left
-				//¢ÚÓÉÓÚ¢Û´¦µÄstyle.left = xxx»áÓ°Ïìµ½currentStyle.left£¬
-				//Òò´Ë°ÑËücurrentStyle.left·Åµ½runtimeStyle.left£¬
-				//runtimeStyle.leftÓµÓĞ×î¸ßÓÅÏÈ¼¶£¬²»»ástyle.leftÓ°Ïì
+				//â‘¡ç”±äºâ‘¢å¤„çš„style.left = xxxä¼šå½±å“åˆ°currentStyle.leftï¼Œ
+				//å› æ­¤æŠŠå®ƒcurrentStyle.leftæ”¾åˆ°runtimeStyle.leftï¼Œ
+				//runtimeStyle.leftæ‹¥æœ‰æœ€é«˜ä¼˜å…ˆçº§ï¼Œä¸ä¼šstyle.leftå½±å“
 				node.runtimeStyle.left = currentStyle.left
-				//¢Û½«¾«È·Öµ¸³¸øµ½style.left£¬È»ºóÍ¨¹ıIEµÄÁíÒ»¸öË½ÓĞÊôĞÔ style.pixelLeft
-				//µÃµ½µ¥Î»ÎªpxµÄ½á¹û£»fontSizeµÄ·ÖÖ§¼ûhttp://bugs.jquery.com/ticket/760
+				//â‘¢å°†ç²¾ç¡®å€¼èµ‹ç»™åˆ°style.leftï¼Œç„¶åé€šè¿‡IEçš„å¦ä¸€ä¸ªç§æœ‰å±æ€§ style.pixelLeft
+				//å¾—åˆ°å•ä½ä¸ºpxçš„ç»“æœï¼›fontSizeçš„åˆ†æ”¯è§http://bugs.jquery.com/ticket/760
 				style.left = name === 'fontSize' ? '1em' : (ret || 0)
 				ret = style.pixelLeft + "px"
-				//¢Ü»¹Ô­ style.left£¬runtimeStyle.left
+				//â‘£è¿˜åŸ style.leftï¼ŒruntimeStyle.left
 				style.left = left
 				node.runtimeStyle.left = rsLeft
 			}
 			if (ret === "medium") {
 				name = name.replace("Width", "Style")
-				//border width Ä¬ÈÏÖµÎªmedium£¬¼´Ê¹ÆäÎª0"
+				//border width é»˜è®¤å€¼ä¸ºmediumï¼Œå³ä½¿å…¶ä¸º0"
 				if (currentStyle[name] === "none") {
 					ret = "0px"
 				}
@@ -2760,7 +2760,7 @@
 			var opacity = isFinite(value) && value <= 1 ? "alpha(opacity=" + value * 100 + ")" : ""
 			var filter = style.filter || "";
 			style.zoom = 1
-			//²»ÄÜÊ¹ÓÃÒÔÏÂ·½Ê½ÉèÖÃÍ¸Ã÷¶È
+			//ä¸èƒ½ä½¿ç”¨ä»¥ä¸‹æ–¹å¼è®¾ç½®é€æ˜åº¦
 			//node.filters.alpha.opacity = value * 100
 			style.filter = (ralpha.test(filter) ?
 				filter.replace(ralpha, opacity) :
@@ -2770,10 +2770,10 @@
 			}
 		}
 		cssHooks["opacity:get"] = function(node) {
-			//ÕâÊÇ×î¿ìµÄ»ñÈ¡IEÍ¸Ã÷ÖµµÄ·½Ê½£¬²»ĞèÒª¶¯ÓÃÕıÔòÁË£¡
+			//è¿™æ˜¯æœ€å¿«çš„è·å–IEé€æ˜å€¼çš„æ–¹å¼ï¼Œä¸éœ€è¦åŠ¨ç”¨æ­£åˆ™äº†ï¼
 			var alpha = node.filters.alpha || node.filters[salpha],
 				op = alpha && alpha.enabled ? alpha.opacity : 100
-			return (op / 100) + "" //È·±£·µ»ØµÄÊÇ×Ö·û´®
+			return (op / 100) + "" //ç¡®ä¿è¿”å›çš„æ˜¯å­—ç¬¦ä¸²
 		}
 	}
 
@@ -2795,7 +2795,7 @@
 
 	function showHidden(node, array) {
 		//http://www.cnblogs.com/rubylouvre/archive/2012/10/27/2742529.html
-		if (node.offsetWidth <= 0) { //opera.offsetWidth¿ÉÄÜĞ¡ÓÚ0
+		if (node.offsetWidth <= 0) { //opera.offsetWidthå¯èƒ½å°äº0
 			if (rdisplayswap.test(cssHooks["@:get"](node, "display"))) {
 				var obj = {
 					node: node
@@ -2849,17 +2849,17 @@
 			}
 			return val;
 		}
-		avalon.fn[method] = function(value) { //»áºöÊÓÆädisplay
+		avalon.fn[method] = function(value) { //ä¼šå¿½è§†å…¶display
 			var node = this[0]
 			if (arguments.length === 0) {
-				if (node.setTimeout) { //È¡µÃ´°¿Ú³ß´ç,IE9ºó¿ÉÒÔÓÃnode.innerWidth /innerHeight´úÌæ
+				if (node.setTimeout) { //å–å¾—çª—å£å°ºå¯¸,IE9åå¯ä»¥ç”¨node.innerWidth /innerHeightä»£æ›¿
 					return node["inner" + name] || node.document.documentElement[clientProp]
 				}
-				if (node.nodeType === 9) { //È¡µÃÒ³Ãæ³ß´ç
+				if (node.nodeType === 9) { //å–å¾—é¡µé¢å°ºå¯¸
 					var doc = node.documentElement
 					//FF chrome    html.scrollHeight< body.scrollHeight
-					//IE ±ê×¼Ä£Ê½ : html.scrollHeight> body.scrollHeight
-					//IE ¹ÖÒìÄ£Ê½ : html.scrollHeight ×î´óµÈÓÚ¿ÉÊÓ´°¿Ú¶àÒ»µã£¿
+					//IE æ ‡å‡†æ¨¡å¼ : html.scrollHeight> body.scrollHeight
+					//IE æ€ªå¼‚æ¨¡å¼ : html.scrollHeight æœ€å¤§ç­‰äºå¯è§†çª—å£å¤šä¸€ç‚¹ï¼Ÿ
 					return Math.max(node.body[scrollProp], doc[scrollProp], node.body[offsetProp], doc[offsetProp], doc[clientProp])
 				}
 				return cssHooks[method + "&get"](node)
@@ -2874,7 +2874,7 @@
 			return cssHooks[method + ":get"](this[0], void 0, includeMargin === true ? 2 : 0)
 		}
 	})
-	avalon.fn.offset = function() { //È¡µÃ¾àÀëÒ³Ãæ×óÓÒ½ÇµÄ×ø±ê
+	avalon.fn.offset = function() { //å–å¾—è·ç¦»é¡µé¢å·¦å³è§’çš„åæ ‡
 		var node = this[0],
 			box = {
 				left: 0,
@@ -2890,8 +2890,8 @@
 		if (!avalon.contains(root, node)) {
 			return box
 		}
-		//http://hkom.blog1.fc2.com/?mode=m&no=750 bodyµÄÆ«ÒÆÁ¿ÊÇ²»°üº¬marginµÄ
-		//ÎÒÃÇ¿ÉÒÔÍ¨¹ıgetBoundingClientRectÀ´»ñµÃÔªËØÏà¶ÔÓÚclientµÄrect.
+		//http://hkom.blog1.fc2.com/?mode=m&no=750 bodyçš„åç§»é‡æ˜¯ä¸åŒ…å«marginçš„
+		//æˆ‘ä»¬å¯ä»¥é€šè¿‡getBoundingClientRectæ¥è·å¾—å…ƒç´ ç›¸å¯¹äºclientçš„rect.
 		//http://msdn.microsoft.com/en-us/library/ms536433.aspx
 		if (node.getBoundingClientRect) {
 			box = node.getBoundingClientRect() // BlackBerry 5, iOS 3 (original iPhone)
@@ -2901,8 +2901,8 @@
 			clientLeft = root.clientLeft || body.clientLeft,
 			scrollTop = Math.max(win.pageYOffset || 0, root.scrollTop, body.scrollTop),
 			scrollLeft = Math.max(win.pageXOffset || 0, root.scrollLeft, body.scrollLeft)
-		// °Ñ¹ö¶¯¾àÀë¼Óµ½left,topÖĞÈ¥¡£
-		// IEÒ»Ğ©°æ±¾ÖĞ»á×Ô¶¯ÎªHTMLÔªËØ¼ÓÉÏ2pxµÄborder£¬ÎÒÃÇĞèÒªÈ¥µôËü
+		// æŠŠæ»šåŠ¨è·ç¦»åŠ åˆ°left,topä¸­å»ã€‚
+		// IEä¸€äº›ç‰ˆæœ¬ä¸­ä¼šè‡ªåŠ¨ä¸ºHTMLå…ƒç´ åŠ ä¸Š2pxçš„borderï¼Œæˆ‘ä»¬éœ€è¦å»æ‰å®ƒ
 		// http://msdn.microsoft.com/en-us/library/ms533564(VS.85).aspx
 		return {
 			top: box.top + scrollTop - clientTop,
@@ -2910,7 +2910,7 @@
 		}
 	}
 
-	//==================================valÏà¹Ø============================
+	//==================================valç›¸å…³============================
 
 	function getValType(el) {
 		var ret = el.tagName.toLowerCase()
@@ -2919,8 +2919,8 @@
 	var roption = /^<option(?:\s+\w+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+))?)*\s+value[\s=]/i
 	var valHooks = {
 		"option:get": IEVersion ? function(node) {
-			//ÔÚIE11¼°W3C£¬Èç¹ûÃ»ÓĞÖ¸¶¨value£¬ÄÇÃ´node.valueÄ¬ÈÏÎªnode.text£¨´æÔÚtrim×÷£©£¬µ«IE9-10ÔòÊÇÈ¡innerHTML(Ã»trim²Ù×÷)
-			//specified²¢²»¿É¿¿£¬Òò´ËÍ¨¹ı·ÖÎöouterHTMLÅĞ¶¨ÓÃ»§ÓĞÃ»ÓĞÏÔÊ¾¶¨Òåvalue
+			//åœ¨IE11åŠW3Cï¼Œå¦‚æœæ²¡æœ‰æŒ‡å®švalueï¼Œé‚£ä¹ˆnode.valueé»˜è®¤ä¸ºnode.textï¼ˆå­˜åœ¨trimä½œï¼‰ï¼Œä½†IE9-10åˆ™æ˜¯å–innerHTML(æ²¡trimæ“ä½œ)
+			//specifiedå¹¶ä¸å¯é ï¼Œå› æ­¤é€šè¿‡åˆ†æouterHTMLåˆ¤å®šç”¨æˆ·æœ‰æ²¡æœ‰æ˜¾ç¤ºå®šä¹‰value
 			return roption.test(node.outerHTML) ? node.value : node.text.trim()
 		} : function(node) {
 			return node.value
@@ -2935,22 +2935,22 @@
 				i = index < 0 ? max : one ? index : 0
 			for (; i < max; i++) {
 				option = options[i]
-				//¾ÉÊ½IEÔÚresetºó²»»á¸Ä±äselected£¬ĞèÒª¸ÄÓÃi === indexÅĞ¶¨
-				//ÎÒÃÇ¹ıÂËËùÓĞdisabledµÄoptionÔªËØ£¬µ«ÔÚsafari5ÏÂ£¬Èç¹ûÉèÖÃselectÎªdisable£¬ÄÇÃ´ÆäËùÓĞº¢×Ó¶¼disable
-				//Òò´Ëµ±Ò»¸öÔªËØÎªdisable£¬ĞèÒª¼ì²âÆäÊÇ·ñÏÔÊ½ÉèÖÃÁËdisable¼°Æä¸¸½ÚµãµÄdisableÇé¿ö
+				//æ—§å¼IEåœ¨resetåä¸ä¼šæ”¹å˜selectedï¼Œéœ€è¦æ”¹ç”¨i === indexåˆ¤å®š
+				//æˆ‘ä»¬è¿‡æ»¤æ‰€æœ‰disabledçš„optionå…ƒç´ ï¼Œä½†åœ¨safari5ä¸‹ï¼Œå¦‚æœè®¾ç½®selectä¸ºdisableï¼Œé‚£ä¹ˆå…¶æ‰€æœ‰å­©å­éƒ½disable
+				//å› æ­¤å½“ä¸€ä¸ªå…ƒç´ ä¸ºdisableï¼Œéœ€è¦æ£€æµ‹å…¶æ˜¯å¦æ˜¾å¼è®¾ç½®äº†disableåŠå…¶çˆ¶èŠ‚ç‚¹çš„disableæƒ…å†µ
 				if ((option.selected || i === index) && !option.disabled) {
 					value = getter(option)
 					if (one) {
 						return value
 					}
-					//ÊÕ¼¯ËùÓĞselectedÖµ×é³ÉÊı×é·µ»Ø
+					//æ”¶é›†æ‰€æœ‰selectedå€¼ç»„æˆæ•°ç»„è¿”å›
 					values.push(value)
 				}
 			}
 			return values
 		},
 		"select:set": function(node, values, optionSet) {
-			values = [].concat(values) //Ç¿ÖÆ×ª»»ÎªÊı×é
+			values = [].concat(values) //å¼ºåˆ¶è½¬æ¢ä¸ºæ•°ç»„
 			var getter = valHooks["option:get"]
 			for (var i = 0, el; el = node.options[i++];) {
 				if ((el.selected = values.indexOf(getter(el)) > -1)) {
@@ -2964,7 +2964,7 @@
 	}
 
 	/*********************************************************************
-	 *                          ±àÒëÏµÍ³                                  *
+	 *                          ç¼–è¯‘ç³»ç»Ÿ                                  *
 	 **********************************************************************/
 	var meta = {
 		'\b': '\\b',
@@ -2986,11 +2986,11 @@
 	var keywords = [
 		"break,case,catch,continue,debugger,default,delete,do,else,false",
 		"finally,for,function,if,in,instanceof,new,null,return,switch,this",
-		"throw,true,try,typeof,var,void,while,with", /* ¹Ø¼ü×Ö*/
+		"throw,true,try,typeof,var,void,while,with", /* å…³é”®å­—*/
 		"abstract,boolean,byte,char,class,const,double,enum,export,extends",
 		"final,float,goto,implements,import,int,interface,long,native",
 		"package,private,protected,public,short,static,super,synchronized",
-		"throws,transient,volatile", /*±£Áô×Ö*/
+		"throws,transient,volatile", /*ä¿ç•™å­—*/
 		"arguments,let,yield,undefined" /* ECMA 5 - use strict*/].join(",")
 	var rrexpstr = /\/\*[\w\W]*?\*\/|\/\/[^\n]*\n|\/\/[^\n]*$|"(?:[^"\\]|\\[\w\W])*"|'(?:[^'\\]|\\[\w\W])*'|[\s\t\n]*\.[\s\t\n]*[$\w\.]+/g
 	var rsplit = /[^\w$]+/g
@@ -3013,7 +3013,7 @@
 			.split(/^$|,+/)
 		return cacheVars.put(key, uniqSet(match))
 	}
-	/*Ìí¼Ó¸³ÖµÓï¾ä*/
+	/*æ·»åŠ èµ‹å€¼è¯­å¥*/
 
 	function addAssign(vars, scope, name, data) {
 		var ret = [],
@@ -3043,9 +3043,9 @@
 		}
 		return ret
 	}
-//»º´æÇóÖµº¯Êı£¬ÒÔ±ã¶à´ÎÀûÓÃ
+//ç¼“å­˜æ±‚å€¼å‡½æ•°ï¼Œä»¥ä¾¿å¤šæ¬¡åˆ©ç”¨
 	var cacheExprs = new Cache(128)
-//È¡µÃÇóÖµº¯Êı¼°Æä´«²Î
+//å–å¾—æ±‚å€¼å‡½æ•°åŠå…¶ä¼ å‚
 	var rduplex = /\w\[.*\]|\w\.\w/
 	var rproxy = /(\$proxy\$[a-z]+)\d+$/
 	var rthimRightParentheses = /\)\s*$/
@@ -3055,11 +3055,11 @@
 	var rthimLeftParentheses = /"\s*\(/g
 	function parseFilter(val, filters) {
 		filters = filters
-			.replace(rthimRightParentheses, "")//´¦Àí×îºóµÄĞ¡À¨ºÅ
-			.replace(rthimOtherParentheses, function () {//´¦ÀíÆäËûĞ¡À¨ºÅ
+			.replace(rthimRightParentheses, "")//å¤„ç†æœ€åçš„å°æ‹¬å·
+			.replace(rthimOtherParentheses, function () {//å¤„ç†å…¶ä»–å°æ‹¬å·
 				return "],|"
 			})
-			.replace(rquoteFilterName, function (a, b) { //´¦Àí|¼°ËüºóÃæµÄ¹ıÂËÆ÷µÄÃû×Ö
+			.replace(rquoteFilterName, function (a, b) { //å¤„ç†|åŠå®ƒåé¢çš„è¿‡æ»¤å™¨çš„åå­—
 				return "[" + quote(b)
 			})
 			.replace(rpatchBracket, function () {
@@ -3082,7 +3082,7 @@
 			names = [],
 			args = [],
 			prefix = ""
-		//args ÊÇÒ»¸ö¶ÔÏóÊı×é£¬ names ÊÇ½«ÒªÉú³ÉµÄÇóÖµº¯ÊıµÄ²ÎÊı
+		//args æ˜¯ä¸€ä¸ªå¯¹è±¡æ•°ç»„ï¼Œ names æ˜¯å°†è¦ç”Ÿæˆçš„æ±‚å€¼å‡½æ•°çš„å‚æ•°
 		scopes = uniqSet(scopes)
 		data.vars = []
 		for (var i = 0, sn = scopes.length; i < sn; i++) {
@@ -3104,7 +3104,7 @@
 					var c = _.charAt(v.length)
 					var r = IEVersion ? code.slice(arguments[1] + _.length) : RegExp.rightContext
 					var method = /^\s*\(/.test(r)
-					if (c === "." || c === "[" || method) {//±ÈÈçvÎªaa,ÎÒÃÇÖ»Æ¥Åäaa.bb,aa[cc],²»Æ¥Åäaaa.xxx
+					if (c === "." || c === "[" || method) {//æ¯”å¦‚vä¸ºaa,æˆ‘ä»¬åªåŒ¹é…aa.bb,aa[cc],ä¸åŒ¹é…aaa.xxx
 						var name = "var" + String(Math.random()).replace(/^0\./, "")
 						if (method) {//array.size()
 							var array = _.split(".")
@@ -3127,7 +3127,7 @@
 		//---------------args----------------
 		data.args = args
 		//---------------cache----------------
-		var fn = cacheExprs.get(exprId) //Ö±½Ó´Ó»º´æ£¬ÃâµÃÖØ¸´Éú³É
+		var fn = cacheExprs.get(exprId) //ç›´æ¥ä»ç¼“å­˜ï¼Œå…å¾—é‡å¤ç”Ÿæˆ
 		if (fn) {
 			data.evaluator = fn
 			return
@@ -3136,13 +3136,13 @@
 		if (prefix) {
 			prefix = "var " + prefix
 		}
-		if (/\S/.test(filters)) { //ÎÄ±¾°ó¶¨£¬Ë«¹¤°ó¶¨²ÅÓĞ¹ıÂËÆ÷
+		if (/\S/.test(filters)) { //æ–‡æœ¬ç»‘å®šï¼ŒåŒå·¥ç»‘å®šæ‰æœ‰è¿‡æ»¤å™¨
 			if (!/text|html/.test(data.type)) {
-				throw Error("ms-" + data.type + "²»Ö§³Ö¹ıÂËÆ÷")
+				throw Error("ms-" + data.type + "ä¸æ”¯æŒè¿‡æ»¤å™¨")
 			}
 			code = "\nvar ret" + expose + " = " + code + ";\r\n"
 			code += parseFilter("ret" + expose, filters)
-		} else if (dataType === "duplex") { //Ë«¹¤°ó¶¨
+		} else if (dataType === "duplex") { //åŒå·¥ç»‘å®š
 			var _body = "'use strict';\nreturn function(vvv){\n\t" +
 				prefix +
 				";\n\tif(!arguments.length){\n\t\treturn " +
@@ -3156,20 +3156,20 @@
 				log("debug: parse error," + e.message)
 			}
 			return
-		} else if (dataType === "on") { //ÊÂ¼ş°ó¶¨
+		} else if (dataType === "on") { //äº‹ä»¶ç»‘å®š
 			if (code.indexOf("(") === -1) {
 				code += ".call(this, $event)"
 			} else {
 				code = code.replace("(", ".call(this,")
 			}
 			names.push("$event")
-			code = "\nreturn " + code + ";" //IEÈ«¼Ò Function("return ")³ö´í£¬ĞèÒªFunction("return ;")
+			code = "\nreturn " + code + ";" //IEå…¨å®¶ Function("return ")å‡ºé”™ï¼Œéœ€è¦Function("return ;")
 			var lastIndex = code.lastIndexOf("\nreturn")
 			var header = code.slice(0, lastIndex)
 			var footer = code.slice(lastIndex)
 			code = header + "\n" + footer
-		} else { //ÆäËû°ó¶¨
-			code = "\nreturn " + code + ";" //IEÈ«¼Ò Function("return ")³ö´í£¬ĞèÒªFunction("return ;")
+		} else { //å…¶ä»–ç»‘å®š
+			code = "\nreturn " + code + ";" //IEå…¨å®¶ Function("return ")å‡ºé”™ï¼Œéœ€è¦Function("return ;")
 		}
 		try {
 			fn = Function.apply(noop, names.concat("'use strict';\n" + prefix + code))
@@ -3177,12 +3177,12 @@
 		} catch (e) {
 			log("debug: parse error," + e.message)
 		} finally {
-			vars = assigns = names = null //ÊÍ·ÅÄÚ´æ
+			vars = assigns = names = null //é‡Šæ”¾å†…å­˜
 		}
 	}
 
 
-//parseExprµÄÖÇÄÜÒıÓÃ´úÀí
+//parseExprçš„æ™ºèƒ½å¼•ç”¨ä»£ç†
 
 	function parseExprProxy(code, scopes, data, tokens, noregister) {
 		if (Array.isArray(tokens)) {
@@ -3193,9 +3193,9 @@
 		parseExpr(code, scopes, data)
 		if (data.evaluator && !noregister) {
 			data.handler = bindingExecutors[data.handlerName || data.type]
-			//·½±ãµ÷ÊÔ
-			//ÕâÀï·Ç³£ÖØÒª,ÎÒÃÇÍ¨¹ıÅĞ¶¨ÊÓÍ¼Ë¢ĞÂº¯ÊıµÄelementÊÇ·ñÔÚDOMÊ÷¾ö¶¨
-			//½«ËüÒÆ³ö¶©ÔÄÕßÁĞ±í
+			//æ–¹ä¾¿è°ƒè¯•
+			//è¿™é‡Œéå¸¸é‡è¦,æˆ‘ä»¬é€šè¿‡åˆ¤å®šè§†å›¾åˆ·æ–°å‡½æ•°çš„elementæ˜¯å¦åœ¨DOMæ ‘å†³å®š
+			//å°†å®ƒç§»å‡ºè®¢é˜…è€…åˆ—è¡¨
 			registerSubscriber(data)
 		}
 	}
@@ -3210,7 +3210,7 @@
 		boolMap[name.toLowerCase()] = name
 	})
 
-	var propMap = { //ÊôĞÔÃûÓ³Éä
+	var propMap = { //å±æ€§åæ˜ å°„
 		"accept-charset": "acceptCharset",
 		"char": "ch",
 		"charoff": "chOff",
@@ -3265,7 +3265,7 @@
 				elem.appendChild(data.endInclude)
 			}
 		}
-		data.handlerName = "attr" //handleNameÓÃÓÚ´¦Àí¶àÖÖ°ó¶¨¹²ÓÃÍ¬Ò»ÖÖbindingExecutorµÄÇé¿ö
+		data.handlerName = "attr" //handleNameç”¨äºå¤„ç†å¤šç§ç»‘å®šå…±ç”¨åŒä¸€ç§bindingExecutorçš„æƒ…å†µ
 		parseExprProxy(text, vmodels, data, (simple ? 0 : scanExpr(data.value)))
 	}
 
@@ -3275,18 +3275,18 @@
 		if (method === "css") {
 			avalon(elem).css(attrName, val)
 		} else if (method === "attr") {
-			// ms-attr-class="xxx" vm.xxx="aaa bbb ccc"½«ÔªËØµÄclassNameÉèÖÃÎªaaa bbb ccc
-			// ms-attr-class="xxx" vm.xxx=false  Çå¿ÕÔªËØµÄËùÓĞÀàÃû
-			// ms-attr-name="yyy"  vm.yyy="ooo" ÎªÔªËØÉèÖÃnameÊôĞÔ
+			// ms-attr-class="xxx" vm.xxx="aaa bbb ccc"å°†å…ƒç´ çš„classNameè®¾ç½®ä¸ºaaa bbb ccc
+			// ms-attr-class="xxx" vm.xxx=false  æ¸…ç©ºå…ƒç´ çš„æ‰€æœ‰ç±»å
+			// ms-attr-name="yyy"  vm.yyy="ooo" ä¸ºå…ƒç´ è®¾ç½®nameå±æ€§
 			var toRemove = (val === false) || (val === null) || (val === void 0)
 
-			if (!W3C && propMap[attrName]) { //¾ÉÊ½IEÏÂĞèÒª½øĞĞÃû×ÖÓ³Éä
+			if (!W3C && propMap[attrName]) { //æ—§å¼IEä¸‹éœ€è¦è¿›è¡Œåå­—æ˜ å°„
 				attrName = propMap[attrName]
 			}
 			var bool = boolMap[attrName]
 			if (typeof elem[bool] === "boolean") {
-				elem[bool] = !!val //²¼¶ûÊôĞÔ±ØĞëÊ¹ÓÃel.xxx = true|false·½Ê½ÉèÖµ
-				if (!val) { //Èç¹ûÎªfalse, IEÈ«ÏµÁĞÏÂÏàµ±ÓÚsetAttribute(xxx,''),»áÓ°Ïìµ½ÑùÊ½,ĞèÒª½øÒ»²½´¦Àí
+				elem[bool] = !!val //å¸ƒå°”å±æ€§å¿…é¡»ä½¿ç”¨el.xxx = true|falseæ–¹å¼è®¾å€¼
+				if (!val) { //å¦‚æœä¸ºfalse, IEå…¨ç³»åˆ—ä¸‹ç›¸å½“äºsetAttribute(xxx,''),ä¼šå½±å“åˆ°æ ·å¼,éœ€è¦è¿›ä¸€æ­¥å¤„ç†
 					toRemove = true
 				}
 			}
@@ -3294,7 +3294,7 @@
 				return elem.removeAttribute(attrName)
 			}
 
-			//SVGÖ»ÄÜÊ¹ÓÃsetAttribute(xxx, yyy), VMLÖ»ÄÜÊ¹ÓÃelem.xxx = yyy ,HTMLµÄ¹ÌÓĞÊôĞÔ±ØĞëelem.xxx = yyy
+			//SVGåªèƒ½ä½¿ç”¨setAttribute(xxx, yyy), VMLåªèƒ½ä½¿ç”¨elem.xxx = yyy ,HTMLçš„å›ºæœ‰å±æ€§å¿…é¡»elem.xxx = yyy
 			var isInnate = rsvg.test(elem) ? false : (DOC.namespaces && isVML(elem)) ? true : attrName in elem.cloneNode(false)
 			if (isInnate) {
 				elem[attrName] = val
@@ -3348,7 +3348,7 @@
 					avalon.nextTick(function() {
 						scanTemplate(cacheTmpls[val])
 					})
-				} else if (Array.isArray(cacheTmpls[val])) { //#805 ·ÀÖ¹ÔÚÑ­»·°ó¶¨ÖĞ·¢³öĞí¶àÏàÍ¬µÄÇëÇó
+				} else if (Array.isArray(cacheTmpls[val])) { //#805 é˜²æ­¢åœ¨å¾ªç¯ç»‘å®šä¸­å‘å‡ºè®¸å¤šç›¸åŒçš„è¯·æ±‚
 					cacheTmpls[val].push(scanTemplate)
 				} else {
 					var xhr = getXHR()
@@ -3373,13 +3373,13 @@
 					xhr.send(null)
 				}
 			} else {
-				//IEÏµÁĞÓë¹»ĞÂµÄ±ê×¼ä¯ÀÀÆ÷Ö§³ÖÍ¨¹ıIDÈ¡µÃÔªËØ£¨firefox14+£©
+				//IEç³»åˆ—ä¸å¤Ÿæ–°çš„æ ‡å‡†æµè§ˆå™¨æ”¯æŒé€šè¿‡IDå–å¾—å…ƒç´ ï¼ˆfirefox14+ï¼‰
 				//http://tjvantoll.com/2012/07/19/dom-element-references-as-global-variables/
 				var el = val && val.nodeType === 1 ? val : DOC.getElementById(val)
 				if (el) {
-					if (el.tagName === "NOSCRIPT" && !(el.innerHTML || el.fixIE78)) { //IE7-8 innerText,innerHTML¶¼ÎŞ·¨È¡µÃÆäÄÚÈİ£¬IE6ÄÜÈ¡µÃÆäinnerHTML
-						xhr = getXHR() //IE9-11ÓëchromeµÄinnerHTML»áµÃµ½×ªÒåµÄÄÚÈİ£¬ËüÃÇµÄinnerText¿ÉÒÔ
-						xhr.open("GET", location, false) //Ğ»Ğ»Nodejs ÂÒìÀÈº ÉîÛÚ-´¿ÊôĞé¹¹
+					if (el.tagName === "NOSCRIPT" && !(el.innerHTML || el.fixIE78)) { //IE7-8 innerText,innerHTMLéƒ½æ— æ³•å–å¾—å…¶å†…å®¹ï¼ŒIE6èƒ½å–å¾—å…¶innerHTML
+						xhr = getXHR() //IE9-11ä¸chromeçš„innerHTMLä¼šå¾—åˆ°è½¬ä¹‰çš„å†…å®¹ï¼Œå®ƒä»¬çš„innerTextå¯ä»¥
+						xhr.open("GET", location, false) //è°¢è°¢Nodejs ä¹±ç‚–ç¾¤ æ·±åœ³-çº¯å±è™šæ„
 						xhr.send(null)
 						//http://bbs.csdn.net/topics/390349046?page=1#post-393492653
 						var noscripts = DOC.getElementsByTagName("noscript")
@@ -3387,7 +3387,7 @@
 						var n = array.length
 						for (var i = 0; i < n; i++) {
 							var tag = noscripts[i]
-							if (tag) { //IE6-8ÖĞnoscript±êÇ©µÄinnerHTML,innerTextÊÇÖ»¶ÁµÄ
+							if (tag) { //IE6-8ä¸­noscriptæ ‡ç­¾çš„innerHTML,innerTextæ˜¯åªè¯»çš„
 								tag.style.display = "none" //http://haslayout.net/css/noscript-Ghost-Bug
 								tag.fixIE78 = (array[i].match(rnoscriptText) || ["", "&nbsp;"])[1]
 							}
@@ -3400,11 +3400,11 @@
 			}
 		} else {
 			if (!root.hasAttribute && typeof val === "string" && (method === "src" || method === "href")) {
-				val = val.replace(/&amp;/g, "&") //´¦ÀíIE67×Ô¶¯×ªÒåµÄÎÊÌâ
+				val = val.replace(/&amp;/g, "&") //å¤„ç†IE67è‡ªåŠ¨è½¬ä¹‰çš„é—®é¢˜
 			}
 			elem[method] = val
 			if (window.chrome && elem.tagName === "EMBED") {
-				var parent = elem.parentNode //#525  chrome1-37ÏÂembed±êÇ©¶¯Ì¬ÉèÖÃsrc²»ÄÜ·¢ÉúÇëÇó
+				var parent = elem.parentNode //#525  chrome1-37ä¸‹embedæ ‡ç­¾åŠ¨æ€è®¾ç½®srcä¸èƒ½å‘ç”Ÿè¯·æ±‚
 				var comment = document.createComment("ms-src")
 				parent.replaceChild(comment, elem)
 				parent.replaceChild(elem, comment)
@@ -3425,11 +3425,11 @@
 		return avalon.parseHTML(text)
 	}
 
-//Õâ¼¸¸öÖ¸Áî¶¼¿ÉÒÔÊ¹ÓÃ²åÖµ±í´ïÊ½£¬Èçms-src="aaa/{{b}}/{{c}}.html"
+//è¿™å‡ ä¸ªæŒ‡ä»¤éƒ½å¯ä»¥ä½¿ç”¨æ’å€¼è¡¨è¾¾å¼ï¼Œå¦‚ms-src="aaa/{{b}}/{{c}}.html"
 	"title,alt,src,value,css,include,href".replace(rword, function(name) {
 		bindingHandlers[name] = bindingHandlers.attr
 	})
-//¸ù¾İVMµÄÊôĞÔÖµ»ò±í´ïÊ½µÄÖµÇĞ»»ÀàÃû£¬ms-class="xxx yyy zzz:flag" 
+//æ ¹æ®VMçš„å±æ€§å€¼æˆ–è¡¨è¾¾å¼çš„å€¼åˆ‡æ¢ç±»åï¼Œms-class="xxx yyy zzz:flag" 
 //http://www.cnblogs.com/rubylouvre/archive/2012/12/17/2818540.html
 	bindingHandlers["class"] = function(data, vmodels) {
 		var oldStyle = data.param,
@@ -3437,27 +3437,27 @@
 			rightExpr
 		data.handlerName = "class"
 		if (!oldStyle || isFinite(oldStyle)) {
-			data.param = "" //È¥µôÊı×Ö
+			data.param = "" //å»æ‰æ•°å­—
 			var noExpr = text.replace(rexprg, function(a) {
 				return a.replace(/./g, "0")
-				//return Math.pow(10, a.length - 1) //½«²åÖµ±í´ïÊ½²åÈë10µÄN-1´Î·½À´Õ¼Î»
+				//return Math.pow(10, a.length - 1) //å°†æ’å€¼è¡¨è¾¾å¼æ’å…¥10çš„N-1æ¬¡æ–¹æ¥å ä½
 			})
-			var colonIndex = noExpr.indexOf(":") //È¡µÃµÚÒ»¸öÃ°ºÅµÄÎ»ÖÃ
-			if (colonIndex === -1) { // ±ÈÈç ms-class="aaa bbb ccc" µÄÇé¿ö
+			var colonIndex = noExpr.indexOf(":") //å–å¾—ç¬¬ä¸€ä¸ªå†’å·çš„ä½ç½®
+			if (colonIndex === -1) { // æ¯”å¦‚ ms-class="aaa bbb ccc" çš„æƒ…å†µ
 				var className = text
-			} else { // ±ÈÈç ms-class-1="ui-state-active:checked" µÄÇé¿ö 
+			} else { // æ¯”å¦‚ ms-class-1="ui-state-active:checked" çš„æƒ…å†µ 
 				className = text.slice(0, colonIndex)
 				rightExpr = text.slice(colonIndex + 1)
-				parseExpr(rightExpr, vmodels, data) //¾ö¶¨ÊÇÌí¼Ó»¹ÊÇÉ¾³ı
+				parseExpr(rightExpr, vmodels, data) //å†³å®šæ˜¯æ·»åŠ è¿˜æ˜¯åˆ é™¤
 				if (!data.evaluator) {
-					log("debug: ms-class '" + (rightExpr || "").trim() + "' ²»´æÔÚÓÚVMÖĞ")
+					log("debug: ms-class '" + (rightExpr || "").trim() + "' ä¸å­˜åœ¨äºVMä¸­")
 					return false
 				} else {
 					data._evaluator = data.evaluator
 					data._args = data.args
 				}
 			}
-			var hasExpr = rexpr.test(className) //±ÈÈçms-class="width{{w}}"µÄÇé¿ö
+			var hasExpr = rexpr.test(className) //æ¯”å¦‚ms-class="width{{w}}"çš„æƒ…å†µ
 			if (!hasExpr) {
 				data.immobileClass = className
 			}
@@ -3471,10 +3471,10 @@
 	bindingExecutors["class"] = function(val, elem, data) {
 		var $elem = avalon(elem),
 			method = data.type
-		if (method === "class" && data.oldStyle) { //Èç¹ûÊÇ¾É·ç¸ñ
+		if (method === "class" && data.oldStyle) { //å¦‚æœæ˜¯æ—§é£æ ¼
 			$elem.toggleClass(data.oldStyle, !!val)
 		} else {
-			//Èç¹û´æÔÚÃ°ºÅ¾ÍÓĞÇóÖµº¯Êı
+			//å¦‚æœå­˜åœ¨å†’å·å°±æœ‰æ±‚å€¼å‡½æ•°
 			data.toggleClass = data._evaluator ? !!data._evaluator.apply(elem, data._args) : true
 			data.newClass = data.immobileClass || val
 			if (data.oldClass && data.newClass !== data.oldClass) {
@@ -3487,10 +3487,10 @@
 					break
 				case "hover":
 				case "active":
-					if (!data.hasBindEvent) { //È·±£Ö»°ó¶¨Ò»´Î
-						var activate = "mouseenter" //ÔÚÒÆ³öÒÆÈëÊ±ÇĞ»»ÀàÃû
+					if (!data.hasBindEvent) { //ç¡®ä¿åªç»‘å®šä¸€æ¬¡
+						var activate = "mouseenter" //åœ¨ç§»å‡ºç§»å…¥æ—¶åˆ‡æ¢ç±»å
 						var abandon = "mouseleave"
-						if (method === "active") { //ÔÚ¾Û½¹Ê§½¹ÖĞÇĞ»»ÀàÃû
+						if (method === "active") { //åœ¨èšç„¦å¤±ç„¦ä¸­åˆ‡æ¢ç±»å
 							elem.tabIndex = elem.tabIndex || -1
 							activate = "mousedown"
 							abandon = "mouseup"
@@ -3519,11 +3519,11 @@
 	"hover,active".replace(rword, function(method) {
 		bindingHandlers[method] = bindingHandlers["class"]
 	})
-//ms-controller°ó¶¨ÒÑ¾­ÔÚscanTag ·½·¨ÖĞÊµÏÖ
-//ms-css°ó¶¨ÒÑÓÉms-attr°ó¶¨ÊµÏÖ
+//ms-controllerç»‘å®šå·²ç»åœ¨scanTag æ–¹æ³•ä¸­å®ç°
+//ms-cssç»‘å®šå·²ç”±ms-attrç»‘å®šå®ç°
 
 
-// bindingHandlers.data ¶¨ÒåÔÚif.js
+// bindingHandlers.data å®šä¹‰åœ¨if.js
 	bindingExecutors.data = function(val, elem, data) {
 		var key = "data-" + data.param
 		if (val && typeof val === "object") {
@@ -3533,7 +3533,7 @@
 		}
 	}
 
-//Ë«¹¤°ó¶¨
+//åŒå·¥ç»‘å®š
 	var duplexBinding = bindingHandlers.duplex = function(data, vmodels) {
 		var elem = data.element,
 			hasCast
@@ -3552,16 +3552,16 @@
 			data.param.replace(/\w+/g, function(name) {
 				if (/^(checkbox|radio)$/.test(elem.type) && /^(radio|checked)$/.test(name)) {
 					if (name === "radio")
-						log("ms-duplex-radioÒÑ¾­¸üÃûÎªms-duplex-checked")
+						log("ms-duplex-radioå·²ç»æ›´åä¸ºms-duplex-checked")
 					name = "checked"
 					data.isChecked = true
 				}
 				if (name === "bool") {
 					name = "boolean"
-					log("ms-duplex-boolÒÑ¾­¸üÃûÎªms-duplex-boolean")
+					log("ms-duplex-boolå·²ç»æ›´åä¸ºms-duplex-boolean")
 				} else if (name === "text") {
 					name = "string"
-					log("ms-duplex-textÒÑ¾­¸üÃûÎªms-duplex-string")
+					log("ms-duplex-textå·²ç»æ›´åä¸ºms-duplex-string")
 				}
 				if (casting[name]) {
 					hasCast = true
@@ -3595,7 +3595,7 @@
 			duplexBinding[tagName] && duplexBinding[tagName](elem, data.evaluator.apply(null, data.args), data)
 		}
 	}
-	//²»´æÔÚ bindingExecutors.duplex
+	//ä¸å­˜åœ¨ bindingExecutors.duplex
 	function fixNull(val) {
 		return val == null ? "" : val
 	}
@@ -3606,7 +3606,7 @@
 			}
 		},
 		string: {
-			get: function(val) { //Í¬²½µ½VM
+			get: function(val) { //åŒæ­¥åˆ°VM
 				return val
 			},
 			set: fixNull
@@ -3686,7 +3686,7 @@
 				}
 			}
 			var inputProto = HTMLInputElement.prototype
-			Object.getOwnPropertyNames(inputProto) //¹ÊÒâÒı·¢IE6-8µÈä¯ÀÀÆ÷±¨´í
+			Object.getOwnPropertyNames(inputProto) //æ•…æ„å¼•å‘IE6-8ç­‰æµè§ˆå™¨æŠ¥é”™
 			setters["INPUT"] = Object.getOwnPropertyDescriptor(aproto, "value").set
 			Object.defineProperty(aproto, "value", {
 				set: newSetter
@@ -3696,7 +3696,7 @@
 				set: newSetter
 			})
 		} catch (e) {
-			//ÔÚchrome 43ÖĞ ms-duplexÖÕÓÚ²»ĞèÒªÊ¹ÓÃ¶¨Ê±Æ÷ÊµÏÖË«Ïò°ó¶¨ÁË
+			//åœ¨chrome 43ä¸­ ms-duplexç»ˆäºä¸éœ€è¦ä½¿ç”¨å®šæ—¶å™¨å®ç°åŒå‘ç»‘å®šäº†
 			// http://updates.html5rocks.com/2015/04/DOM-attributes-now-on-the-prototype
 			// https://docs.google.com/document/d/1jwA8mtClwxI-QJuHT7872Z0pxpZz8PBkf2bGAbsUtqs/edit?pli=1
 			watchValueInTimer = avalon.tick
@@ -3711,7 +3711,7 @@
 		})
 	}
 
-//´¦Àíradio, checkbox, text, textarea, password
+//å¤„ç†radio, checkbox, text, textarea, password
 	duplexBinding.INPUT = function(element, evaluator, data) {
 		var $type = element.type,
 			bound = data.bound,
@@ -3729,11 +3729,11 @@
 		function compositionEnd() {
 			composing = false
 		}
-		//µ±value±ä»¯Ê±¸Ä±ämodelµÄÖµ
+		//å½“valueå˜åŒ–æ—¶æ”¹å˜modelçš„å€¼
 		var updateVModel = function() {
-			if (composing) //´¦ÀíÖĞÎÄÊäÈë·¨ÔÚminlenghÏÂÒı·¢µÄBUG
+			if (composing) //å¤„ç†ä¸­æ–‡è¾“å…¥æ³•åœ¨minlenghä¸‹å¼•å‘çš„BUG
 				return
-			var val = element.oldValue = element.value //·ÀÖ¹µİ¹éµ÷ÓÃĞÎ³ÉËÀÑ­»·
+			var val = element.oldValue = element.value //é˜²æ­¢é€’å½’è°ƒç”¨å½¢æˆæ­»å¾ªç¯
 			var lastValue = data.pipe(val, data, "get")
 			if ($elem.data("duplexObserve") !== false) {
 				evaluator(lastValue)
@@ -3745,7 +3745,7 @@
 				}
 			}
 		}
-		//µ±model±ä»¯Ê±,Ëü¾Í»á¸Ä±ävalueµÄÖµ
+		//å½“modelå˜åŒ–æ—¶,å®ƒå°±ä¼šæ”¹å˜valueçš„å€¼
 		data.handler = function() {
 			var val = data.pipe(evaluator(), data, "set") + "" //fix #673
 			if (val !== element.oldValue) {
@@ -3767,9 +3767,9 @@
 				element.oldValue = checked
 				if (IE6) {
 					setTimeout(function() {
-						//IE8 checkbox, radioÊÇÊ¹ÓÃdefaultChecked¿ØÖÆÑ¡ÖĞ×´Ì¬£¬
-						//²¢ÇÒÒªÏÈÉèÖÃdefaultCheckedºóÉèÖÃchecked
-						//²¢ÇÒ±ØĞëÉèÖÃÑÓ³Ù
+						//IE8 checkbox, radioæ˜¯ä½¿ç”¨defaultCheckedæ§åˆ¶é€‰ä¸­çŠ¶æ€ï¼Œ
+						//å¹¶ä¸”è¦å…ˆè®¾ç½®defaultCheckedåè®¾ç½®checked
+						//å¹¶ä¸”å¿…é¡»è®¾ç½®å»¶è¿Ÿ
 						element.defaultChecked = checked
 						element.checked = checked
 					}, 31)
@@ -3784,7 +3784,7 @@
 					var method = element.checked ? "ensure" : "remove"
 					var array = evaluator()
 					if (!Array.isArray(array)) {
-						log("ms-duplexÓ¦ÓÃÓÚcheckboxÉÏÒª¶ÔÓ¦Ò»¸öÊı×é")
+						log("ms-duplexåº”ç”¨äºcheckboxä¸Šè¦å¯¹åº”ä¸€ä¸ªæ•°ç»„")
 						array = [array]
 					}
 					avalon.Array[method](array, data.pipe(element.value, data, "get"))
@@ -3793,14 +3793,14 @@
 			}
 
 			data.handler = function() {
-				var array = [].concat(evaluator()) //Ç¿ÖÆ×ª»»ÎªÊı×é
+				var array = [].concat(evaluator()) //å¼ºåˆ¶è½¬æ¢ä¸ºæ•°ç»„
 				element.checked = array.indexOf(data.pipe(element.value, data, "get")) > -1
 			}
 			bound(W3C ? "change" : "click", updateVModel)
 		} else {
 			var events = element.getAttribute("data-duplex-event") || "input"
 			if (element.attributes["data-event"]) {
-				log("data-eventÖ¸ÁîÒÑ¾­·ÏÆú£¬Çë¸ÄÓÃdata-duplex-event")
+				log("data-eventæŒ‡ä»¤å·²ç»åºŸå¼ƒï¼Œè¯·æ”¹ç”¨data-duplex-event")
 			}
 
 			function delay(e) { // jshint ignore:line
@@ -3813,16 +3813,16 @@
 					case "input":
 						if (!IEVersion) { // W3C
 							bound("input", updateVModel)
-							//·ÇIEä¯ÀÀÆ÷²ÅÓÃÕâ¸ö
+							//éIEæµè§ˆå™¨æ‰ç”¨è¿™ä¸ª
 							bound("compositionstart", compositionStart)
 							bound("compositionend", compositionEnd)
 							bound("DOMAutoComplete", updateVModel)
-						} else { //onpropertychangeÊÂ¼şÎŞ·¨Çø·ÖÊÇ³ÌĞò´¥·¢»¹ÊÇÓÃ»§´¥·¢
-							// IEÏÂÍ¨¹ıselectionchangeÊÂ¼ş¼àÌıIE9+µã»÷inputÓÒ±ßµÄXµÄÇå¿ÕĞĞÎª£¬¼°Õ³Ìù£¬¼ôÇĞ£¬É¾³ıĞĞÎª
+						} else { //onpropertychangeäº‹ä»¶æ— æ³•åŒºåˆ†æ˜¯ç¨‹åºè§¦å‘è¿˜æ˜¯ç”¨æˆ·è§¦å‘
+							// IEä¸‹é€šè¿‡selectionchangeäº‹ä»¶ç›‘å¬IE9+ç‚¹å‡»inputå³è¾¹çš„Xçš„æ¸…ç©ºè¡Œä¸ºï¼ŒåŠç²˜è´´ï¼Œå‰ªåˆ‡ï¼Œåˆ é™¤è¡Œä¸º
 							if (IEVersion > 8) {
-								bound("input", updateVModel) //IE9Ê¹ÓÃpropertychangeÎŞ·¨¼àÌıÖĞÎÄÊäÈë¸Ä¶¯
+								bound("input", updateVModel) //IE9ä½¿ç”¨propertychangeæ— æ³•ç›‘å¬ä¸­æ–‡è¾“å…¥æ”¹åŠ¨
 							} else {
-								bound("propertychange", function(e) { //IE6-8ÏÂµÚÒ»´ÎĞŞ¸ÄÊ±²»»á´¥·¢,ĞèÒªÊ¹ÓÃkeydown»òselectionchangeĞŞÕı
+								bound("propertychange", function(e) { //IE6-8ä¸‹ç¬¬ä¸€æ¬¡ä¿®æ”¹æ—¶ä¸ä¼šè§¦å‘,éœ€è¦ä½¿ç”¨keydownæˆ–selectionchangeä¿®æ­£
 									if (e.propertyName === "value") {
 										updateVModel()
 									}
@@ -3870,7 +3870,7 @@
 
 		function updateVModel() {
 			if ($elem.data("duplexObserve") !== false) {
-				var val = $elem.val() //×Ö·û´®»ò×Ö·û´®Êı×é
+				var val = $elem.val() //å­—ç¬¦ä¸²æˆ–å­—ç¬¦ä¸²æ•°ç»„
 				if (Array.isArray(val)) {
 					val = val.map(function(v) {
 						return data.pipe(v, data, "get")
@@ -3889,14 +3889,14 @@
 			val = val && val.$model || val
 			if (Array.isArray(val)) {
 				if (!element.multiple) {
-					log("ms-duplexÔÚ<select multiple=true>ÉÏÒªÇó¶ÔÓ¦Ò»¸öÊı×é")
+					log("ms-duplexåœ¨<select multiple=true>ä¸Šè¦æ±‚å¯¹åº”ä¸€ä¸ªæ•°ç»„")
 				}
 			} else {
 				if (element.multiple) {
-					log("ms-duplexÔÚ<select multiple=false>²»ÄÜ¶ÔÓ¦Ò»¸öÊı×é")
+					log("ms-duplexåœ¨<select multiple=false>ä¸èƒ½å¯¹åº”ä¸€ä¸ªæ•°ç»„")
 				}
 			}
-			//±ØĞë±ä³É×Ö·û´®ºó²ÅÄÜ±È½Ï
+			//å¿…é¡»å˜æˆå­—ç¬¦ä¸²åæ‰èƒ½æ¯”è¾ƒ
 			val = Array.isArray(val) ? val.map(String) : val + ""
 			if (val + "" !== element.oldValue) {
 				$elem.val(val)
@@ -3909,14 +3909,14 @@
 			data.changed.call(element, evaluator(), data)
 		}, NaN)
 	}
-// bindingHandlers.html ¶¨ÒåÔÚif.js
+// bindingHandlers.html å®šä¹‰åœ¨if.js
 	bindingExecutors.html = function(val, elem, data) {
 		val = val == null ? "" : val
 		var isHtmlFilter = "group" in data
 		var parent = isHtmlFilter ? elem.parentNode : elem
 		if (!parent)
 			return
-		if (val.nodeType === 11) { //½«val×ª»»ÎªÎÄµµËéÆ¬
+		if (val.nodeType === 11) { //å°†valè½¬æ¢ä¸ºæ–‡æ¡£ç¢ç‰‡
 			var fragment = val
 		} else if (val.nodeType === 1 || val.item) {
 			var nodes = val.nodeType === 1 ? val.childNodes : val.item ? val : []
@@ -3927,7 +3927,7 @@
 		} else {
 			fragment = avalon.parseHTML(val)
 		}
-		//²åÈëÕ¼Î»·û, Èç¹ûÊÇ¹ıÂËÆ÷,ĞèÒªÓĞ½ÚÖÆµØÒÆ³ıÖ¸¶¨µÄÊıÁ¿,Èç¹ûÊÇhtmlÖ¸Áî,Ö±½ÓÇå¿Õ
+		//æ’å…¥å ä½ç¬¦, å¦‚æœæ˜¯è¿‡æ»¤å™¨,éœ€è¦æœ‰èŠ‚åˆ¶åœ°ç§»é™¤æŒ‡å®šçš„æ•°é‡,å¦‚æœæ˜¯htmlæŒ‡ä»¤,ç›´æ¥æ¸…ç©º
 		var comment = DOC.createComment("ms-html")
 		if (isHtmlFilter) {
 			parent.insertBefore(comment, elem)
@@ -3940,7 +3940,7 @@
 				}
 			}
 			parent.removeChild(elem)
-			data.element = comment //·ÀÖ¹±»CG
+			data.element = comment //é˜²æ­¢è¢«CG
 		} else {
 			avalon.clearHTML(parent).appendChild(comment)
 		}
@@ -3967,21 +3967,21 @@
 					}
 
 	bindingExecutors["if"] = function(val, elem, data) {
-		if (val) { //²å»ØDOMÊ÷
+		if (val) { //æ’å›DOMæ ‘
 			if (elem.nodeType === 8) {
 				elem.parentNode.replaceChild(data.template, elem)
-				elem = data.element = data.template //ÕâÊ±¿ÉÄÜÎªnull
+				elem = data.element = data.template //è¿™æ—¶å¯èƒ½ä¸ºnull
 			}
 			if (elem.getAttribute(data.name)) {
 				elem.removeAttribute(data.name)
 				scanAttr(elem, data.vmodels)
 			}
 			data.rollback = null
-		} else { //ÒÆ³öDOMÊ÷£¬²¢ÓÃ×¢ÊÍ½ÚµãÕ¼¾İÔ­Î»ÖÃ
+		} else { //ç§»å‡ºDOMæ ‘ï¼Œå¹¶ç”¨æ³¨é‡ŠèŠ‚ç‚¹å æ®åŸä½ç½®
 			if (elem.nodeType === 1) {
 				var node = data.element = DOC.createComment("ms-if")
 				elem.parentNode.replaceChild(node, elem)
-				data.template = elem //ÔªËØ½Úµã
+				data.template = elem //å…ƒç´ èŠ‚ç‚¹
 				ifGroup.appendChild(elem)
 				data.rollback = function() {
 					if (elem.parentNode === ifGroup) {
@@ -3993,8 +3993,8 @@
 	}
 
 
-//ms-important°ó¶¨ÒÑ¾­ÔÚscanTag ·½·¨ÖĞÊµÏÖ
-//ms-include°ó¶¨ÒÑÓÉms-attr°ó¶¨ÊµÏÖ
+//ms-importantç»‘å®šå·²ç»åœ¨scanTag æ–¹æ³•ä¸­å®ç°
+//ms-includeç»‘å®šå·²ç”±ms-attrç»‘å®šå®ç°
 
 //ms-layout-list
 //http://www.cnblogs.com/jqyp/archive/2010/10/23/1859182.html
@@ -4013,7 +4013,7 @@
 		}
 		if (value.indexOf("(") > 0 && value.indexOf(")") > -1) {
 			var matched = (value.match(rdash) || ["", ""])[1].trim()
-			if (matched === "" || matched === "$event") { // aaa() aaa($event)µ±³Éaaa´¦Àí
+			if (matched === "" || matched === "$event") { // aaa() aaa($event)å½“æˆaaaå¤„ç†
 				value = value.replace(rdash, "")
 			}
 		}
@@ -4055,7 +4055,7 @@
 			var xtype = avalon.type($repeat)
 			if (xtype !== "object" && xtype !== "array") {
 				freturn = true
-				avalon.log("warning:" + data.value + "Ö»ÄÜÊÇ¶ÔÏó»òÊı×é")
+				avalon.log("warning:" + data.value + "åªèƒ½æ˜¯å¯¹è±¡æˆ–æ•°ç»„")
 			}
 		} catch (e) {
 			freturn = true
@@ -4144,7 +4144,7 @@
 			var proxies = data.proxies
 			var transation = hyperspace.cloneNode(false)
 			switch (method) {
-				case "add": //ÔÚposÎ»ÖÃºóÌí¼ÓelÊı×é£¨posÎªÊı×Ö£¬elÎªÊı×é£©
+				case "add": //åœ¨posä½ç½®åæ·»åŠ elæ•°ç»„ï¼ˆposä¸ºæ•°å­—ï¼Œelä¸ºæ•°ç»„ï¼‰
 					var n = pos + el
 					var array = data.$repeat
 					var last = array.length - 1
@@ -4161,7 +4161,7 @@
 						fragment.nodes = fragment.vmodels = null
 					}
 					break
-				case "del": //½«posºóµÄel¸öÔªËØÉ¾µô(pos, el¶¼ÊÇÊı×Ö)
+				case "del": //å°†posåçš„elä¸ªå…ƒç´ åˆ æ‰(pos, eléƒ½æ˜¯æ•°å­—)
 					start = proxies[pos].$stamp
 					end = locateNode(data, pos + el)
 					sweepNodes(start, end)
@@ -4197,7 +4197,7 @@
 					}
 					parent.insertBefore(transation, end)
 					break
-				case "index": //½«proxiesÖĞµÄµÚpos¸öÆğµÄËùÓĞÔªËØÖØĞÂË÷Òı
+				case "index": //å°†proxiesä¸­çš„ç¬¬posä¸ªèµ·çš„æ‰€æœ‰å…ƒç´ é‡æ–°ç´¢å¼•
 					last = proxies.length - 1
 					for (; el = proxies[pos]; pos++) {
 						el.$index = pos
@@ -4205,22 +4205,22 @@
 						el.$last = pos === last
 					}
 					return
-				case "set": //½«proxiesÖĞµÄµÚpos¸öÔªËØµÄVMÉèÖÃÎªel£¨posÎªÊı×Ö£¬elÈÎÒâ£©
+				case "set": //å°†proxiesä¸­çš„ç¬¬posä¸ªå…ƒç´ çš„VMè®¾ç½®ä¸ºelï¼ˆposä¸ºæ•°å­—ï¼Œelä»»æ„ï¼‰
 					proxy = proxies[pos]
 					if (proxy) {
 						notifySubscribers(proxy.$events.$index)
 					}
 					return
-				case "append": //½«posµÄ¼üÖµ¶Ô´ÓelÖĞÈ¡³ö£¨posÎªÒ»¸öÆÕÍ¨¶ÔÏó£¬elÎªÔ¤ÏÈÉú³ÉºÃµÄ´úÀíVM¶ÔÏó³Ø£©
+				case "append": //å°†posçš„é”®å€¼å¯¹ä»elä¸­å–å‡ºï¼ˆposä¸ºä¸€ä¸ªæ™®é€šå¯¹è±¡ï¼Œelä¸ºé¢„å…ˆç”Ÿæˆå¥½çš„ä»£ç†VMå¯¹è±¡æ± ï¼‰
 					var pool = el
 					var keys = []
 					fragments = []
-					for (var key in pos) { //µÃµ½ËùÓĞ¼üÃû
+					for (var key in pos) { //å¾—åˆ°æ‰€æœ‰é”®å
 						if (pos.hasOwnProperty(key) && key !== "hasOwnProperty") {
 							keys.push(key)
 						}
 					}
-					if (data.sortedCallback) { //Èç¹ûÓĞ»Øµ÷£¬ÔòÈÃËüÃÇÅÅĞò
+					if (data.sortedCallback) { //å¦‚æœæœ‰å›è°ƒï¼Œåˆ™è®©å®ƒä»¬æ’åº
 						var keys2 = data.sortedCallback.call(parent, keys)
 						if (keys2 && Array.isArray(keys2) && keys2.length) {
 							keys = keys2
@@ -4293,9 +4293,9 @@
 		}
 	}
 
-// Îªms-each,ms-with, ms-repeat»á´´½¨Ò»¸ö´úÀíVM£¬
-// Í¨¹ıËüÃÇ±£³ÖÒ»¸öÏÂÉÏÎÄ£¬ÈÃÓÃ»§ÄÜµ÷ÓÃ$index,$first,$last,$remove,$key,$val,$outerµÈÊôĞÔÓë·½·¨
-// ËùÓĞ´úÀíVMµÄ²úÉú,Ïû·Ñ,ÊÕ¼¯,´æ·ÅÍ¨¹ıxxxProxyFactory,xxxProxyAgent, recycleProxies,xxxProxyPoolÊµÏÖ
+// ä¸ºms-each,ms-with, ms-repeatä¼šåˆ›å»ºä¸€ä¸ªä»£ç†VMï¼Œ
+// é€šè¿‡å®ƒä»¬ä¿æŒä¸€ä¸ªä¸‹ä¸Šæ–‡ï¼Œè®©ç”¨æˆ·èƒ½è°ƒç”¨$index,$first,$last,$remove,$key,$val,$outerç­‰å±æ€§ä¸æ–¹æ³•
+// æ‰€æœ‰ä»£ç†VMçš„äº§ç”Ÿ,æ¶ˆè´¹,æ”¶é›†,å­˜æ”¾é€šè¿‡xxxProxyFactory,xxxProxyAgent, recycleProxies,xxxProxyPoolå®ç°
 	var eachProxyPool = []
 	var withProxyPool = []
 	function eachProxyFactory(name) {
@@ -4418,18 +4418,18 @@
 
 
 	/*********************************************************************
-	 *                         ¸÷ÖÖÖ¸Áî                                  *
+	 *                         å„ç§æŒ‡ä»¤                                  *
 	 **********************************************************************/
-//ms-skip°ó¶¨ÒÑ¾­ÔÚscanTag ·½·¨ÖĞÊµÏÖ
-// bindingHandlers.text ¶¨ÒåÔÚif.js
+//ms-skipç»‘å®šå·²ç»åœ¨scanTag æ–¹æ³•ä¸­å®ç°
+// bindingHandlers.text å®šä¹‰åœ¨if.js
 	bindingExecutors.text = function(val, elem) {
-		val = val == null ? "" : val //²»ÔÚÒ³ÃæÉÏÏÔÊ¾undefined null
-		if (elem.nodeType === 3) { //°ó¶¨ÔÚÎÄ±¾½ÚµãÉÏ
-			try { //IE¶ÔÓÎÀëÓÚDOMÊ÷ÍâµÄ½Úµã¸³Öµ»á±¨´í
+		val = val == null ? "" : val //ä¸åœ¨é¡µé¢ä¸Šæ˜¾ç¤ºundefined null
+		if (elem.nodeType === 3) { //ç»‘å®šåœ¨æ–‡æœ¬èŠ‚ç‚¹ä¸Š
+			try { //IEå¯¹æ¸¸ç¦»äºDOMæ ‘å¤–çš„èŠ‚ç‚¹èµ‹å€¼ä¼šæŠ¥é”™
 				elem.data = val
 			} catch (e) {
 			}
-		} else { //°ó¶¨ÔÚÌØĞÔ½ÚµãÉÏ
+		} else { //ç»‘å®šåœ¨ç‰¹æ€§èŠ‚ç‚¹ä¸Š
 			if ("textContent" in elem) {
 				elem.textContent = val
 			} else {
@@ -4440,7 +4440,7 @@
 
 
 	function parseDisplay(nodeName, val) {
-		//ÓÃÓÚÈ¡µÃ´ËÀà±êÇ©µÄÄ¬ÈÏdisplayÖµ
+		//ç”¨äºå–å¾—æ­¤ç±»æ ‡ç­¾çš„é»˜è®¤displayå€¼
 		var key = "_" + nodeName
 		if (!parseDisplay[key]) {
 			var node = DOC.createElement(nodeName)
@@ -4486,10 +4486,10 @@
 		var elem = data.element
 		var widget = args[0]
 		var id = args[1]
-		if (!id || id === "$") {//Ã»ÓĞ¶¨Òå»òÎª$Ê±£¬È¡×é¼şÃû+Ëæ»úÊı
+		if (!id || id === "$") {//æ²¡æœ‰å®šä¹‰æˆ–ä¸º$æ—¶ï¼Œå–ç»„ä»¶å+éšæœºæ•°
 			id = generateID(widget)
 		}
-		var optName = args[2] || widget//Ã»ÓĞ¶¨Òå£¬È¡×é¼şÃû
+		var optName = args[2] || widget//æ²¡æœ‰å®šä¹‰ï¼Œå–ç»„ä»¶å
 		var constructor = avalon.ui[widget]
 		if (typeof constructor === "function") { //ms-widget="tabs,tabsAAA,optname"
 			vmodels = elem.vmodels || vmodels
@@ -4506,7 +4506,7 @@
 					id = wid
 				}
 			}
-			//³éÈ¡data-tooltip-text¡¢data-tooltip-attrÊôĞÔ£¬×é³ÉÒ»¸öÅäÖÃ¶ÔÏó
+			//æŠ½å–data-tooltip-textã€data-tooltip-attrå±æ€§ï¼Œç»„æˆä¸€ä¸ªé…ç½®å¯¹è±¡
 			var widgetData = avalon.getWidgetData(elem, widget)
 			data.value = [widget, id, optName].join(",")
 			data[widget + "Id"] = id
@@ -4514,7 +4514,7 @@
 			elem.msData["ms-widget-id"] = id
 			var options = data[widget + "Options"] = avalon.mix({}, constructor.defaults, vmOptions || {}, widgetData)
 			elem.removeAttribute("ms-widget")
-			var vmodel = constructor(elem, data, vmodels) || {} //·ÀÖ¹×é¼ş²»·µ»ØVM
+			var vmodel = constructor(elem, data, vmodels) || {} //é˜²æ­¢ç»„ä»¶ä¸è¿”å›VM
 			if (vmodel.$id) {
 				avalon.vmodels[id] = vmodel
 				createSignalTower(elem, vmodel)
@@ -4544,14 +4544,14 @@
 			} else {
 				avalon.scan(elem, vmodels)
 			}
-		} else if (vmodels.length) { //Èç¹û¸Ã×é¼ş»¹Ã»ÓĞ¼ÓÔØ£¬ÄÇÃ´±£´æµ±Ç°µÄvmodels
+		} else if (vmodels.length) { //å¦‚æœè¯¥ç»„ä»¶è¿˜æ²¡æœ‰åŠ è½½ï¼Œé‚£ä¹ˆä¿å­˜å½“å‰çš„vmodels
 			elem.vmodels = vmodels
 		}
 	}
 	var widgetList = []
-//²»´æÔÚ bindingExecutors.widget
+//ä¸å­˜åœ¨ bindingExecutors.widget
 	/*********************************************************************
-	 *                             ×Ô´ø¹ıÂËÆ÷                            *
+	 *                             è‡ªå¸¦è¿‡æ»¤å™¨                            *
 	 **********************************************************************/
 	var rscripts = /<script[^>]*>([\S\s]*?)<\/script\s*>/gim
 	var ron = /\s+(on[^=\s]+)(?:=("[^"]*"|'[^']*'|[^\s>]+))?/g
@@ -4566,10 +4566,10 @@
 
 	function numberFormat(number, decimals, point, thousands) {
 		//form http://phpjs.org/functions/number_format/
-		//number	±ØĞè£¬Òª¸ñÊ½»¯µÄÊı×Ö
-		//decimals	¿ÉÑ¡£¬¹æ¶¨¶àÉÙ¸öĞ¡ÊıÎ»¡£
-		//point	¿ÉÑ¡£¬¹æ¶¨ÓÃ×÷Ğ¡ÊıµãµÄ×Ö·û´®£¨Ä¬ÈÏÎª . £©¡£
-		//thousands	¿ÉÑ¡£¬¹æ¶¨ÓÃ×÷Ç§Î»·Ö¸ô·ûµÄ×Ö·û´®£¨Ä¬ÈÏÎª , £©£¬Èç¹ûÉèÖÃÁË¸Ã²ÎÊı£¬ÄÇÃ´ËùÓĞÆäËû²ÎÊı¶¼ÊÇ±ØĞèµÄ¡£
+		//number	å¿…éœ€ï¼Œè¦æ ¼å¼åŒ–çš„æ•°å­—
+		//decimals	å¯é€‰ï¼Œè§„å®šå¤šå°‘ä¸ªå°æ•°ä½ã€‚
+		//point	å¯é€‰ï¼Œè§„å®šç”¨ä½œå°æ•°ç‚¹çš„å­—ç¬¦ä¸²ï¼ˆé»˜è®¤ä¸º . ï¼‰ã€‚
+		//thousands	å¯é€‰ï¼Œè§„å®šç”¨ä½œåƒä½åˆ†éš”ç¬¦çš„å­—ç¬¦ä¸²ï¼ˆé»˜è®¤ä¸º , ï¼‰ï¼Œå¦‚æœè®¾ç½®äº†è¯¥å‚æ•°ï¼Œé‚£ä¹ˆæ‰€æœ‰å…¶ä»–å‚æ•°éƒ½æ˜¯å¿…éœ€çš„ã€‚
 		number = (number + '')
 			.replace(/[^0-9+\-Ee.]/g, '')
 		var n = !isFinite(+number) ? 0 : +number,
@@ -4606,7 +4606,7 @@
 			return str.toLowerCase()
 		},
 		truncate: function(str, length, truncation) {
-			//length£¬ĞÂ×Ö·û´®³¤¶È£¬truncation£¬ĞÂ×Ö·û´®µÄ½áÎ²µÄ×Ö¶Î,·µ»ØĞÂ×Ö·û´®
+			//lengthï¼Œæ–°å­—ç¬¦ä¸²é•¿åº¦ï¼Œtruncationï¼Œæ–°å­—ç¬¦ä¸²çš„ç»“å°¾çš„å­—æ®µ,è¿”å›æ–°å­—ç¬¦ä¸²
 			length = length || 30
 			truncation = truncation === void(0) ? "..." : truncation
 			return str.length > length ? str.slice(0, length - truncation.length) + truncation : String(str)
@@ -4632,7 +4632,7 @@
 		sanitize: function(str) {
 			return str.replace(rscripts, "").replace(ropen, function(a, b) {
 				var match = a.toLowerCase().match(/<(\w+)\s/)
-				if (match) { //´¦Àía±êÇ©µÄhrefÊôĞÔ£¬img±êÇ©µÄsrcÊôĞÔ£¬form±êÇ©µÄactionÊôĞÔ
+				if (match) { //å¤„ç†aæ ‡ç­¾çš„hrefå±æ€§ï¼Œimgæ ‡ç­¾çš„srcå±æ€§ï¼Œformæ ‡ç­¾çš„actionå±æ€§
 					var reg = rsanitize[match[1]]
 					if (reg) {
 						a = a.replace(reg, function(s, name, value) {
@@ -4641,11 +4641,11 @@
 						})
 					}
 				}
-				return a.replace(ron, " ").replace(/\s+/g, " ") //ÒÆ³ıonXXXÊÂ¼ş
+				return a.replace(ron, " ").replace(/\s+/g, " ") //ç§»é™¤onXXXäº‹ä»¶
 			})
 		},
 		escape: function(str) {
-			//½«×Ö·û´®¾­¹ı str ×ªÒåµÃµ½ÊÊºÏÔÚÒ³ÃæÖĞÏÔÊ¾µÄÄÚÈİ, ÀıÈçÌæ»» < Îª &lt 
+			//å°†å­—ç¬¦ä¸²ç»è¿‡ str è½¬ä¹‰å¾—åˆ°é€‚åˆåœ¨é¡µé¢ä¸­æ˜¾ç¤ºçš„å†…å®¹, ä¾‹å¦‚æ›¿æ¢ < ä¸º &lt 
 			return String(str).
 				replace(/&/g, '&amp;').
 				replace(rsurrogate, function(value) {
@@ -4742,7 +4742,7 @@
 			paddedZone += padNumber(Math[zone > 0 ? "floor" : "ceil"](zone / 60), 2) + padNumber(Math.abs(zone % 60), 2)
 			return paddedZone
 		}
-		//È¡µÃÉÏÎçÏÂÎç
+		//å–å¾—ä¸Šåˆä¸‹åˆ
 
 		function ampmGetter(date, formats) {
 			return date.getHours() < 12 ? formats.AMPMS[0] : formats.AMPMS[1]
@@ -4789,21 +4789,21 @@
 					var trimDate = date.trim()
 					var dateArray = [0, 0, 0, 0, 0, 0, 0]
 					var oDate = new Date(0)
-					//È¡µÃÄêÔÂÈÕ
+					//å–å¾—å¹´æœˆæ—¥
 					trimDate = trimDate.replace(/^(\d+)\D(\d+)\D(\d+)/, function(_, a, b, c) {
 						var array = c.length === 4 ? [c, a, b] : [a, b, c]
-						dateArray[0] = toInt(array[0])     //Äê
-						dateArray[1] = toInt(array[1]) - 1 //ÔÂ
-						dateArray[2] = toInt(array[2])     //ÈÕ
+						dateArray[0] = toInt(array[0])     //å¹´
+						dateArray[1] = toInt(array[1]) - 1 //æœˆ
+						dateArray[2] = toInt(array[2])     //æ—¥
 						return ""
 					})
 					var dateSetter = oDate.setFullYear
 					var timeSetter = oDate.setHours
 					trimDate = trimDate.replace(/[T\s](\d+):(\d+):?(\d+)?\.?(\d)?/, function(_, a, b, c, d) {
-						dateArray[3] = toInt(a) //Ğ¡Ê±
-						dateArray[4] = toInt(b) //·ÖÖÓ
-						dateArray[5] = toInt(c) //Ãë
-						if (d) {                //ºÁÃë
+						dateArray[3] = toInt(a) //å°æ—¶
+						dateArray[4] = toInt(b) //åˆ†é’Ÿ
+						dateArray[5] = toInt(c) //ç§’
+						if (d) {                //æ¯«ç§’
 							dateArray[6] = Math.round(parseFloat("0." + d) * 1000)
 						}
 						return ""
@@ -4851,43 +4851,43 @@
 		}
 		var locate = {
 			AMPMS: {
-				0: "ÉÏÎç",
-				1: "ÏÂÎç"
+				0: "ä¸Šåˆ",
+				1: "ä¸‹åˆ"
 			},
 			DAY: {
-				0: "ĞÇÆÚÈÕ",
-				1: "ĞÇÆÚÒ»",
-				2: "ĞÇÆÚ¶ş",
-				3: "ĞÇÆÚÈı",
-				4: "ĞÇÆÚËÄ",
-				5: "ĞÇÆÚÎå",
-				6: "ĞÇÆÚÁù"
+				0: "æ˜ŸæœŸæ—¥",
+				1: "æ˜ŸæœŸä¸€",
+				2: "æ˜ŸæœŸäºŒ",
+				3: "æ˜ŸæœŸä¸‰",
+				4: "æ˜ŸæœŸå››",
+				5: "æ˜ŸæœŸäº”",
+				6: "æ˜ŸæœŸå…­"
 			},
 			MONTH: {
-				0: "1ÔÂ",
-				1: "2ÔÂ",
-				2: "3ÔÂ",
-				3: "4ÔÂ",
-				4: "5ÔÂ",
-				5: "6ÔÂ",
-				6: "7ÔÂ",
-				7: "8ÔÂ",
-				8: "9ÔÂ",
-				9: "10ÔÂ",
-				10: "11ÔÂ",
-				11: "12ÔÂ"
+				0: "1æœˆ",
+				1: "2æœˆ",
+				2: "3æœˆ",
+				3: "4æœˆ",
+				4: "5æœˆ",
+				5: "6æœˆ",
+				6: "7æœˆ",
+				7: "8æœˆ",
+				8: "9æœˆ",
+				9: "10æœˆ",
+				10: "11æœˆ",
+				11: "12æœˆ"
 			},
 			SHORTDAY: {
-				"0": "ÖÜÈÕ",
-				"1": "ÖÜÒ»",
-				"2": "ÖÜ¶ş",
-				"3": "ÖÜÈı",
-				"4": "ÖÜËÄ",
-				"5": "ÖÜÎå",
-				"6": "ÖÜÁù"
+				"0": "å‘¨æ—¥",
+				"1": "å‘¨ä¸€",
+				"2": "å‘¨äºŒ",
+				"3": "å‘¨ä¸‰",
+				"4": "å‘¨å››",
+				"5": "å‘¨äº”",
+				"6": "å‘¨å…­"
 			},
-			fullDate: "yÄêMÔÂdÈÕEEEE",
-			longDate: "yÄêMÔÂdÈÕ",
+			fullDate: "yå¹´Mæœˆdæ—¥EEEE",
+			longDate: "yå¹´Mæœˆdæ—¥",
 			medium: "yyyy-M-d H:mm:ss",
 			mediumDate: "yyyy-M-d",
 			mediumTime: "H:mm:ss",
@@ -4899,7 +4899,7 @@
 		filters.date.locate = locate
 	}// jshint ignore:line
 	/*********************************************************************
-	 *                      AMD¼ÓÔØÆ÷                                   *
+	 *                      AMDåŠ è½½å™¨                                   *
 	 **********************************************************************/
 //https://www.devbridge.com/articles/understanding-amd-requirejs/
 //http://maxogden.com/nested-dependencies.html
@@ -4913,36 +4913,36 @@
 			state: 4
 		}
 	}
-//Object(modules[id]).stateÓµÓĞÈçÏÂÖµ 
-// undefined  Ã»ÓĞ¶¨Òå
-// 1(send)    ÒÑ¾­·¢³öÇëÇó
-// 2(loading) ÒÑ¾­±»Ö´ĞĞµ«»¹Ã»ÓĞÖ´ĞĞÍê³É£¬ÔÚÕâ¸ö½×¶Îdefine·½·¨»á±»Ö´ĞĞ
-// 3(loaded)  Ö´ĞĞÍê±Ï£¬Í¨¹ıonload/onreadystatechange»Øµ÷ÅĞ¶¨£¬ÔÚÕâ¸ö½×¶ÎcheckDeps·½·¨»áÖ´ĞĞ
-// 4(execute)  ÆäÒÀÀµÒ²Ö´ĞĞÍê±Ï, Öµ·Åµ½exports¶ÔÏóÉÏ£¬ÔÚÕâ¸ö½×¶ÎfireFactory·½·¨»áÖ´ĞĞ
+//Object(modules[id]).stateæ‹¥æœ‰å¦‚ä¸‹å€¼ 
+// undefined  æ²¡æœ‰å®šä¹‰
+// 1(send)    å·²ç»å‘å‡ºè¯·æ±‚
+// 2(loading) å·²ç»è¢«æ‰§è¡Œä½†è¿˜æ²¡æœ‰æ‰§è¡Œå®Œæˆï¼Œåœ¨è¿™ä¸ªé˜¶æ®µdefineæ–¹æ³•ä¼šè¢«æ‰§è¡Œ
+// 3(loaded)  æ‰§è¡Œå®Œæ¯•ï¼Œé€šè¿‡onload/onreadystatechangeå›è°ƒåˆ¤å®šï¼Œåœ¨è¿™ä¸ªé˜¶æ®µcheckDepsæ–¹æ³•ä¼šæ‰§è¡Œ
+// 4(execute)  å…¶ä¾èµ–ä¹Ÿæ‰§è¡Œå®Œæ¯•, å€¼æ”¾åˆ°exportså¯¹è±¡ä¸Šï¼Œåœ¨è¿™ä¸ªé˜¶æ®µfireFactoryæ–¹æ³•ä¼šæ‰§è¡Œ
 	modules.exports = modules.avalon
 
 	new function () {// jshint ignore:line
-		var loadings = [] //ÕıÔÚ¼ÓÔØÖĞµÄÄ£¿éÁĞ±í
-		var factorys = [] //·ÅÖÃdefine·½·¨µÄfactoryº¯Êı
+		var loadings = [] //æ­£åœ¨åŠ è½½ä¸­çš„æ¨¡å—åˆ—è¡¨
+		var factorys = [] //æ”¾ç½®defineæ–¹æ³•çš„factoryå‡½æ•°
 		var rjsext = /\.js$/i
 		function makeRequest(name, config) {
-//1. È¥µô×ÊÔ´Ç°×º
+//1. å»æ‰èµ„æºå‰ç¼€
 			var res = "js"
 			name = name.replace(/^(\w+)\!/, function (a, b) {
 				res = b
 				return ""
 			})
 			if (res === "ready") {
-				log("debug: ready!ÒÑ¾­±»·ÏÆú£¬ÇëÊ¹ÓÃdomReady!")
+				log("debug: ready!å·²ç»è¢«åºŸå¼ƒï¼Œè¯·ä½¿ç”¨domReady!")
 				res = "domReady"
 			}
-//2. È¥µôquerystring, hash
+//2. å»æ‰querystring, hash
 			var query = ""
 			name = name.replace(rquery, function (a) {
 				query = a
 				return ""
 			})
-			//3. È¥µôÀ©Õ¹Ãû
+			//3. å»æ‰æ‰©å±•å
 			var suffix = "." + res
 			var ext = /js|css/.test(suffix) ? suffix : ""
 			name = name.replace(/\.[a-z0-9]+$/g, function (a) {
@@ -4967,7 +4967,7 @@
 		function fireRequest(req) {
 			var name = req.name
 			var res = req.res
-			//1. Èç¹û¸ÃÄ£¿éÒÑ¾­·¢³öÇëÇó£¬Ö±½Ó·µ»Ø
+			//1. å¦‚æœè¯¥æ¨¡å—å·²ç»å‘å‡ºè¯·æ±‚ï¼Œç›´æ¥è¿”å›
 			var module = modules[name]
 			var urlNoQuery = name && req.urlNoQuery
 			if (module && module.state >= 1) {
@@ -5003,7 +5003,7 @@
 			return name ? urlNoQuery : res + "!"
 		}
 
-//ºËĞÄAPIÖ®Ò» require
+//æ ¸å¿ƒAPIä¹‹ä¸€ require
 		var requireQueue = []
 		var isUserFirstRequire = false
 		innerRequire = avalon.require = function (array, factory, parentUrl, defineConfig) {
@@ -5020,9 +5020,9 @@
 			}
 
 			if (!Array.isArray(array)) {
-				avalon.error("require·½·¨µÄµÚÒ»¸ö²ÎÊıÓ¦ÎªÊı×é " + array)
+				avalon.error("requireæ–¹æ³•çš„ç¬¬ä¸€ä¸ªå‚æ•°åº”ä¸ºæ•°ç»„ " + array)
 			}
-			var deps = [] // ·ÅÖÃËùÓĞÒÀÀµÏîµÄÍêÕûÂ·¾¶
+			var deps = [] // æ”¾ç½®æ‰€æœ‰ä¾èµ–é¡¹çš„å®Œæ•´è·¯å¾„
 			var uniq = {}
 			var id = parentUrl || "callback" + setTimeout("1")// jshint ignore:line
 			defineConfig = defineConfig || {}
@@ -5038,11 +5038,11 @@
 			} else {
 				array.forEach(function (name) {
 					var req = makeRequest(name, defineConfig)
-					var url = fireRequest(req) //¼ÓÔØ×ÊÔ´£¬²¢·µ»Ø¸Ã×ÊÔ´µÄÍêÕûµØÖ·
+					var url = fireRequest(req) //åŠ è½½èµ„æºï¼Œå¹¶è¿”å›è¯¥èµ„æºçš„å®Œæ•´åœ°å€
 					if (url) {
 						if (!uniq[url]) {
 							deps.push(url)
-							uniq[url] = "Ë¾Í½ÕıÃÀ" //È¥ÖØ
+							uniq[url] = "å¸å¾’æ­£ç¾" //å»é‡
 						}
 					}
 				})
@@ -5058,14 +5058,14 @@
 				}
 			}
 			if (!module) {
-				//Èç¹û´ËÄ£¿éÊÇ¶¨ÒåÔÚÁíÒ»¸öJSÎÄ¼şÖĞ, ÄÇ±ØĞëµÈ¸ÃÎÄ¼ş¼ÓÔØÍê±Ï, ²ÅÄÜ·Åµ½¼ì²âÁĞ¶ÓÖĞ
+				//å¦‚æœæ­¤æ¨¡å—æ˜¯å®šä¹‰åœ¨å¦ä¸€ä¸ªJSæ–‡ä»¶ä¸­, é‚£å¿…é¡»ç­‰è¯¥æ–‡ä»¶åŠ è½½å®Œæ¯•, æ‰èƒ½æ”¾åˆ°æ£€æµ‹åˆ—é˜Ÿä¸­
 				loadings.push(id)
 			}
 			checkDeps()
 		}
 
-//ºËĞÄAPIÖ®¶ş require
-		innerRequire.define = function (name, deps, factory) { //Ä£¿éÃû,ÒÀÀµÁĞ±í,Ä£¿é±¾Éí
+//æ ¸å¿ƒAPIä¹‹äºŒ require
+		innerRequire.define = function (name, deps, factory) { //æ¨¡å—å,ä¾èµ–åˆ—è¡¨,æ¨¡å—æœ¬èº«
 			if (typeof name !== "string") {
 				factory = deps
 				deps = name
@@ -5076,7 +5076,7 @@
 				deps = []
 			}
 			var config = {
-				built: !isUserFirstRequire, //ÓÃr.js´ò°üºó,ËùÓĞdefine»á·Åµ½requirejsÖ®Ç°
+				built: !isUserFirstRequire, //ç”¨r.jsæ‰“åŒ…å,æ‰€æœ‰defineä¼šæ”¾åˆ°requirejsä¹‹å‰
 				defineName: name
 			}
 			var args = [deps, factory, config]
@@ -5090,19 +5090,19 @@
 					} catch (e) {
 					}
 					if (isCycle) {
-						avalon.error(url + "Ä£¿éÓëÖ®Ç°µÄÄ£¿é´æÔÚÑ­»·ÒÀÀµ£¬Çë²»ÒªÖ±½ÓÓÃscript±êÇ©ÒıÈë" + url + "Ä£¿é")
+						avalon.error(url + "æ¨¡å—ä¸ä¹‹å‰çš„æ¨¡å—å­˜åœ¨å¾ªç¯ä¾èµ–ï¼Œè¯·ä¸è¦ç›´æ¥ç”¨scriptæ ‡ç­¾å¼•å…¥" + url + "æ¨¡å—")
 					}
 				}
-				delete factory.require //ÊÍ·ÅÄÚ´æ
+				delete factory.require //é‡Šæ”¾å†…å­˜
 				innerRequire.apply(null, args) //0,1,2 --> 1,2,0
 			}
-//¸ù¾İ±ê×¼,ËùÓĞ×ñÑ­W3C±ê×¼µÄä¯ÀÀÆ÷,script±êÇ©»á°´±êÇ©µÄ³öÏÖË³ĞòÖ´ĞĞ¡£
-//ÀÏµÄä¯ÀÀÆ÷ÖĞ£¬¼ÓÔØÒ²ÊÇ°´Ë³ĞòµÄ£ºÒ»¸öÎÄ¼şÏÂÔØÍê³Éºó£¬²Å¿ªÊ¼ÏÂÔØÏÂÒ»¸öÎÄ¼ş¡£
-//½ÏĞÂµÄä¯ÀÀÆ÷ÖĞ£¨IE8+ ¡¢FireFox3.5+ ¡¢Chrome4+ ¡¢Safari4+£©£¬ÎªÁË¼õĞ¡ÇëÇóÊ±¼äÒÔÓÅ»¯ÌåÑé£¬
-//ÏÂÔØ¿ÉÒÔÊÇ²¢ĞĞµÄ£¬µ«ÊÇÖ´ĞĞË³Ğò»¹ÊÇ°´ÕÕ±êÇ©³öÏÖµÄË³Ğò¡£
-//µ«Èç¹ûscript±êÇ©ÊÇ¶¯Ì¬²åÈëµÄ, ¾ÍÎ´±Ø°´ÕÕÏÈÇëÇóÏÈÖ´ĞĞµÄÔ­ÔòÁË,Ä¿²âÖ»ÓĞfirefox×ñÊØ
-//Î¨Ò»±È½ÏÒ»ÖÂµÄÊÇ,IE10+¼°ÆäËû±ê×¼ä¯ÀÀÆ÷,Ò»µ©¿ªÊ¼½âÎö½Å±¾, ¾Í»áÒ»Ö±¶ÂÔÚÄÇÀï,Ö±½Ó½Å±¾½âÎöÍê±Ï
-//Òà¼´£¬ÏÈ½øÈëloading½×¶ÎµÄscript±êÇ©(Ä£¿é)±ØÈ»»áÏÈ½øÈëloaded½×¶Î
+//æ ¹æ®æ ‡å‡†,æ‰€æœ‰éµå¾ªW3Cæ ‡å‡†çš„æµè§ˆå™¨,scriptæ ‡ç­¾ä¼šæŒ‰æ ‡ç­¾çš„å‡ºç°é¡ºåºæ‰§è¡Œã€‚
+//è€çš„æµè§ˆå™¨ä¸­ï¼ŒåŠ è½½ä¹Ÿæ˜¯æŒ‰é¡ºåºçš„ï¼šä¸€ä¸ªæ–‡ä»¶ä¸‹è½½å®Œæˆåï¼Œæ‰å¼€å§‹ä¸‹è½½ä¸‹ä¸€ä¸ªæ–‡ä»¶ã€‚
+//è¾ƒæ–°çš„æµè§ˆå™¨ä¸­ï¼ˆIE8+ ã€FireFox3.5+ ã€Chrome4+ ã€Safari4+ï¼‰ï¼Œä¸ºäº†å‡å°è¯·æ±‚æ—¶é—´ä»¥ä¼˜åŒ–ä½“éªŒï¼Œ
+//ä¸‹è½½å¯ä»¥æ˜¯å¹¶è¡Œçš„ï¼Œä½†æ˜¯æ‰§è¡Œé¡ºåºè¿˜æ˜¯æŒ‰ç…§æ ‡ç­¾å‡ºç°çš„é¡ºåºã€‚
+//ä½†å¦‚æœscriptæ ‡ç­¾æ˜¯åŠ¨æ€æ’å…¥çš„, å°±æœªå¿…æŒ‰ç…§å…ˆè¯·æ±‚å…ˆæ‰§è¡Œçš„åŸåˆ™äº†,ç›®æµ‹åªæœ‰firefoxéµå®ˆ
+//å”¯ä¸€æ¯”è¾ƒä¸€è‡´çš„æ˜¯,IE10+åŠå…¶ä»–æ ‡å‡†æµè§ˆå™¨,ä¸€æ—¦å¼€å§‹è§£æè„šæœ¬, å°±ä¼šä¸€ç›´å µåœ¨é‚£é‡Œ,ç›´æ¥è„šæœ¬è§£æå®Œæ¯•
+//äº¦å³ï¼Œå…ˆè¿›å…¥loadingé˜¶æ®µçš„scriptæ ‡ç­¾(æ¨¡å—)å¿…ç„¶ä¼šå…ˆè¿›å…¥loadedé˜¶æ®µ
 			var url = config.built ? "unknown" : getCurrentScript()
 			if (url) {
 				var module = modules[url]
@@ -5110,16 +5110,16 @@
 					module.state = 2
 				}
 				factory.require(url)
-			} else {//ºÏ²¢Ç°ºóµÄsafari£¬ºÏ²¢ºóµÄIE6-9×ß´Ë·ÖÖ§
+			} else {//åˆå¹¶å‰åçš„safariï¼Œåˆå¹¶åçš„IE6-9èµ°æ­¤åˆ†æ”¯
 				factorys.push(factory)
 			}
 		}
-//ºËĞÄAPIÖ®Èı require.config(settings)
+//æ ¸å¿ƒAPIä¹‹ä¸‰ require.config(settings)
 		innerRequire.config = kernel
-		//ºËĞÄAPIÖ®ËÄ define.amd ±êÊ¶Æä·ûºÏAMD¹æ·¶
+		//æ ¸å¿ƒAPIä¹‹å›› define.amd æ ‡è¯†å…¶ç¬¦åˆAMDè§„èŒƒ
 		innerRequire.define.amd = modules
 
-		//==========================¶ÔÓÃ»§ÅäÖÃÏî½øĞĞÔÙ¼Ó¹¤==========================
+		//==========================å¯¹ç”¨æˆ·é…ç½®é¡¹è¿›è¡Œå†åŠ å·¥==========================
 		var allpaths = kernel["orig.paths"] = {}
 		var allmaps = kernel["orig.map"] = {}
 		var allpackages = kernel["packages"] = []
@@ -5195,9 +5195,9 @@
 		})
 
 
-		//==============================ÄÚ²¿·½·¨=================================
+		//==============================å†…éƒ¨æ–¹æ³•=================================
 		function checkCycle(deps, nick) {
-			//¼ì²âÊÇ·ñ´æÔÚÑ­»·ÒÀÀµ
+			//æ£€æµ‹æ˜¯å¦å­˜åœ¨å¾ªç¯ä¾èµ–
 			for (var i = 0, id; id = deps[i++]; ) {
 				if (modules[id].state !== 4 &&
 					(id === nick || checkCycle(modules[id].deps, nick))) {
@@ -5207,21 +5207,21 @@
 		}
 
 		function checkFail(node, onError, fuckIE) {
-			var id = trimQuery(node.src) //¼ì²âÊÇ·ñËÀÁ´
+			var id = trimQuery(node.src) //æ£€æµ‹æ˜¯å¦æ­»é“¾
 			node.onload = node.onreadystatechange = node.onerror = null
 			if (onError || (fuckIE && modules[id] && !modules[id].state)) {
 				setTimeout(function () {
 					head.removeChild(node)
-					node = null // ´¦Àí¾ÉÊ½IEÏÂµÄÑ­»·ÒıÓÃÎÊÌâ
+					node = null // å¤„ç†æ—§å¼IEä¸‹çš„å¾ªç¯å¼•ç”¨é—®é¢˜
 				})
-				log("debug: ¼ÓÔØ " + id + " Ê§°Ü" + onError + " " + (!modules[id].state))
+				log("debug: åŠ è½½ " + id + " å¤±è´¥" + onError + " " + (!modules[id].state))
 			} else {
 				return true
 			}
 		}
 
 		function checkDeps() {
-			//¼ì²â´ËJSÄ£¿éµÄÒÀÀµÊÇ·ñ¶¼ÒÑ°²×°Íê±Ï,ÊÇÔò°²×°×ÔÉí
+			//æ£€æµ‹æ­¤JSæ¨¡å—çš„ä¾èµ–æ˜¯å¦éƒ½å·²å®‰è£…å®Œæ¯•,æ˜¯åˆ™å®‰è£…è‡ªèº«
 			loop: for (var i = loadings.length, id; id = loadings[--i]; ) {
 				var obj = modules[id],
 					deps = obj.deps
@@ -5232,20 +5232,20 @@
 						continue loop
 					}
 				}
-				//Èç¹ûdepsÊÇ¿Õ¶ÔÏó»òÕßÆäÒÀÀµµÄÄ£¿éµÄ×´Ì¬¶¼ÊÇ2
+				//å¦‚æœdepsæ˜¯ç©ºå¯¹è±¡æˆ–è€…å…¶ä¾èµ–çš„æ¨¡å—çš„çŠ¶æ€éƒ½æ˜¯2
 				if (obj.state !== 4) {
-					loadings.splice(i, 1) //±ØĞëÏÈÒÆ³ıÔÙ°²×°£¬·ÀÖ¹ÔÚIEÏÂDOMÊ÷½¨ÍêºóÊÖ¶¯Ë¢ĞÂÒ³Ãæ£¬»á¶à´ÎÖ´ĞĞËü
+					loadings.splice(i, 1) //å¿…é¡»å…ˆç§»é™¤å†å®‰è£…ï¼Œé˜²æ­¢åœ¨IEä¸‹DOMæ ‘å»ºå®Œåæ‰‹åŠ¨åˆ·æ–°é¡µé¢ï¼Œä¼šå¤šæ¬¡æ‰§è¡Œå®ƒ
 					fireFactory(obj.id, obj.deps, obj.factory)
-					checkDeps() //Èç¹û³É¹¦,ÔòÔÙÖ´ĞĞÒ»´Î,ÒÔ·ÀÓĞĞ©Ä£¿é¾Í²î±¾Ä£¿éÃ»ÓĞ°²×°ºÃ
+					checkDeps() //å¦‚æœæˆåŠŸ,åˆ™å†æ‰§è¡Œä¸€æ¬¡,ä»¥é˜²æœ‰äº›æ¨¡å—å°±å·®æœ¬æ¨¡å—æ²¡æœ‰å®‰è£…å¥½
 				}
 			}
 		}
 
 		var rreadyState = DOC.documentMode >= 8 ? /loaded/ : /complete|loaded/
 		function loadJS(url, id, callback) {
-			//Í¨¹ıscript½Úµã¼ÓÔØÄ¿±êÄ£¿é
+			//é€šè¿‡scriptèŠ‚ç‚¹åŠ è½½ç›®æ ‡æ¨¡å—
 			var node = DOC.createElement("script")
-			node.className = subscribers //ÈÃgetCurrentScriptÖ»´¦ÀíÀàÃûÎªsubscribersµÄscript½Úµã
+			node.className = subscribers //è®©getCurrentScriptåªå¤„ç†ç±»åä¸ºsubscribersçš„scriptèŠ‚ç‚¹
 			var timeID
 			var supportLoad = "onload" in node
 			var onEvent = supportLoad ? "onload" : "onreadystatechange"
@@ -5261,7 +5261,7 @@
 						callback()
 					}
 					if (checkFail(node, false, !supportLoad)) {
-						log("debug: ÒÑ³É¹¦¼ÓÔØ " + url)
+						log("debug: å·²æˆåŠŸåŠ è½½ " + url)
 						id && loadings.push(id)
 						checkDeps()
 					}
@@ -5272,13 +5272,13 @@
 				checkFail(node, true)
 			}
 
-			head.insertBefore(node, head.firstChild) //chromeÏÂµÚ¶ş¸ö²ÎÊı²»ÄÜÎªnull
-			node.src = url //²åÈëµ½headµÄµÚÒ»¸ö½ÚµãÇ°£¬·ÀÖ¹IE6ÏÂhead±êÇ©Ã»±ÕºÏÇ°Ê¹ÓÃappendChildÅ×´í
-			log("debug: Õı×¼±¸¼ÓÔØ " + url) //¸üÖØÒªµÄÊÇIE6ÏÂ¿ÉÒÔÊÕÕ­getCurrentScriptµÄÑ°ÕÒ·¶Î§
+			head.insertBefore(node, head.firstChild) //chromeä¸‹ç¬¬äºŒä¸ªå‚æ•°ä¸èƒ½ä¸ºnull
+			node.src = url //æ’å…¥åˆ°headçš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹å‰ï¼Œé˜²æ­¢IE6ä¸‹headæ ‡ç­¾æ²¡é—­åˆå‰ä½¿ç”¨appendChildæŠ›é”™
+			log("debug: æ­£å‡†å¤‡åŠ è½½ " + url) //æ›´é‡è¦çš„æ˜¯IE6ä¸‹å¯ä»¥æ”¶çª„getCurrentScriptçš„å¯»æ‰¾èŒƒå›´
 		}
 
 		var resources = innerRequire.plugins = {
-			//Èı´ó³£ÓÃ×ÊÔ´²å¼ş js!, css!, text!, ready!
+			//ä¸‰å¤§å¸¸ç”¨èµ„æºæ’ä»¶ js!, css!, text!, ready!
 			ready: {
 				load: noop
 			},
@@ -5287,7 +5287,7 @@
 					var url = req.url
 					var id = req.urlNoQuery
 					var shim = kernel.shim[name.replace(rjsext, "")]
-					if (shim) { //shim»úÖÆ
+					if (shim) { //shimæœºåˆ¶
 						innerRequire(shim.deps || [], function () {
 							var args = avalon.slice(arguments)
 							loadJS(url, id, function () {
@@ -5306,7 +5306,7 @@
 					node.rel = "stylesheet"
 					node.href = url
 					head.insertBefore(node, head.firstChild)
-					log("debug: ÒÑ³É¹¦¼ÓÔØ " + url)
+					log("debug: å·²æˆåŠŸåŠ è½½ " + url)
 					onLoad()
 				}
 			},
@@ -5318,20 +5318,20 @@
 						if (xhr.readyState === 4) {
 							var status = xhr.status;
 							if (status > 399 && status < 600) {
-								avalon.error(url + " ¶ÔÓ¦×ÊÔ´²»´æÔÚ»òÃ»ÓĞ¿ªÆô CORS")
+								avalon.error(url + " å¯¹åº”èµ„æºä¸å­˜åœ¨æˆ–æ²¡æœ‰å¼€å¯ CORS")
 							} else {
-								log("debug: ÒÑ³É¹¦¼ÓÔØ " + url)
+								log("debug: å·²æˆåŠŸåŠ è½½ " + url)
 								onLoad(xhr.responseText)
 							}
 						}
 					}
 					xhr.open("GET", url, true)
-					if ("withCredentials" in xhr) {//ÕâÊÇ´¦Àí¿çÓò
+					if ("withCredentials" in xhr) {//è¿™æ˜¯å¤„ç†è·¨åŸŸ
 						xhr.withCredentials = true
 					}
-					xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest")//¸æËßºó¶ËÕâÊÇAJAXÇëÇó
+					xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest")//å‘Šè¯‰åç«¯è¿™æ˜¯AJAXè¯·æ±‚
 					xhr.send()
-					log("debug: Õı×¼±¸¼ÓÔØ " + url)
+					log("debug: æ­£å‡†å¤‡åŠ è½½ " + url)
 				}
 			}
 		}
@@ -5355,16 +5355,16 @@
 			// inspireb by https://github.com/samyk/jiagra/blob/master/jiagra.js
 			var stack
 			try {
-				a.b.c() //Ç¿ÖÆ±¨´í,ÒÔ±ã²¶»ñe.stack
-			} catch (e) { //safari5µÄsourceURL£¬firefoxµÄfileName£¬ËüÃÇµÄĞ§¹ûÓëe.stack²»Ò»Ñù
+				a.b.c() //å¼ºåˆ¶æŠ¥é”™,ä»¥ä¾¿æ•è·e.stack
+			} catch (e) { //safari5çš„sourceURLï¼Œfirefoxçš„fileNameï¼Œå®ƒä»¬çš„æ•ˆæœä¸e.stackä¸ä¸€æ ·
 				stack = e.stack
 				if (!stack && window.opera) {
-					//opera 9Ã»ÓĞe.stack,µ«ÓĞe.Backtrace,µ«²»ÄÜÖ±½ÓÈ¡µÃ,ĞèÒª¶Ôe¶ÔÏó×ª×Ö·û´®½øĞĞ³éÈ¡
+					//opera 9æ²¡æœ‰e.stack,ä½†æœ‰e.Backtrace,ä½†ä¸èƒ½ç›´æ¥å–å¾—,éœ€è¦å¯¹eå¯¹è±¡è½¬å­—ç¬¦ä¸²è¿›è¡ŒæŠ½å–
 					stack = (String(e).match(/of linked script \S+/g) || []).join(" ")
 				}
 			}
 			if (stack) {
-				/**e.stack×îºóÒ»ĞĞÔÚËùÓĞÖ§³ÖµÄä¯ÀÀÆ÷´óÖÂÈçÏÂ:
+				/**e.stackæœ€åä¸€è¡Œåœ¨æ‰€æœ‰æ”¯æŒçš„æµè§ˆå™¨å¤§è‡´å¦‚ä¸‹:
 				 *chrome23:
 				 * at http://113.93.50.63/data.js:4:1
 				 *firefox17:
@@ -5373,13 +5373,13 @@
 				 *@http://113.93.50.63/data.js:4
 				 *IE10:
 				 *  at Global code (http://113.93.50.63/data.js:4:1)
-				 *  //firefox4+ ¿ÉÒÔÓÃdocument.currentScript
+				 *  //firefox4+ å¯ä»¥ç”¨document.currentScript
 				 */
-				stack = stack.split(/[@ ]/g).pop() //È¡µÃ×îºóÒ»ĞĞ,×îºóÒ»¸ö¿Õ¸ñ»ò@Ö®ºóµÄ²¿·Ö
-				stack = stack[0] === "(" ? stack.slice(1, -1) : stack.replace(/\s/, "") //È¥µô»»ĞĞ·û
-				return trimQuery(stack.replace(/(:\d+)?:\d+$/i, "")) //È¥µôĞĞºÅÓë»òĞí´æÔÚµÄ³ö´í×Ö·ûÆğÊ¼Î»ÖÃ
+				stack = stack.split(/[@ ]/g).pop() //å–å¾—æœ€åä¸€è¡Œ,æœ€åä¸€ä¸ªç©ºæ ¼æˆ–@ä¹‹åçš„éƒ¨åˆ†
+				stack = stack[0] === "(" ? stack.slice(1, -1) : stack.replace(/\s/, "") //å»æ‰æ¢è¡Œç¬¦
+				return trimQuery(stack.replace(/(:\d+)?:\d+$/i, "")) //å»æ‰è¡Œå·ä¸æˆ–è®¸å­˜åœ¨çš„å‡ºé”™å­—ç¬¦èµ·å§‹ä½ç½®
 			}
-			var nodes = head.getElementsByTagName("script") //Ö»ÔÚhead±êÇ©ÖĞÑ°ÕÒ
+			var nodes = head.getElementsByTagName("script") //åªåœ¨headæ ‡ç­¾ä¸­å¯»æ‰¾
 			for (var i = nodes.length, node; node = nodes[--i]; ) {
 				if (node.className === subscribers && node.readyState === "interactive") {
 					var url = getFullUrl(node, "src")
@@ -5403,7 +5403,7 @@
 			try {
 				var ret = factory.apply(window, array)
 			} catch (e) {
-				log("Ö´ĞĞ["+id+"]Ä£¿éµÄfactoryÅ×´í£º "+ e)
+				log("æ‰§è¡Œ["+id+"]æ¨¡å—çš„factoryæŠ›é”™ï¼š "+ e)
 			}
 			if (ret !== void 0) {
 				module.exports = ret
@@ -5416,10 +5416,10 @@
 		}
 		function toUrl(id) {
 			if (id.indexOf(this.res + "!") === 0) {
-				id = id.slice(this.res.length + 1) //´¦Àídefine("css!style",[], function(){})µÄÇé¿ö
+				id = id.slice(this.res.length + 1) //å¤„ç†define("css!style",[], function(){})çš„æƒ…å†µ
 			}
 			var url = id
-			//1. ÊÇ·ñÃüÖĞpathsÅäÖÃÏî
+			//1. æ˜¯å¦å‘½ä¸­pathsé…ç½®é¡¹
 			var usePath = 0
 			var baseUrl = this.baseUrl
 			var rootUrl = this.parentUrl || baseUrl
@@ -5427,13 +5427,13 @@
 				url = url.replace(key, value)
 				usePath = 1
 			})
-			//2. ÊÇ·ñÃüÖĞpackagesÅäÖÃÏî
+			//2. æ˜¯å¦å‘½ä¸­packagesé…ç½®é¡¹
 			if (!usePath) {
 				eachIndexArray(id, kernel.packages, function (value, key, item) {
 					url = url.replace(item.name, item.location)
 				})
 			}
-			//3. ÊÇ·ñÃüÖĞmapÅäÖÃÏî
+			//3. æ˜¯å¦å‘½ä¸­mapé…ç½®é¡¹
 			if (this.mapUrl) {
 				eachIndexArray(this.mapUrl, kernel.map, function (array) {
 					eachIndexArray(url, array, function (mdValue, mdKey) {
@@ -5446,15 +5446,15 @@
 			if (ext && usePath && url.slice(-ext.length) === ext) {
 				url = url.slice(0, -ext.length)
 			}
-			//4. ×ª»»Îª¾ø¶ÔÂ·¾¶
+			//4. è½¬æ¢ä¸ºç»å¯¹è·¯å¾„
 			if (!isAbsUrl(url)) {
 				rootUrl = this.built || /^\w/.test(url) ? baseUrl : rootUrl
 				url = joinPath(rootUrl, url)
 			}
-			//5. »¹Ô­À©Õ¹Ãû£¬query
+			//5. è¿˜åŸæ‰©å±•åï¼Œquery
 			var urlNoQuery = url + ext
 			url = urlNoQuery + this.query
-			//6. ´¦ÀíurlArgs
+			//6. å¤„ç†urlArgs
 			eachIndexArray(id, kernel.urlArgs, function (value) {
 				url += (url.indexOf("?") === -1 ? "?" : "&") + value;
 			})
@@ -5463,7 +5463,7 @@
 		}
 
 		function makeIndexArray(hash, useStar, part) {
-			//´´½¨Ò»¸ö¾­¹ıÌØÊâËã·¨ÅÅºÃĞòµÄÊı×é
+			//åˆ›å»ºä¸€ä¸ªç»è¿‡ç‰¹æ®Šç®—æ³•æ’å¥½åºçš„æ•°ç»„
 			var index = hash2array(hash, useStar, part)
 			index.sort(descSorterByName)
 			return index
@@ -5511,7 +5511,7 @@
 				}
 			}
 		}
-		// ¸ù¾İÔªËØµÄnameÏî½øĞĞÊı×é×Ö·ûÊıÄæĞòµÄÅÅĞòº¯Êı
+		// æ ¹æ®å…ƒç´ çš„nameé¡¹è¿›è¡Œæ•°ç»„å­—ç¬¦æ•°é€†åºçš„æ’åºå‡½æ•°
 		function descSorterByName(a, b) {
 			var aaa = a.name
 			var bbb = b.name
@@ -5529,10 +5529,10 @@
 			if (a.charAt(a.length - 1) !== "/") {
 				a += "/"
 			}
-			if (b.slice(0, 2) === "./") { //Ïà¶ÔÓÚĞÖµÜÂ·¾¶
+			if (b.slice(0, 2) === "./") { //ç›¸å¯¹äºå…„å¼Ÿè·¯å¾„
 				return a + b.slice(2)
 			}
-			if (b.slice(0, 2) === "..") { //Ïà¶ÔÓÚ¸¸Â·¾¶
+			if (b.slice(0, 2) === "..") { //ç›¸å¯¹äºçˆ¶è·¯å¾„
 				a += b
 				while (rdeuce.test(a)) {
 					a = a.replace(rdeuce, "")
@@ -5586,7 +5586,7 @@
 	}
 
 	function doScrollCheck() {
-		try { //IEÏÂÍ¨¹ıdoScrollCheck¼ì²âDOMÊ÷ÊÇ·ñ½¨Íê
+		try { //IEä¸‹é€šè¿‡doScrollCheckæ£€æµ‹DOMæ ‘æ˜¯å¦å»ºå®Œ
 			root.doScroll("left")
 			fireReady()
 		} catch (e) {
@@ -5595,7 +5595,7 @@
 	}
 
 	if (DOC.readyState === "complete") {
-		setTimeout(fireReady) //Èç¹ûÔÚdomReadyÖ®Íâ¼ÓÔØ
+		setTimeout(fireReady) //å¦‚æœåœ¨domReadyä¹‹å¤–åŠ è½½
 	} else if (W3C) {
 		DOC.addEventListener("DOMContentLoaded", fireReady)
 	} else {

@@ -1,79 +1,79 @@
-# PHP¿ò¼ÜLaravelÑ§Ï°Ö¸µ¼
+# PHPæ¡†æ¶Laravelå­¦ä¹ æŒ‡å¯¼
 
-## 1. °²×°
+## 1. å®‰è£…
 
-### 1. °²×°Composer
+### 1. å®‰è£…Composer
 
-* WindowsÏÂÓĞ°²×°°ü£º<https://getcomposer.org/Composer-Setup.exe>	
-* LinuxÖ®ÀàµÄÓÃ:
+* Windowsä¸‹æœ‰å®‰è£…åŒ…ï¼š<https://getcomposer.org/Composer-Setup.exe>	
+* Linuxä¹‹ç±»çš„ç”¨:
 	> curl -sS https://getcomposer.org/installer | php
-* LinuxÏÂÈ«¾Ö°²×°ÓÃ:
+* Linuxä¸‹å…¨å±€å®‰è£…ç”¨:
 	> curl -sS https://getcomposer.org/installer | php  
 	> mv composer.phar /usr/local/bin/composer  
 
-### 2. ÓÃcomposerÃüÁî°²×°
+### 2. ç”¨composerå‘½ä»¤å®‰è£…
 	`composer global require "laravel/installer=~1.1"`
 	
-### 3. ·şÎñÆ÷»·¾³ÒªÇó
+### 3. æœåŠ¡å™¨ç¯å¢ƒè¦æ±‚
 	* PHP >= 5.4
 	* Mcrypt PHP Extension
 	* OpenSSL PHP Extension
 	* Mbstring PHP Extension
  
-**PS:PHP 5.5µÄ»°£¬Çë°²×°json¿â£º**`apt-get install php5-json`
+**PS:PHP 5.5çš„è¯ï¼Œè¯·å®‰è£…jsonåº“ï¼š**`apt-get install php5-json`
 
 
-## 2. ¼òµ¥µÄÊ¹ÓÃ
+## 2. ç®€å•çš„ä½¿ç”¨
 
-* È»ºólaravel new <ÏîÄ¿Ä¿Â¼Ãû³Æ>¾Í¿ÉÒÔĞÂ½¨Ò»¸öÏîÄ¿ÁË
-* ½øÈëÏîÄ¿ºó£¬ÔËĞĞ£ºphp artisan serve ¾Í¿ÉÒÔÓÃPHPÄÚ½¨µÄWEB·şÎñÆ÷´ò¿ªÄ¬ÈÏÒ³Ãæ
+* ç„¶ålaravel new <é¡¹ç›®ç›®å½•åç§°>å°±å¯ä»¥æ–°å»ºä¸€ä¸ªé¡¹ç›®äº†
+* è¿›å…¥é¡¹ç›®åï¼Œè¿è¡Œï¼šphp artisan serve å°±å¯ä»¥ç”¨PHPå†…å»ºçš„WEBæœåŠ¡å™¨æ‰“å¼€é»˜è®¤é¡µé¢
 
-* Ö÷ÒªÎÄ¼şÄ¿Â¼Î»ÖÃ£º
-	> ¿ØÖÆÆ÷ÔÚ£ºapp/Http/Controllers/*  
-	> Â·ÓÉÆ÷ÔÚ£ºapp/Http/routes.php  
-	> ÊÓÍ¼Î»ÓÚ£ºresources/views/*  
-	> ÅäÖÃÎÄ¼ş£ºconfig/*  
+* ä¸»è¦æ–‡ä»¶ç›®å½•ä½ç½®ï¼š
+	> æ§åˆ¶å™¨åœ¨ï¼šapp/Http/Controllers/*  
+	> è·¯ç”±å™¨åœ¨ï¼šapp/Http/routes.php  
+	> è§†å›¾ä½äºï¼šresources/views/*  
+	> é…ç½®æ–‡ä»¶ï¼šconfig/*  
 
-* ¿ØÖÆÆ÷Óï·¨£º
+* æ§åˆ¶å™¨è¯­æ³•ï¼š
 	> Route::get('test','TestController@index');
-	> Route::getÊÇ¹Ì¶¨µÄ£¬±íÊ¾ÓÃget·½Ê½£¨²Â²â£©
-	> testÊÇurlÖĞµÄµØÖ·
-	> TestController@index£º±íÊ¾ÓÃTestControllerÀàÖĞµÄindex·½·¨´¦ÀíÕâ¸öÇëÇó
+	> Route::getæ˜¯å›ºå®šçš„ï¼Œè¡¨ç¤ºç”¨getæ–¹å¼ï¼ˆçŒœæµ‹ï¼‰
+	> testæ˜¯urlä¸­çš„åœ°å€
+	> TestController@indexï¼šè¡¨ç¤ºç”¨TestControllerç±»ä¸­çš„indexæ–¹æ³•å¤„ç†è¿™ä¸ªè¯·æ±‚
 
-* ±íµ¥µÄÎÊÌâ£º
-* ÒòÎªÔÚLaravel5ÖĞ£¬HtmlºÍFormÒÑ¾­²»ÊÇºËĞÄ×é¼ş±»ÒÆ³ıÁË£¬ËùÒÔĞèÒªÊÖ¹¤Ìí¼Ó£º
-	1. ÔÚcomposer.jsonÖĞµÄrequirement×Ö¶ÎÖĞÔö¼Ó:`"illuminate/html": "~5.0"`
-	2. Ö´ĞĞComposer update¸üĞÂ
-	3. ÔÚconfig/app.phpÖĞÊ×ÏÈÔÚproviderÊı×éÖĞ¼ÓÈë:`'Illuminate\Html\HtmlServiceProvider'`
-	4. È»ºóÔÙaliasesÊı×éÖĞ¼ÓÈëÏÂÃæÁ½ĞĞ£º
+* è¡¨å•çš„é—®é¢˜ï¼š
+* å› ä¸ºåœ¨Laravel5ä¸­ï¼ŒHtmlå’ŒFormå·²ç»ä¸æ˜¯æ ¸å¿ƒç»„ä»¶è¢«ç§»é™¤äº†ï¼Œæ‰€ä»¥éœ€è¦æ‰‹å·¥æ·»åŠ ï¼š
+	1. åœ¨composer.jsonä¸­çš„requirementå­—æ®µä¸­å¢åŠ :`"illuminate/html": "~5.0"`
+	2. æ‰§è¡ŒComposer updateæ›´æ–°
+	3. åœ¨config/app.phpä¸­é¦–å…ˆåœ¨provideræ•°ç»„ä¸­åŠ å…¥:`'Illuminate\Html\HtmlServiceProvider'`
+	4. ç„¶åå†aliasesæ•°ç»„ä¸­åŠ å…¥ä¸‹é¢ä¸¤è¡Œï¼š
 		> 'Form'=> 'Illuminate\Html\FormFacade',  
 		> 'HTML'=> 'Illuminate\Html\HtmlFacade',  
-	5. ÁíÍâ£¬ÏÖÔÚ±êÇ©µÄ¸ñÊ½±ä³ÉÁË{!!Form:text('name')!!}µÄĞÎÊ½£¬ÒÔÇ°µÄ{{}}½«Êä³öRAW×Ö·û´®£¨Ò²¿ÉÒÔecho {{}}½â¾öÕâ¸öÎÊÌâ£©¡£
-	6. ĞÂ½¨¿ØÖÆÆ÷µÄÎÊÌâ£ºÒòÎªÓï·¨±ä¶¯£¬ËùÒÔĞèÒªÓÃ `php artisan make:controller <¿ØÖÆÆ÷Ãû³Æ>` À´ĞÂ½¨ÁË
+	5. å¦å¤–ï¼Œç°åœ¨æ ‡ç­¾çš„æ ¼å¼å˜æˆäº†{!!Form:text('name')!!}çš„å½¢å¼ï¼Œä»¥å‰çš„{{}}å°†è¾“å‡ºRAWå­—ç¬¦ä¸²ï¼ˆä¹Ÿå¯ä»¥echo {{}}è§£å†³è¿™ä¸ªé—®é¢˜ï¼‰ã€‚
+	6. æ–°å»ºæ§åˆ¶å™¨çš„é—®é¢˜ï¼šå› ä¸ºè¯­æ³•å˜åŠ¨ï¼Œæ‰€ä»¥éœ€è¦ç”¨ `php artisan make:controller <æ§åˆ¶å™¨åç§°>` æ¥æ–°å»ºäº†
 	
 
-* ¶ÁÈ¡±íµ¥Ìá½»±äÁ¿±¨´í£º
-	> Ô­À´ÊÇ£º
+* è¯»å–è¡¨å•æäº¤å˜é‡æŠ¥é”™ï¼š
+	> åŸæ¥æ˜¯ï¼š
 	Use Illuminate\Http\Request;
-	ÇëĞŞ¸Ä³É;
+	è¯·ä¿®æ”¹æˆ;
 	Use Request;
-	ÒòÎªÏÖÔÚapp.phpÖĞµÄ¶¨ÒåÊÇ£º
+	å› ä¸ºç°åœ¨app.phpä¸­çš„å®šä¹‰æ˜¯ï¼š
 	'Request'=>'Illuminate\Support\Facades\Request',
 	
-	> Ô­À´ÊÇ£ºInput::all();
-	ÏÖÔÚÊÇ£ºRequest::all();
+	> åŸæ¥æ˜¯ï¼šInput::all();
+	ç°åœ¨æ˜¯ï¼šRequest::all();
 	
-	> ÁĞ³öµ±Ç°Â·ÓÉ£º
+	> åˆ—å‡ºå½“å‰è·¯ç”±ï¼š
 	php artisan route:list
 
 
-½ñÌì¿´µ½£º
-5.3 ´´½¨ÎÄÕÂ
+ä»Šå¤©çœ‹åˆ°ï¼š
+5.3 åˆ›å»ºæ–‡ç« 
 
-À´×Ô <https://github.com/huanghua581/laravel-getting-started/blob/master/4.2.md> 
+æ¥è‡ª <https://github.com/huanghua581/laravel-getting-started/blob/master/4.2.md> 
 
 
-½ñÌì¿ªÊ¼ÀÏ°æ±¾µÄ°²×°
+ä»Šå¤©å¼€å§‹è€ç‰ˆæœ¬çš„å®‰è£…
 composer create-project laravel/laravel=4.1.27 your-project-name --prefer-dist
-Ö¸¶¨°²×°°æ±¾ĞèÒªÕâÑù²Ù×÷
+æŒ‡å®šå®‰è£…ç‰ˆæœ¬éœ€è¦è¿™æ ·æ“ä½œ
 

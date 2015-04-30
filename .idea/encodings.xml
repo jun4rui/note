@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/CSS3.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Ionic.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Javascript_regex.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Laravel.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Nodejs.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/README.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TODO.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/avalon源码解析.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/django.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oh-my-zsh.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/temp.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/前端小玩意.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/淘宝技术这十年.md" charset="UTF-8" />
   </component>
 </project>

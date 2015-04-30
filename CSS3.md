@@ -1,3 +1,3 @@
-# CSS3 动画学习笔记
+# CSS3 鍔ㄧ敾瀛︿範绗旇
 
-1. 首先，动画要创建起来，用@keyframes规则，而webkit系列浏览器（Chrome，Safari等）需要用@-webkit-keyframes命令
+1. 棣栧厛锛屽姩鐢昏鍒涘缓璧锋潵锛岀敤@keyframes瑙勫垯锛岃�寃ebkit绯诲垪娴忚鍣紙Chrome锛孲afari绛夛級闇�瑕佺敤@-webkit-keyframes鍛戒护
