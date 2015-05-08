@@ -1,8 +1,8 @@
-// Éú³ÉGUID/UUIDµÄº¯Êý
+// ç”ŸæˆGUID/UUIDçš„å‡½æ•°
 function guid() {
-	//º¯Êý°üº¬ÔÚº¯ÊýÄÚ£¬ÕâÑùs4µÄÃüÃû¿Õ¼ä¾ÍÔÚº¯ÊýÄÚ²¿£¬²»»áºÍº¯ÊýÍâÍ¬ÃûµÄº¯Êý³åÍ»
+	//å‡½æ•°åŒ…å«åœ¨å‡½æ•°å†…ï¼Œè¿™æ ·s4çš„å‘½åç©ºé—´å°±åœ¨å‡½æ•°å†…éƒ¨ï¼Œä¸ä¼šå’Œå‡½æ•°å¤–åŒåçš„å‡½æ•°å†²çª
 	function s4() {
-		// Math.floor: »ñµÃÐ¡ÓÚ»òÕßµÈÓÚ²ÎÊýµÄÕûÊý
+		// Math.floor: èŽ·å¾—å°äºŽæˆ–è€…ç­‰äºŽå‚æ•°çš„æ•´æ•°
 		return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 	}
 
