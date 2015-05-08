@@ -1,10 +1,19 @@
-/**
- * Created by cao on 2015/4/8.
- */
+// 生成GUID/UUID的函数
+function guid() {
+	//函数包含在函数内，这样s4的命名空间就在函数内部，不会和函数外同名的函数冲突
+	function s4() {
+		// Math.floor: 获得小于或者等于参数的整数
+		return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+	}
 
-var teststr = 'http://static.cnbetacdn.com/thumb/mini/article/2015/0408/ed1a6d726b24003.jpg_100x100.jpg http://static.cnbetacdn.com/thumb/mini/article/2015/0408/83b14cd8a1dd331_100x100.png http://static.cnbetacdn.com/thumb/mini/article/2015/0408/559b8a56a91339e_100x100.jpg http://static.cnbetacdn.com/thumb/mini/article/2015/0408/c69306a59afc8f7_100x100.jpg http://static.cnbetacdn.com/thumb/mini/article/2015/0408/c69306a59afA SDc8f7_100x100.jpg http://static.cnbetacdn.com/thumb/mini/article/2015/0408/c69306a59afc8f7_100x100.jpg 测试测试就是为了测试而而已 不看这个看什么啊？ 1237812987adjklsfhlajkshdfklKLJHASDJKLHAKLJSHD';
+	return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+// sample..
 
-//var teststr    = "QQ:13762338415";
 
-console.log(teststr.replace(/(http:\/\/[\/\.\w]+.[jpg|png|gif]+)/g, "[img]$1[/img]"));
-teststr.toString()
+console.log(
+	'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+		var r = Math.random() * 16 | 0, v = c == 'x' ? r : r & 0x3 | 0x8;
+		return v.toString(16);
+	})
+);
