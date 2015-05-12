@@ -12,9 +12,11 @@
 ### 已有项目提交到git@OSC去
 
 原理是，在git@OSC上新建一个仓库，然后在本地项目中添加远程仓库，并将数据推送到远程仓库去：
+
 1. 为本地项目建立git仓库：命令行估计是git init，不过在idea中可以选择菜单的VCS->Import into Version Control->Create Git Repository即可
 2. 指定远程仓库：`git remote add origin http://xxxx.xxx.com/xxx.git` ，切记，如果是git@OSC，现在应该是用ssh方式了，记得在git@OSC的仓库页面选择SSH的链接，不要用HTTPS的，否则要求输入账号密码，而且怎么都会不对
 3. 推送到远程仓库：`git push origin master`
+
 	备注：
 	1. 貌似推送前要`git add .`一下，把所有文件都add，然后`git commit`提交一下
 	2. 有些不需要推送的文件请加入到`.gitignore`文件里面去，文本的，一行一个
